@@ -50,11 +50,7 @@
 				echo anchor( site_url(LOGIN_PAGE . '?redirect=examples', $link_protocol ),'Login','id="login-link"');
 			}
 		?></li>
-		<?php 
-			if( ! isset( $auth_user_id ) ){
-				echo '<li>' . anchor( site_url('examples/ajax_login', $link_protocol ),'Ajax Login','id="ajax-login-link"') . '</li>';
-			}
-		?>
+
 		<li>
 			<?php echo anchor( site_url('examples/optional_login_test', $link_protocol ),'Optional Login'); ?>
 		</li>
