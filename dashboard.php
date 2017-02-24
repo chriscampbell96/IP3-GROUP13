@@ -17,7 +17,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 //testing login...
 echo "WELCOME: ";
 echo $_SESSION['userEmail'];
-echo " Your Session number is: ";
+echo " Your UserID is: ";
 echo $_SESSION['userSession'];
 
 ?>
