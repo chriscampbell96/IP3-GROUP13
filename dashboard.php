@@ -21,3 +21,16 @@ echo " Your Session number is: ";
 echo $_SESSION['userSession'];
 
 ?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dashboard</title>
+  </head>
+  <body>
+    <form action="logout.php">
+      <input type="submit" value="logout" />
+    </form>
+  </body>
+</html>
