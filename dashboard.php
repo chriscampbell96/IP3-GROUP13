@@ -32,5 +32,8 @@ echo $_SESSION['userSession'];
     <form action="logout.php">
       <input type="submit" value="logout" />
     </form>
+    <form action="manage_users.php">
+      <input type="submit" value="Manage Users" />
+    </form>
   </body>
 </html>
