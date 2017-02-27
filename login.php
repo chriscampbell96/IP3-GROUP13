@@ -23,7 +23,7 @@ if(isset($_POST['btn-login']))
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Login | Coding Cage</title>
+    <title>Login | Document Management</title>
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
@@ -42,7 +42,7 @@ if(isset($_POST['btn-login']))
    ?>
             <div class='alert alert-error'>
     <button class='close' data-dismiss='alert'>&times;</button>
-    <strong>Sorry!</strong> This Account is not Activated Go to your Inbox and Activate it.
+    <strong>Sorry!</strong> This Account is not Activated. Please contact the System Administrator.
    </div>
             <?php
   }

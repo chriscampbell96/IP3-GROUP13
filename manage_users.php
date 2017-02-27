@@ -118,8 +118,10 @@ if(isset($_POST['btn-signup']))
     <div class="container">
       <p></p>
       <form action="user_register.php">
-        <input type="submit" value="Register New User" />
+        <button type="submit" name="Create New user" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-plus"></i>Create User</button>
+
       </form>
+      <br>
         <!-- Modal
         <button class="btn btn-primary" data-toggle="user_register.php" data-target="user_register.php">Create New User</button>
 
@@ -186,40 +188,62 @@ if(isset($_POST['btn-signup']))
 
     <thead>
         <tr>
+        <th></th>
+        <th>UserID</th>
+        <th>Username</th>
         <th>Full Name</th>
-        <th>View Profile</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Actions</th>
         </tr>
     </thead>
+    <?php
+          //DB CONNECTION
+          $database = new Database();
+          $db = $database->dbConnection();
+          $conn = $db;
+
+
+                  $query = "SELECT * FROM tbl_users";
+                  $stmt = $conn->prepare($query);
+                  $stmt->execute();
+                  while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
+                  ?>
+                  <tr>
+                  <td>
+                    <td><?php echo $row['userID']?></td>
+                    <td><?php echo $row['userName']?></td>
+                    <td><?php echo $row['userFirstName']."&nbsp;".$row['userSurname']; ?></td>
+                    <td><?php echo $row['userEmail']?></td>
+                    <td><?php echo $row['userRole']?></td>
+                    <td><?php echo $row['userStatus']?></td>
+
+
+
+                  </td>
+                  <td>
+                    <!-- ADDING VIEW USER BUTTON TO CHANGE -->
+                    <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i> View</button>
+                    <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+                    <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-minus"></i> Delete</button>
+
+                  </td>
+                </tr>
+
+                  <?php
+                }
+             ?>
+
+
+       </tbody>
+    </table>
 
     <tbody>
 
 
-   </tbody>
-</table>
-<?php
-
-//DB CONNECTION
-$database = new Database();
-$db = $database->dbConnection();
-$conn = $db;
 
 
-        $query = "SELECT * FROM tbl_users";
-        $stmt = $conn->prepare($query);
-        $stmt->execute();
-        while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-        ?>
-        <tr>
-        <td><?php echo $row['userFirstName']."&nbsp;".$row['userSurname']; ?><br></td>
-        <td>
-          <!-- ADDING VIEW USER BUTTON TO CHANGE -->
-
-        <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['user_id']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i> View</button>
-        </td>
-        </tr>
-        <?php
-      }
-   ?>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
