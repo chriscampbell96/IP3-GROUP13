@@ -198,14 +198,22 @@ if(isset($_POST['btn-signup']))
 </table>
 <?php
 
+//DB CONNECTION
+$database = new Database();
+$db = $database->dbConnection();
+$conn = $db;
+
+
         $query = "SELECT * FROM tbl_users";
-        $stmt = $dbname->prepare( $query );
+        $stmt = $conn->prepare($query);
         $stmt->execute();
         while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
         ?>
         <tr>
-        <td><?php echo $row['first_name']."&nbsp;".$row['last_name']; ?></td>
+        <td><?php echo $row['userFirstName']."&nbsp;".$row['userSurname']; ?><br></td>
         <td>
+          <!-- ADDING VIEW USER BUTTON TO CHANGE -->
+
         <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['user_id']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i> View</button>
         </td>
         </tr>
