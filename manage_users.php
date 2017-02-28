@@ -141,7 +141,7 @@ if(isset($_POST['btn-signup']))
 
     <thead>
         <tr>
-        <th></th>
+      
         <th>UserID</th>
         <th>Username</th>
         <th>Full Name</th>
@@ -164,7 +164,7 @@ if(isset($_POST['btn-signup']))
                   while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                   ?>
                   <tr>
-                  <td>
+
                     <td><?php echo $row['userID']?></td>
                     <td><?php echo $row['userName']?></td>
                     <td><?php echo $row['userFirstName']."&nbsp;".$row['userSurname']; ?></td>
@@ -172,9 +172,6 @@ if(isset($_POST['btn-signup']))
                     <td><?php echo $row['userRole']?></td>
                     <td><?php echo $row['userStatus']?></td>
 
-
-
-                  </td>
                   <td>
                     <!-- ADDING VIEW USER BUTTON TO CHANGE -->
                     <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i> View</button>

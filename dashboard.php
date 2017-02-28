@@ -35,5 +35,9 @@ echo $_SESSION['userSession'];
     <form action="manage_users.php">
       <input type="submit" value="Manage Users" />
     </form>
+    <br>
+    <form action="mydocuments.php">
+      <input type="submit" value="My Documents" />
+    </form>
   </body>
 </html>
