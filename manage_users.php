@@ -8,6 +8,11 @@ if(!$user_home->is_logged_in())
  $user_home->redirect('login.php');
 }
 
+if ($_SESSION['userRole'] !== ('Admin'))
+{
+   $user_home->redirect('dashboard.php');
+}
+
 if(isset($_POST['btn-signup']))
 {
    $fname = trim($_POST['txt_fname']);
@@ -141,7 +146,7 @@ if(isset($_POST['btn-signup']))
 
     <thead>
         <tr>
-      
+
         <th>UserID</th>
         <th>Username</th>
         <th>Full Name</th>

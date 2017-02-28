@@ -10,9 +10,9 @@ if(!$user_home->is_logged_in())
  $user_home->redirect('login.php');
 }
 
-if ($_SESSION['userRole'] == ('Admin'))
+if ($_SESSION['userRole'] !== ('Admin'))
 {
-$user_home->redirect('dashboardAdmin.php');
+   $user_home->redirect('dashboard.php');
 }
 
 $stmt = $user_home->runQuery("SELECT * FROM tbl_users WHERE userID=:uid");
@@ -24,7 +24,7 @@ echo "WELCOME: ";
 echo $_SESSION['userEmail'];
 echo " Your UserID is: ";
 echo $_SESSION['userSession'];
-echo " Your role is: ";
+echo "Your role is: ";
 echo $_SESSION['userRole'];
 
 ?>
@@ -38,6 +38,9 @@ echo $_SESSION['userRole'];
   <body>
     <form action="logout.php">
       <input type="submit" value="logout" />
+    </form>
+    <form action="manage_users.php">
+      <input type="submit" value="Manage Users" />
     </form>
     <br>
     <form action="mydocuments.php">

@@ -1,5 +1,6 @@
 <?php
 
+
 require_once 'config.php';
 
 class USER
@@ -64,6 +65,7 @@ class USER
      {
       $_SESSION['userSession'] = $userRow['userID'];
       $_SESSION['userEmail'] = $userRow['userEmail'];
+      $_SESSION['userRole'] = $userRow['userRole'];
       return true;
      }
      else
