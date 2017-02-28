@@ -56,6 +56,7 @@ if(isset($_POST['btn-login']))
     <button class='close' data-dismiss='alert'>&times;</button>
     <strong>Please check your credentials.</strong>
    </div>
+
             <?php
   }
   ?>
@@ -64,7 +65,7 @@ if(isset($_POST['btn-login']))
         <input type="password" class="input-block-level" placeholder="Password" name="txtupass" required />
       <hr />
         <button class="btn btn-large btn-primary" type="submit" name="btn-login">Sign in</button>
-        <a href="fpass.php">Lost your Password ? </a>
+        <a href="#">Lost your Password ? </a>
       </form>
 
     </div> <!-- /container -->

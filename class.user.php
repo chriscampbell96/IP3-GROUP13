@@ -26,19 +26,21 @@ class USER
   return $stmt;
  }
 
- public function register($uname,$email,$upass,$code)
+ public function register($fname,$lname,$uname,$email,$upass,$code)
  {
   try
   {
-   $password = sha1($upass);
-   $stmt = $this->conn->prepare("INSERT INTO tbl_users(userName,userEmail,userPass,tokenCode)
-                                                VALUES(:user_name, :user_mail, :user_pass, :active_code)");
-   $stmt->bindparam(":user_name",$uname);
-   $stmt->bindparam(":user_mail",$email);
-   $stmt->bindparam(":user_pass",$password);
-   $stmt->bindparam(":active_code",$code);
-   $stmt->execute();
-   return $stmt;
+    $password = sha1($upass);
+    $stmt = $this->conn->prepare("INSERT INTO tbl_users(userFirstName,userSurname,userName,userEmail,userPass)
+                                                 VALUES(:user_firstname, :user_surname, :user_name, :user_mail, :user_pass)");
+
+    $stmt->bindparam(":user_firstname",$fname);
+    $stmt->bindparam(":user_surname",$lname);
+    $stmt->bindparam(":user_name",$uname);
+    $stmt->bindparam(":user_mail",$email);
+    $stmt->bindparam(":user_pass",$password);
+    $stmt->execute();
+    return $stmt;
   }
   catch(PDOException $ex)
   {

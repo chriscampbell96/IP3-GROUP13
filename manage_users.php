@@ -66,6 +66,8 @@ if(isset($_POST['btn-signup']))
   }
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -76,6 +78,7 @@ if(isset($_POST['btn-signup']))
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Manage Users</title>
+
 
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -92,6 +95,14 @@ if(isset($_POST['btn-signup']))
        <input type="submit" value="logout" />
      </form>
     <h1>User Management</h1>
+
+    <!-- SIMPLE PAGE BREADCRUMB-->
+    <ul class="breadcrumb">
+      <li><a href="dashboard.php">Dashboard</a></li>
+      <li class="active">Manage Users</li>
+    </ul>
+    <!--END BREAD CRUMB-->
+
     <?php
       if(isset($error))
       {
@@ -121,68 +132,10 @@ if(isset($_POST['btn-signup']))
         <button type="submit" name="Create New user" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-plus"></i>Create User</button>
 
       </form>
+      <!--FUZZY SEARCH FEATURE-->
+
       <br>
-        <!-- Modal
-        <button class="btn btn-primary" data-toggle="user_register.php" data-target="user_register.php">Create New User</button>
 
-            <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="addUserLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="addUserLabel">Create New User</h4>
-                  </div>
-                  <form>
-                  <div class="modal-body">
-                    <form>
-                      <div class="form-group">
-                        <label for="fname">First Name</label>
-                            <input type="text" class="form-control" name="txt_fname" placeholder="Enter first name"/>
-                          </div>
-                      <div class="form-group">
-                        <label for="lname">Last Name</label>
-                            <input type="text" class="form-control" name="txt_lname" placeholder="Enter last name"/>
-                          </div>
-                      <div class="form-group">
-                        <label for="email">Username</label>
-                          <input type="text" class="form-control" name="txt_uname" placeholder="Enter Username" value="<?php if(isset($error)){echo $uname;}?>" />                      </div>
-                      <div class="form-group">
-                        <label for="username">Email</label>
-                          <input type="text" class="form-control" name="txt_email" placeholder="Enter email address" value="<?php if(isset($error)){echo $email;}?>" />                      </div>
-                      <div class="form-group">
-                        <label for="password">Password</label>
-                            <input type="text" class="form-control" name="txt_upass" placeholder="Enter Password" />
-                        </div>
-
-
-                      <div class="form-group">
-                        <label for="role">Role</label>
-                            <input type="text" class="form-control" name="txt_role" placeholder="Enter User role" />
-                          </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Activate User Now?
-                        </label>
-                      </div>
-
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-block btn-primary" name="btn-signup">
-                        <i class="glyphicon glyphicon-open-file"></i>&nbsp;Create User
-                    </button>
-
-                  </form>
-
-                  </div>
-                </form>
-                </div>
-              </div>
-            </div>
-      <p></p>
-    </div>
--->
     <!-- Viewing users.. -->
     <table class="table table-striped table-bordered">
 
@@ -225,8 +178,8 @@ if(isset($_POST['btn-signup']))
                   <td>
                     <!-- ADDING VIEW USER BUTTON TO CHANGE -->
                     <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i> View</button>
-                    <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
-                    <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-minus"></i> Delete</button>
+                    <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+                    <button data-toggle="modal" data-target=".bs-example-modal-sm" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-danger"><i class="glyphicon glyphicon-minus"></i> Delete</button>
 
                   </td>
                 </tr>

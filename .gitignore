@@ -20,8 +20,6 @@ application/logs/*
 !application/logs/.htaccess
 /vendor/
 
-### Less ###
-*.css
 
 ### macOS ###
 *.DS_Store
