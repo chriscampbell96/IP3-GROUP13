@@ -2,13 +2,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-/*
- * Base structure
- */
-
-/* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
+  background-image: url("img/programming.jpg");
 }
 
 h6 {
@@ -16,114 +12,18 @@ h6 {
   padding: 2px;
 }
 
-.sidebar {
-  position: fixed;
-  top: 67px;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  padding: 20px;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  border-right: 1px solid #eee;
-}
-
-
-/*
- * Typography
- */
-
 h1 {
   margin-bottom: 20px;
   padding-bottom: 9px;
   border-bottom: 1px solid #eee;
 }
 
-.navbar-two {
-  height: 22px;
-}
-
-.container-head {
-  padding-left: 15px;
-}
-
-.container-task {
-  font-size: 15px;
-  padding-left: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.progress-bar {
-  height: 10px;
-}
-
-.container-jobs {
-  font-style: normal;
-  font-size: 10px;
-}
-
-table {
-    border-collapse: collapse;
-    border-style: hidden;
-}
-
-table td, table th {
-    border: 1px solid black;
-}
-
-th, td {
-    padding: 15px;
-}
-
-.welcome {
-  align-items: center;
-}
-
-/* Sidebar navigation */
-.sidebar {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.sidebar .nav {
-  margin-bottom: 20px;
-}
-
-.sidebar .nav-item {
-  width: 100%;
-}
-
-.sidebar .nav-item + .nav-item {
-  margin-left: 0;
-}
-
-.sidebar .nav-link {
-  border-radius: 0;
-}
-
-/*
- * Dashboard
- */
-
- /* Placeholders */
-.placeholders {
-  padding-bottom: 3rem;
-}
-
-.placeholder img {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.container-signin {
-  background-image: url("img/programming.jpg");
-}
-
 .form-signin {
+  margin-top: 20px;
   max-width: 330px;
-  padding: 15px;
+  padding: 25px;
   margin: 0 auto;
+  padding-top: 200px;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -159,21 +59,4 @@ th, td {
   margin-bottom: 10px;
   align-items: center;
   text-align: center;
-}
-
-/* Center align the text within the three columns below the carousel */
-.container-circles .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.container-circles h2 {
-  font-weight: normal;
-}
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
-}
-
-.container-circles {
-  padding: 30px;
 }
