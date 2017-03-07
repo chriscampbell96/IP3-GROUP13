@@ -1,0 +1,70 @@
+* {
+  font-family: 'Times New Roman', sans-serif;
+  font-size: small;
+
+}
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+
+}
+
+h6 {
+  margin-top: 7px;
+  padding: 2px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 67px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  border-right: 1px solid #eee;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+/*
+ * Typography
+ */
+
+
+
+h1 {
+  margin-bottom: 20px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #eee;
+}
+
+
+
+.container-head {
+  padding-left: 15px;
+}
+
+
+
+.progress-bar {
+  height: 10px;
+}
+
+
+
+
+/* Sidebar navigation */
+.sidebar {
+  padding-left: 0;
+  padding-right: 0;
+}
