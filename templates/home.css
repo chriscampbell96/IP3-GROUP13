@@ -4,7 +4,6 @@
 
 body {
   padding-top: 50px;
-  background-image: url("img/programming.jpg");
 }
 
 h6 {
@@ -53,10 +52,4 @@ h1 {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
-
-.form-signin-heading {
-  margin-bottom: 10px;
-  align-items: center;
-  text-align: center;
 }
