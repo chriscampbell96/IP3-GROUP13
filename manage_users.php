@@ -179,9 +179,14 @@ if(isset($_POST['btn-signup']))
                     <td><?php echo $row['userStatus']?></td>
 
                   <td>
-                    <!-- ADDING VIEW USER BUTTON TO CHANGE -->
+
+                    <?php if($row['userStatus'] == ('N')){
+                   echo '  <button class="btn btn-info"><i class="glyphicon glyphicon-ok"></i> Activate</button>';
+
+                    }else{
+                      echo '  <button class="btn btn-default"><i class="glyphicon glyphicon-eye-close"></i> Archive</button>';
+                    } ?>
                     <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
-                    <button data-toggle="modal" data-target=".bs-example-modal-sm" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-danger"><i class="glyphicon glyphicon-minus"></i> Delete</button>
 
                   </td>
                 </tr>
