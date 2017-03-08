@@ -96,6 +96,8 @@ if(isset($_POST['btn-signup']))
     <![endif]-->
   </head>
   <body>
+
+    <div class="container">
      <form action="logout.php">
        <input type="submit" value="logout" />
      </form>
@@ -131,7 +133,6 @@ if(isset($_POST['btn-signup']))
             ?>
 
 
-    <div class="container">
       <p></p>
       <form action="user_register.php">
         <button type="submit" name="Create New user" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-plus"></i>Create User</button>
@@ -179,7 +180,6 @@ if(isset($_POST['btn-signup']))
 
                   <td>
                     <!-- ADDING VIEW USER BUTTON TO CHANGE -->
-                    <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i> View</button>
                     <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
                     <button data-toggle="modal" data-target=".bs-example-modal-sm" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-danger"><i class="glyphicon glyphicon-minus"></i> Delete</button>
 

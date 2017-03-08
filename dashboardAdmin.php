@@ -46,5 +46,9 @@ echo $_SESSION['userRole'];
     <form action="mydocuments.php">
       <input type="submit" value="My Documents" />
     </form>
+    <br>
+    <form action="view_documents.php">
+      <input type="submit" value="View shared documents" />
+    </form>
   </body>
 </html>

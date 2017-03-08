@@ -101,6 +101,25 @@ class USER
   }
  }
 
+ public function create_doc($docTitle,$docDesc,$docFile){
+   try
+   {
+     $stmt = $this->conn->prepare("INSERT INTO tbl_documents(docTitle,docDesc,docFile)
+                                                  VALUES(:document_title, :document_desctiption, :document_file)");
+
+     $stmt->bindparam(":document_title",$docTitle);
+     $stmt->bindparam(":document_desctiption",$docDesc);
+     $stmt->bindparam(":document_file",$docFile);
+     $stmt->execute();
+     return $stmt;
+   }
+   catch(PDOException $ex)
+   {
+    echo $ex->getMessage();
+   }
+
+ }
+
 
  public function redirect($url)
  {
