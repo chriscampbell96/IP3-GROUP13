@@ -8,68 +8,6 @@ if(!$user_home->is_logged_in())
  $user_home->redirect('login.php');
 }
 
-if ($_SESSION['userRole'] !== ('Admin'))
-{
-   $user_home->redirect('dashboard.php');
-}
-
-if(isset($_POST['btn-signup']))
-{
-   $fname = trim($_POST['txt_fname']);
-   $lname = trim($_POST['txt_lname']);
-   $uname = trim($_POST['txt_uname']);
-   $uemail = trim($_POST['txt_email']);
-   $upass = trim($_POST['txt_upass']);
-   $role = trim($_POST['txt_role']);
-   if($fname=="") {
-      $error[] = "provide first name !";
-   }
-   if($lname=="") {
-      $error[] = "provide last name !";
-   }
-   if($uname=="") {
-      $error[] = "provide username !";
-   }
-   else if($umail=="") {
-      $error[] = "provide email id !";
-   }
-   else if(!filter_var($umail, FILTER_VALIDATE_EMAIL)) {
-      $error[] = 'Please enter a valid email address !';
-   }
-   else if($upass=="") {
-      $error[] = "provide password !";
-   }
-   else if(strlen($upass) < 6){
-      $error[] = "Password must be atleast 6 characters";
-   }
-   else
-   {
-      try
-      {
-         $stmt = $DB_con->prepare("SELECT userName,userEmail FROM tbl_users WHERE userName=:uname OR userEmail=:umail");
-         $stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
-         $row=$stmt->fetch(PDO::FETCH_ASSOC);
-
-         if($row['userName']==$uname) {
-            $error[] = "sorry username already taken !";
-         }
-         else if($row['userEmail']==$umail) {
-            $error[] = "sorry email address already taken. You acoutn may already be active!";
-         }
-         else
-         {
-            if($user->register($fname,$lname,$uname,$umail,$upass))
-            {
-                $user->redirect('sign-up.php?joined');
-            }
-         }
-     }
-     catch(PDOException $e)
-     {
-        echo $e->getMessage();
-     }
-  }
-}
 
 
 
@@ -106,42 +44,14 @@ if(isset($_POST['btn-signup']))
     <!-- SIMPLE PAGE BREADCRUMB-->
     <ul class="breadcrumb">
       <li><a href="dashboard.php">Dashboard</a></li>
-      <li class="active">Manage Users</li>
+      <li class="active">Shared Documents</li>
     </ul>
     <!--END BREAD CRUMB-->
 
-    <?php
-      if(isset($error))
-      {
-         foreach($error as $error)
-         {
-            ?>
-            <div class="alert alert-danger">
-                <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $error;
-      ?>
-      <?php
-               }
-            }
-            else if(isset($_GET['joined']))
-            {
-                 ?>
-                 <div class="alert alert-info">
-                      <i class="glyphicon glyphicon-log-in"></i> &nbsp; User successfully registered <a href=''></a>
-                 </div>
-                 <?php
-            }
-            ?>
+
 
 
       <p></p>
-
-      <!-- Button trigger modal -->
-    <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i>
-        Upload Document
-    </button>
-
-      <br>
-      <br>
 
     <!-- Viewing users.. -->
     <div class="table-responsive">
@@ -158,9 +68,9 @@ if(isset($_POST['btn-signup']))
         <th>Document ID</th>
         <th>Doument Title</th>
         <th>Document Description</th>
-        <th>Dcument File</th>
-        <th>Upload Date</th>
-        <th>Status</th>
+        <th>Last Changed</th>
+        <th>Document File</th>
+        <th>Document Status</th>
         <th>Actions</th>
         </tr>
     </thead>
@@ -171,25 +81,28 @@ if(isset($_POST['btn-signup']))
           $conn = $db;
 
 
-                  $query = "SELECT * FROM tbl_users";
+                  $query = "SELECT * FROM tbl_documents";
                   $stmt = $conn->prepare($query);
                   $stmt->execute();
                   while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                   ?>
                   <tr>
 
-                    <td><?php echo $row['userID']?></td>
-                    <td><?php echo $row['userName']?></td>
-                    <td><?php echo $row['userFirstName']."&nbsp;".$row['userSurname']; ?></td>
-                    <td><?php echo $row['userEmail']?></td>
-                    <td><?php echo $row['userRole']?></td>
-                    <td><?php echo $row['userStatus']?></td>
+                    <td><?php echo $row['docID']?></td>
+                    <td><?php echo $row['docTitle']?></td>
+                    <td><?php echo $row['docDesc']?></td>
+                    <td><?php echo $row['docLastChange']?></td>
+                    <td><?php echo $row['docFile']?></td>
+                    <td><?php echo $row['docStatus']?></td>
 
                   <td>
-                    <!-- ADDING VIEW USER BUTTON TO CHANGE -->
-                    <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i> View</button>
-                    <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
-                    <button data-toggle="modal" data-target=".bs-example-modal-sm" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-danger"><i class="glyphicon glyphicon-minus"></i> Delete</button>
+ <?php if($row['docStatus'] == ('Draft')){
+echo '  <button class="btn btn-sm btn-info"><i class="glyphicon glyphicon-ok"></i> Activate</button>';
+
+ }else{
+   echo '  <button class="btn btn-default"><i class="glyphicon glyphicon-eye-close"></i> Draft</button>';
+ } ?>
+
 
                   </td>
                 </tr>
@@ -235,7 +148,7 @@ if(isset($_POST['btn-signup']))
       </div>
       <div class="modal-body">
         <form>
-              <div class="form-group">
+              <div class="form-group" enctype="multipart/form-data">
                   <label for="exampleInputEmail1">Document Title</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Document Title">
                 </div>
@@ -243,8 +156,8 @@ if(isset($_POST['btn-signup']))
                     <textarea class="form-control" rows="3"  placeholder="Document Description"></textarea>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
+                  <label for="uploa">File input</label>
+                  <input type="file" id="upload">
                   <p class="help-block">Browse Computer</p>
                 </div>
                 <div class="checkbox">
@@ -256,7 +169,7 @@ if(isset($_POST['btn-signup']))
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn-upload" method="post">Save changes</button>
       </div>
     </div>
   </div>

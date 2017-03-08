@@ -101,15 +101,17 @@ class USER
   }
  }
 
- public function create_doc($docTitle,$docDesc,$docFile){
+
+public function create_doc($docTitle,$docDesc,$docFile,$userID){
    try
    {
-     $stmt = $this->conn->prepare("INSERT INTO tbl_documents(docTitle,docDesc,docFile)
-                                                  VALUES(:document_title, :document_desctiption, :document_file)");
+     $stmt = $this->conn->prepare("INSERT INTO tbl_documents(docTitle,docDesc,docFile,userID)
+                                                  VALUES(:document_title, :document_desctiption, :doc_file, :userUpload)");
 
      $stmt->bindparam(":document_title",$docTitle);
      $stmt->bindparam(":document_desctiption",$docDesc);
-     $stmt->bindparam(":document_file",$docFile);
+     $stmt->bindparam("doc_file",$docFile);
+     $stmt->bindparam(":userUpload",$userID);
      $stmt->execute();
      return $stmt;
    }
@@ -118,6 +120,10 @@ class USER
     echo $ex->getMessage();
    }
 
+ }
+
+ public function check_upload(){
+   #
  }
 
 
