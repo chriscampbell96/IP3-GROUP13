@@ -1,10 +1,14 @@
-* {
-  font-family: 'Open Sans', sans-serif;
-}
+/*!
+ * Start Bootstrap - SB Admin (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+/* Global Styles */
 
 body {
     margin-top: 100px;
-    background-color: white;
+    background-color: #222;
 }
 
 @media(min-width:768px) {
@@ -39,16 +43,9 @@ body {
 }
 
 /* Top Navigation */
-.navbar {
-  height: 60px;
-}
 
 .top-nav {
     padding: 0 15px;
-}
-
-.navbar-brand {
-  padding-left: 20px;
 }
 
 .top-nav>li {
@@ -68,8 +65,8 @@ body {
 .top-nav>.open>a,
 .top-nav>.open>a:hover,
 .top-nav>.open>a:focus {
-    color: #F3F4F5;
-    background-color: #F3F4F5;
+    color: #fff;
+    background-color: #000;
 }
 
 .top-nav>.open>.dropdown-menu {
@@ -113,26 +110,10 @@ ul.alert-dropdown {
     width: 200px;
 }
 
-.header {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.container-header {
-  height: 15px;
-}
-
-.progress-bar {
-  height: 15px;
-}
-
 /* Side Navigation */
 
 @media(min-width:768px) {
-
     .side-nav {
-        margin-top: 30px;
         position: fixed;
         top: 51px;
         left: 225px;
@@ -141,15 +122,10 @@ ul.alert-dropdown {
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        color: white;
-        background-color: #38474E;
+        background-color: #222;
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
-    }
-
-    .active {
-      margin-top: -20px;
     }
 
     .side-nav>li>a {
@@ -159,8 +135,7 @@ ul.alert-dropdown {
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
-        background-color: #222E32 !important;
-        color: white;
+        background-color: #000 !important;
     }
 }
 
