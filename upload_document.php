@@ -13,27 +13,49 @@ if(!$user_home->is_logged_in())
 //   $user_home->redirect('dashboard.php');
 //}
 //docTitle,$docDesc
+
 if(isset($_POST['btn-upload']))
 {
    $docTitle = trim($_POST['txtdocTitle']);
    $docDesc = trim($_POST['txtdocDesc']);
-   $docFile = trim($_FILE['file']['name']);
-   $tmp_name = $_FILE['file']['tmpName'];
+   $file = rand(1000,100000)."-".$_FILES['file']['name'];
+   $file_loc = $_FILES['file']['tmp_name'];
+   $file_size = $_FILES['file']['size'];
+   $file_type = $_FILES['file']['type'];
+   $folder="uploads/";
    $userID = trim($_SESSION['userSession']);
 
+   // new file size in KB
+ $new_size = $file_size/1024;
+ // new file size in KB
 
-    if($user_home->create_doc($docTitle,$docDesc,$docFile,$userID))
+ // make file name in lower case
+ $new_file_name = strtolower($file);
+ // make file name in lower case
+//  $fleExt = strtolower(pathinfo($file,PATHINFO_EXTENSION)); // get file extension
+//  $valid_extensions = array('doc', 'docx', 'pdf', 'txt');
+
+
+ $final_file=str_replace(' ','-',$new_file_name);
+
+ //if(in_array($fleExt, $valid_extensions)){
+
+   if(move_uploaded_file($file_loc,$folder.$final_file)){
+
+    if($user_home->create_doc($docTitle,$docDesc,$final_file,$file_type,$new_size,$userID))
     {
       $user_home->redirect('mydocuments.php');
 
     }
-    else
-    {
+    else{
      echo "sorry , Query could no execute...";
 
    }
   }
+}else{
 
+
+}
 
 
 ?>

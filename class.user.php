@@ -102,15 +102,17 @@ class USER
  }
 
 
-public function create_doc($docTitle,$docDesc,$docFile,$userID){
+public function create_doc($docTitle,$docDesc,$final_file,$file_type,$new_size,$userID){
    try
    {
-     $stmt = $this->conn->prepare("INSERT INTO tbl_documents(docTitle,docDesc,docFile,userID)
-                                                  VALUES(:document_title, :document_desctiption, :doc_file, :userUpload)");
+     $stmt = $this->conn->prepare("INSERT INTO tbl_documents(docTitle,docDesc,docFile,docType,docSize,userID)
+                                                  VALUES(:document_title, :document_desctiption, :doc_file, :doc_Type, :doc_Size, :userUpload)");
 
      $stmt->bindparam(":document_title",$docTitle);
      $stmt->bindparam(":document_desctiption",$docDesc);
-     $stmt->bindparam("doc_file",$docFile);
+     $stmt->bindparam("doc_file",$final_file);
+     $stmt->bindparam("doc_Type",$file_type);
+     $stmt->bindparam("doc_Size",$new_size);
      $stmt->bindparam(":userUpload",$userID);
      $stmt->execute();
      return $stmt;
@@ -122,7 +124,15 @@ public function create_doc($docTitle,$docDesc,$docFile,$userID){
 
  }
 
- public function check_upload(){
+ public function delete_doc($docId){
+
+    $stmt = $this->conn->prepare("DELETE FROM tbl_documents WHERE docId=:id");
+    $stmt->execute(array(':id'=>$id));
+
+
+ }
+
+ public function activate_doc(){
    #
  }
 

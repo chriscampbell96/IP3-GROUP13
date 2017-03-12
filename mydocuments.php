@@ -3,12 +3,12 @@ session_start();
 require_once 'class.user.php';
 $user_home = new USER();
 
+
+
 if(!$user_home->is_logged_in())
 {
  $user_home->redirect('login.php');
 }
-
-
 
 
 ?>
@@ -80,7 +80,6 @@ if(!$user_home->is_logged_in())
           $db = $database->dbConnection();
           $conn = $db;
 
-
                   $query = "SELECT * FROM tbl_documents";
                   $stmt = $conn->prepare($query);
                   $stmt->execute();
@@ -95,6 +94,7 @@ if(!$user_home->is_logged_in())
                     <td><?php echo $row['docFile']?></td>
                     <td><?php echo $row['docStatus']?></td>
 
+
                   <td>
  <?php if($row['docStatus'] == ('Draft')){
 echo '  <button class="btn btn-sm btn-info"><i class="glyphicon glyphicon-ok"></i> Activate</button>';
@@ -103,6 +103,7 @@ echo '  <button class="btn btn-sm btn-info"><i class="glyphicon glyphicon-ok"></
    echo '  <button class="btn btn-default"><i class="glyphicon glyphicon-eye-close"></i> Draft</button>';
  } ?>
 
+<button class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Delete</button>
 
                   </td>
                 </tr>
