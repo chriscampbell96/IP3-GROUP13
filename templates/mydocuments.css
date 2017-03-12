@@ -183,19 +183,14 @@ ul.alert-dropdown {
     color: #fff;
 }
 
-.marketing {
-  margin-left: -12px;
-  position: absolute;
-  align-items: center;
-  margin-top: 50px;
-  height: 400px;
-}
-
-.panel-heading {
-  align-items: center;
+.container-back {
+  background-color: #F3F4F5;
   width: 100%;
+  align-items: center;
+  text-align: center;
 }
 
-.container-footer {
-  margin-left: 20px;
+.container-grid {
+  padding-left: 15px;
+  padding-right: 15px;
 }
