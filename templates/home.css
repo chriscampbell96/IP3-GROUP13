@@ -184,15 +184,12 @@ ul.alert-dropdown {
 }
 
 .container-back {
-  height: 40%;
+  height: 50%;
   background-color: #F3F4F5;
   width: 100%;
 }
 
 .marketing .col-lg-4 {
-
-  margin-top: 40px;
-  width: 30%;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -202,4 +199,12 @@ ul.alert-dropdown {
 .marketing .col-lg-4 p {
   margin-right: .75rem;
   margin-left: .75rem;
+}
+
+.marketing {
+  margin-top: 50px;
+}
+
+.container-footer {
+  margin-left: 20px;
 }

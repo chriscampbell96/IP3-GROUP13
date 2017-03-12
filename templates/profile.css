@@ -184,20 +184,11 @@ ul.alert-dropdown {
 }
 
 .container-back {
-  height: 500px;
+  height: 40%;
   background-color: #F3F4F5;
-  position: static;
+  width: 100%;
 }
 
-.row {
-  font-size: 20px;
-  padding: 10px;
-}
-
-.col-md-8 {
-  font-size: 16px;
-}
-
-.col-md-4 {
-  font-size: 16px;
+.container-footer {
+  margin-left: 20px;
 }
