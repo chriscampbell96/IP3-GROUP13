@@ -183,6 +183,10 @@ ul.alert-dropdown {
     color: #fff;
 }
 
+.container-fluid {
+  margin-left: -225px;
+}
+
 .marketing {
   margin-left: -12px;
   margin-right: -12px;
