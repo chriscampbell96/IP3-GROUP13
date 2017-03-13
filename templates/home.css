@@ -168,9 +168,7 @@ ul.alert-dropdown {
     }
 }
 
-.container-fluid {
-  margin-left: 225px;
-}
+
 
 .side-nav>li>ul {
     padding: 0;
@@ -190,7 +188,7 @@ ul.alert-dropdown {
 
 .marketing {
   margin-left: -12px;
-  margin-right: -12px;
+  margin-right: -14px;
   position: absolute;
   align-items: center;
   margin-top: 50px;

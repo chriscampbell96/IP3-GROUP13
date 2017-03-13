@@ -144,83 +144,26 @@
                 </div>
                 <!-- /.row -->
 
-<div class="container-big">
-<div class="container-back">
-  <!-- Image Header -->
-          <div class="row">
-              <div class="col-lg-12">
-                  <img class="img-responsive" src="img/back.jpg" width="1200" height="300" alt="">
-              </div>
-          </div>
-</div>
-          <!-- /.row -->
 
+                <!-- Include stylesheet -->
+                <link href="https://cdn.quilljs.com/1.2.2/quill.snow.css" rel="stylesheet">
 
+                <!-- Create the editor container -->
+                <div id="editor">
+                  <p>Hello World!</p>
+                  <p>Some initial <strong>bold</strong> text</p>
+                  <p><br></p>
+                </div>
 
-<div class="marketing">
+                <!-- Include the Quill library -->
+                <script src="https://cdn.quilljs.com/1.2.2/quill.js"></script>
 
-                     <div class="col-md-3 col-sm-6">
-                         <div class="panel panel-default text-center">
-                             <div class="panel-heading">
-                                 <span class="fa-stack fa-5x">
-                                       <i class="fa fa-circle fa-stack-2x text-primary" style="color:#BF3944"></i>
-                                       <i class="fa fa-book fa-stack-1x fa-inverse"></i>
-                                 </span>
-                             </div>
-                             <div class="panel-body">
-                                 <h4>Create</h4>
-                                 <p>Create and personalise your own documents. Its super quick and easy to do.</p>
-                                 <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944" class="btn btn-primary">Learn More</a>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-md-3 col-sm-6">
-                         <div class="panel panel-default text-center">
-                             <div class="panel-heading">
-                                 <span class="fa-stack fa-5x">
-                                       <i class="fa fa-circle fa-stack-2x text-primary" style="color:#BF3944"></i>
-                                       <i class="fa fa-share-alt fa-stack-1x fa-inverse"></i>
-                                 </span>
-                             </div>
-                             <div class="panel-body">
-                                 <h4>Share</h4>
-                                 <p>Once you are happy with your document, share it with your friends and colleagues.</p>
-                                 <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944" class="btn btn-primary">Learn More</a>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-md-3 col-sm-6">
-                         <div class="panel panel-default text-center">
-                             <div class="panel-heading">
-                                 <span class="fa-stack fa-5x">
-                                       <i class="fa fa-circle fa-stack-2x text-primary" style="color:#BF3944"></i>
-                                       <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
-                                 </span>
-                             </div>
-                             <div class="panel-body">
-                                 <h4>View</h4>
-                                 <p>Check your notifications to see if anyone has shared their documents with you.</p>
-                                 <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944" class="btn btn-primary">Learn More</a>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-md-3 col-sm-6">
-                         <div class="panel panel-default text-center">
-                             <div class="panel-heading">
-                                 <span class="fa-stack fa-5x">
-                                       <i class="fa fa-circle fa-stack-2x text-primary" style="color:#BF3944"></i>
-                                       <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                 </span>
-                             </div>
-                             <div class="panel-body">
-                                 <h4>Update</h4>
-                                 <p>Make sure your documents stay up-to-date and relevant by making changes if needed.</p>
-                                 <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944" class="btn btn-primary">Learn More</a>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-</div>
+                <!-- Initialize Quill editor -->
+                <script>
+                  var quill = new Quill('#editor', {
+                    theme: 'snow'
+                  });
+                </script>
 
 
             </div>
