@@ -41,7 +41,7 @@ if(!$user_home->is_logged_in())
   </head>
   <body>
     <?php include("templates/header.php"); ?>
-    <?php include("templates/sidebar.html"); ?>
+    <?php include("templates/sidebar.php"); ?>
 <div id="page-wrapper">
 
   <div class="container-fluid">

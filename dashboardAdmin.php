@@ -4,7 +4,7 @@ require_once 'class.user.php';
 $user_home = new USER();
 
 include 'templates/header.php';
-include 'templates/sidebar.html';
+include 'templates/sidebar.php';
 
 if(!$user_home->is_logged_in())
 {
@@ -51,7 +51,9 @@ echo $_SESSION['userRole'];
   </head>
 
   <body>
+    <div id="page-wrapper">
 
+      <div class="container-fluid">
     <form action="logout.php">
       <input type="submit" value="logout" />
     </form>
@@ -66,6 +68,8 @@ echo $_SESSION['userRole'];
     <form action="view_documents.php">
       <input type="submit" value="View shared documents" />
     </form>
+  </div>
+</div>
     <!-- jQuery -->
     <script src="templates/js/jquery.js"></script>
 

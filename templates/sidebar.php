@@ -37,7 +37,7 @@
 
 <div class="head-container">
 
-<h4 class="header">Username</h4>
+<h4 class="header"><?php echo $_SESSION['userEmail'] ?></h4>
 
 </div>
 
