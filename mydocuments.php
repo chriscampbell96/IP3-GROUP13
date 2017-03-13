@@ -47,9 +47,6 @@ if(!$user_home->is_logged_in())
   <div class="container-fluid">
 
 
-     <form action="logout.php">
-       <input type="submit" value="logout" />
-     </form>
     <h1>My Documents</h1>
 
     <!-- SIMPLE PAGE BREADCRUMB-->

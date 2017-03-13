@@ -51,13 +51,13 @@
 </div>
 
                     <li class="active">
-                        <a href="home.html" style="background-color:#38474E; color:white"><i class="fa fa-fw fa-home" style="color:white"></i> Home</a>
+                        <a href="dashboardAdmin.php" style="background-color:#38474E; color:white"><i class="fa fa-fw fa-home" style="color:white"></i> Home</a>
                     </li>
                     <li>
-                        <a href="mydocuments" style="color:white"><i class="fa fa-fw fa-book" style="color:white"></i> My Documents</a>
+                        <a href="mydocuments.php" style="color:white"><i class="fa fa-fw fa-book" style="color:white"></i> My Documents</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-file-text-o" style="color:white"></i> Create Document</a>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-file-text-o" style="color:white"></i> Create Document Online</a>
                     </li>
                     <li>
                         <a href="#" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> Other</a>

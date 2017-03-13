@@ -3,8 +3,7 @@ session_start();
 require_once 'class.user.php';
 $user_home = new USER();
 
-include 'templates/header.php';
-include 'templates/sidebar.php';
+
 
 if(!$user_home->is_logged_in())
 {
@@ -21,12 +20,7 @@ $stmt->execute(array(":uid"=>$_SESSION['userSession']));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 //testing login...
-echo "WELCOME: ";
-echo $_SESSION['userEmail'];
-echo " Your UserID is: ";
-echo $_SESSION['userSession'];
-echo "Your role is: ";
-echo $_SESSION['userRole'];
+
 
 ?>
 
@@ -48,15 +42,25 @@ echo $_SESSION['userRole'];
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <?php include 'templates/header.php';
+    include 'templates/sidebar.php'; ?>
   </head>
 
   <body>
     <div id="page-wrapper">
 
       <div class="container-fluid">
+
+        <?php echo "WELCOME: ";
+        echo $_SESSION['userEmail'];
+        echo " Your UserID is: ";
+        echo $_SESSION['userSession'];
+        echo "Your role is: ";
+        echo $_SESSION['userRole']; ?>
     <form action="logout.php">
       <input type="submit" value="logout" />
     </form>
+    <br>
     <form action="manage_users.php">
       <input type="submit" value="Manage Users" />
     </form>
@@ -67,6 +71,18 @@ echo $_SESSION['userRole'];
     <br>
     <form action="view_documents.php">
       <input type="submit" value="View shared documents" />
+    </form>
+    <br>
+    <form action="#">
+      <input type="submit" value="My Notifications" />
+    </form>
+    <br>
+    <form action="#">
+      <input type="submit" value="My Revisions" />
+    </form>
+    <br>
+    <form action="#">
+      <input type="submit" value="Create document online" />
     </form>
   </div>
 </div>
