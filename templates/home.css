@@ -168,7 +168,9 @@ ul.alert-dropdown {
     }
 }
 
-
+.container-fluid {
+  margin-left: 225px;
+}
 
 .side-nav>li>ul {
     padding: 0;
