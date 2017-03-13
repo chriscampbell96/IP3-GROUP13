@@ -4,7 +4,6 @@ require_once 'class.user.php';
 $user_home = new USER();
 
 
-
 if(!$user_home->is_logged_in())
 {
  $user_home->redirect('login.php');
@@ -19,23 +18,35 @@ if(!$user_home->is_logged_in())
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+
     <title>My Documents</title>
 
 
     <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="templates/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Custom CSS -->
+    <link href="templates/css/sb-admin.css" rel="stylesheet">
+    <link href="templates/home.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="templates/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
+    <?php include("templates/header.php"); ?>
+    <?php include("templates/sidebar.html"); ?>
+<div id="page-wrapper">
 
-        <div class="container">
+  <div class="container-fluid">
+
+
      <form action="logout.php">
        <input type="submit" value="logout" />
      </form>
@@ -175,12 +186,18 @@ echo '  <button class="btn btn-sm btn-info"><i class="glyphicon glyphicon-ok"></
     </div>
   </div>
 </div>
+</div>
 
+<!-- jQuery -->
+<script src="templates/js/jquery.js"></script>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="templates/js/bootstrap.min.js"></script>
 
-    <script src="assets/js/bootstrap.min.js"></script>
+<!-- Morris Charts JavaScript -->
+<script src="templates/js/plugins/morris/raphael.min.js"></script>
+<script src="templates/js/plugins/morris/morris.min.js"></script>
+<script src="templates/js/plugins/morris/morris-data.js"></script>
 
   </body>
 </html>
