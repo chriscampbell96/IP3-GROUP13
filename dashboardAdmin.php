@@ -43,7 +43,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <?php include 'templates/header.php';
-    include 'templates/sidebar.php'; ?>
+    include 'templates/sidebar.php';?>
   </head>
 
   <body>

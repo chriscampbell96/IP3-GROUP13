@@ -42,7 +42,7 @@ if(isset($_POST['btn-upload']))
 
    if(move_uploaded_file($file_loc,$folder.$final_file)){
 
-    if($user_home->create_doc($docTitle,$docDesc,$final_file,$file_type,$new_size,$userID))
+    if($user_home->create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID))
     {
       $user_home->redirect('mydocuments.php');
 

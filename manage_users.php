@@ -13,64 +13,53 @@ if ($_SESSION['userRole'] !== ('Admin'))
    $user_home->redirect('dashboard.php');
 }
 
-if(isset($_POST['btn-signup']))
+if(isset($_POST['btn-activate'])){
+
+   $id = $_GET['id'];
+   extract($user_home->getID($userId));
+
+   $statusY = "Y";
+   $statusN = "N";
+
+$stmt = $user->runQuery("SELECT userID,userStatus FROM tbl_users WHERE userID=:uID");
+$stmt->execute(array(":userID"=>$userId));
+$row=$stmt->fetch(PDO::FETCH_ASSOC);
+if($stmt->rowCount() > 0)
 {
-   $fname = trim($_POST['txt_fname']);
-   $lname = trim($_POST['txt_lname']);
-   $uname = trim($_POST['txt_uname']);
-   $uemail = trim($_POST['txt_email']);
-   $upass = trim($_POST['txt_upass']);
-   $role = trim($_POST['txt_role']);
-   if($fname=="") {
-      $error[] = "provide first name !";
-   }
-   if($lname=="") {
-      $error[] = "provide last name !";
-   }
-   if($uname=="") {
-      $error[] = "provide username !";
-   }
-   else if($umail=="") {
-      $error[] = "provide email id !";
-   }
-   else if(!filter_var($umail, FILTER_VALIDATE_EMAIL)) {
-      $error[] = 'Please enter a valid email address !';
-   }
-   else if($upass=="") {
-      $error[] = "provide password !";
-   }
-   else if(strlen($upass) < 6){
-      $error[] = "Password must be atleast 6 characters";
-   }
-   else
-   {
-      try
-      {
-         $stmt = $DB_con->prepare("SELECT userName,userEmail FROM tbl_users WHERE userName=:uname OR userEmail=:umail");
-         $stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
-         $row=$stmt->fetch(PDO::FETCH_ASSOC);
+if($row['userStatus']==$statusN)
+{
+$stmt = $user->runQuery("UPDATE tbl_users SET userStatus=:status WHERE userId=:userID");
+$stmt->bindparam(":status",$statusY);
+$stmt->bindparam(":userID",$userId);
+$stmt->execute();
 
-         if($row['userName']==$uname) {
-            $error[] = "sorry username already taken !";
-         }
-         else if($row['userEmail']==$umail) {
-            $error[] = "sorry email address already taken. You acoutn may already be active!";
-         }
-         else
-         {
-            if($user->register($fname,$lname,$uname,$umail,$upass))
-            {
-                $user->redirect('sign-up.php?joined');
-            }
-         }
-     }
-     catch(PDOException $e)
-     {
-        echo $e->getMessage();
-     }
-  }
+$msg = "
+          <div class='alert alert-success'>
+    <button class='close' data-dismiss='alert'>&times;</button>
+    <strong>WoW !</strong>  Your Account is Now Activated : <a href='manage_users.php'></a>
+       </div>
+       ";
 }
-
+else
+{
+$msg = "
+          <div class='alert alert-error'>
+    <button class='close' data-dismiss='alert'>&times;</button>
+    <strong>sorry !</strong>  Your Account is allready Activated : <a href='manage_users.php'></a>
+       </div>
+       ";
+}
+}
+else
+{
+$msg = "
+      <div class='alert alert-error'>
+   <button class='close' data-dismiss='alert'>&times;</button>
+   <strong>sorry !</strong>  No Account Found : <a href='manage_users.php'></a>
+   </div>
+   ";
+}
+}
 
 
 ?>
@@ -187,9 +176,8 @@ if(isset($_POST['btn-signup']))
                   <td>
 
                     <?php if($row['userStatus'] == ('N')){
-                   echo '  <button class="btn btn-info"><i class="glyphicon glyphicon-ok"></i> Activate</button>';
-
-                    }else{
+                      echo '  <button type="submit" class="btn btn-info" name="btn-activate"><i class="glyphicon glyphicon-ok"></i> Activate</button>';
+                      }else{
                       echo '  <button class="btn btn-default"><i class="glyphicon glyphicon-eye-close"></i> Archive</button>';
                     } ?>
                     <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
@@ -208,7 +196,7 @@ if(isset($_POST['btn-signup']))
     <tbody>
 
 </div>
-</div>  
+</div>
 
 
 

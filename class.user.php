@@ -92,6 +92,16 @@ class USER
   }
  }
 
+ public function getID($userId)
+ {
+  $stmt = $this->db->prepare("SELECT * FROM tbl_users WHERE userId=:id");
+  $stmt->execute(array(":id"=>$userId));
+  $editRow=$stmt->fetch(PDO::FETCH_ASSOC);
+  return $editRow;
+ }
+
+
+
 
  public function is_logged_in()
  {
@@ -102,7 +112,7 @@ class USER
  }
 
 
-public function create_doc($docTitle,$docDesc,$final_file,$file_type,$new_size,$userID){
+public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID){
    try
    {
      $stmt = $this->conn->prepare("INSERT INTO tbl_documents(docTitle,docDesc,docFile,docType,docSize,userID)
@@ -110,7 +120,7 @@ public function create_doc($docTitle,$docDesc,$final_file,$file_type,$new_size,$
 
      $stmt->bindparam(":document_title",$docTitle);
      $stmt->bindparam(":document_desctiption",$docDesc);
-     $stmt->bindparam("doc_file",$final_file);
+     $stmt->bindparam("doc_file",$file);
      $stmt->bindparam("doc_Type",$file_type);
      $stmt->bindparam("doc_Size",$new_size);
      $stmt->bindparam(":userUpload",$userID);
