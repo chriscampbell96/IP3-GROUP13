@@ -29,7 +29,9 @@ body {
 }
 
 @media(min-width:768px) {
-    
+    #wrapper {
+        padding-left: 225px;
+    }
 
     #page-wrapper {
         padding: 10px;
@@ -166,10 +168,6 @@ ul.alert-dropdown {
     }
 }
 
-.container-fluid {
-  margin-left: 225px;
-}
-
 .side-nav>li>ul {
     padding: 0;
 }
@@ -185,21 +183,20 @@ ul.alert-dropdown {
     color: #fff;
 }
 
-
-.marketing {
-  margin-left: -12px;
-  margin-right: -14px;
-  position: absolute;
-  align-items: center;
-  margin-top: 50px;
-  height: 400px;
-}
-
-.panel-heading {
-  align-items: center;
+.container-back {
+  height: 40%;
+  background-color: #F3F4F5;
   width: 100%;
 }
 
 .container-footer {
   margin-left: 20px;
+}
+
+#editor {
+  height: 390px;
+}
+
+.container-buttons {
+  padding-top: 20px;
 }

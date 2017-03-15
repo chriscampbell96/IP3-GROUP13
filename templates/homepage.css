@@ -29,7 +29,9 @@ body {
 }
 
 @media(min-width:768px) {
-
+    #wrapper {
+        padding-left: 225px;
+    }
 
     #page-wrapper {
         padding: 10px;
@@ -166,10 +168,6 @@ ul.alert-dropdown {
     }
 }
 
-.container-fluid {
-  margin-left: 225px;
-}
-
 .side-nav>li>ul {
     padding: 0;
 }
@@ -185,10 +183,16 @@ ul.alert-dropdown {
     color: #fff;
 }
 
-#editor {
-  height: 390px;
+.container-back {
+  height: 40%;
+  background-color: #F3F4F5;
+  width: 100%;
 }
 
-.container-buttons {
-  padding-top: 20px;
+.container-footer {
+  margin-left: 20px;
+}
+
+.marketing {
+  padding-top: 50px;
 }

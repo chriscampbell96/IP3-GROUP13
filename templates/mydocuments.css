@@ -186,11 +186,16 @@ ul.alert-dropdown {
 .container-back {
   background-color: #F3F4F5;
   width: 100%;
-  align-items: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th {
   text-align: center;
 }
 
-.container-grid {
-  padding-left: 15px;
-  padding-right: 15px;
+td {
+  text-align: left;
 }

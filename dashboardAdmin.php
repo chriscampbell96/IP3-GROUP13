@@ -47,6 +47,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
   </head>
 
   <body>
+    <div id="wrapper">
     <div id="page-wrapper">
 
       <div class="container-fluid">
@@ -85,6 +86,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       <input type="submit" value="Create document online" />
     </form>
   </div>
+</div>
 </div>
     <!-- jQuery -->
     <script src="templates/js/jquery.js"></script>
