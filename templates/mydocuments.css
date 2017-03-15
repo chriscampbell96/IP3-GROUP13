@@ -183,18 +183,11 @@ ul.alert-dropdown {
     color: #fff;
 }
 
-@media(min-width:768px) {
-  .container-back {
-    background-color: #F3F4F5;
-    width:100%;
-  }
-}
-
 .container-back {
   background-color: #F3F4F5;
   width: 100%;
 }
 
-table, th, td {
-    border: 1px solid black;
+.container-footer {
+  margin-left: 20px;
 }
