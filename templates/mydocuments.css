@@ -183,6 +183,13 @@ ul.alert-dropdown {
     color: #fff;
 }
 
+@media(min-width:768px) {
+  .container-back {
+    background-color: #F3F4F5;
+    width:100%;
+  }
+}
+
 .container-back {
   background-color: #F3F4F5;
   width: 100%;
@@ -190,12 +197,4 @@ ul.alert-dropdown {
 
 table, th, td {
     border: 1px solid black;
-}
-
-th {
-  text-align: center;
-}
-
-td {
-  text-align: left;
 }

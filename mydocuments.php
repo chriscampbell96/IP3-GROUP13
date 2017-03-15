@@ -29,10 +29,7 @@ if(!$user_home->is_logged_in())
 
     <!-- Custom CSS -->
     <link href="templates/css/sb-admin.css" rel="stylesheet">
-    <link href="templates/home.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="templates/css/plugins/morris.css" rel="stylesheet">
+    <link href="templates/homepage.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -42,6 +39,7 @@ if(!$user_home->is_logged_in())
   <body>
     <?php include("templates/header.php"); ?>
     <?php include("templates/sidebar.php"); ?>
+    <div id="wrapper">
 <div id="page-wrapper">
 
   <div class="container-fluid">
@@ -182,6 +180,7 @@ echo '  <button class="btn btn-sm btn-info"><i class="glyphicon glyphicon-ok"></
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
 
