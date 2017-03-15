@@ -29,7 +29,7 @@ body {
 }
 
 @media(min-width:768px) {
-    
+
 
     #page-wrapper {
         padding: 10px;
@@ -185,21 +185,10 @@ ul.alert-dropdown {
     color: #fff;
 }
 
-
-.marketing {
-  margin-left: -12px;
-  margin-right: -14px;
-  position: absolute;
-  align-items: center;
-  margin-top: 50px;
-  height: 400px;
+#editor {
+  height: 390px;
 }
 
-.panel-heading {
-  align-items: center;
-  width: 100%;
-}
-
-.container-footer {
-  margin-left: 20px;
+.container-buttons {
+  padding-top: 20px;
 }
