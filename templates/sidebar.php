@@ -49,30 +49,30 @@
   <div class="progress-bar" role="progressbar" style="background-color:#8C9AA1; width: 33.333%; height:5px"aria-valuenow="33.333" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
-<li class="active">
-    <a href="home.html" style="background-color:#38474E; color:white"><i class="fa fa-fw fa-home"></i> Home</a>
-</li>
-<li>
-    <a href="mydocuments.html" style="color:white"><i class="fa fa-fw fa-book"></i>My Documents</a>
-</li>
-<li>
-    <a href="createdocument.html" style="color:white"><i class="fa fa-fw fa-file-text-o"></i> Create Document</a>
-</li>
-<li>
-    <a href="#" style="color:white"><i class="fa fa-fw fa-upload"></i> Upload Document</a>
-</li>
-<li>
-    <a href="#" style="color:white"><i class="fa fa-fw fa-share-alt"></i> Shared Documents</a>
-</li>
-<li>
-    <a href="#" style="color:white"><i class="fa fa-fw fa-envelope-o"></i> Send Documents</a>
-</li>
-<li>
-    <a href="#" style="color:white"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
-</li>
-<li>
-    <a href="#" style="color:white"><i class="fa fa-fw fa-pencil"></i> My Revisions</a>
-</li>
+                    <li class="active">
+                        <a href="dashboardAdmin.php" style="color:white"><i class="fa fa-fw fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="mydocuments.php" style="color:white"><i class="fa fa-fw fa-book"></i> My Documents</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-file-text-o"></i> Create Document</a>
+                    </li>
+                    <li>
+                        <a href="view_documents.php" style="color:white"><i class="fa fa-fw fa-upload"></i> Upload Document</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-share-alt"></i> Shared Documents</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-envelope-o"></i> Send Documents</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
+                    </li>
+                    <li>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-pencil"></i> Revisions</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
