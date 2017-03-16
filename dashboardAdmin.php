@@ -79,7 +79,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
       <input type="submit" value="My Revisions" />
     </form>
     <br>
-    <form action="#">
+    <form action="createdocument.php">
       <input type="submit" value="Create document online" />
     </form>
   </div>
