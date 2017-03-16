@@ -59,19 +59,19 @@
                         <a href="#" style="color:white"><i class="fa fa-fw fa-file-text-o" style="color:white"></i> Create Document Online</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> Other</a>
+                        <a href="view_documents.php" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> Shared Documents</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> Other</a>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> Notification Board</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> Other</a>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> My Revisions</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> Other</a>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> Upload Document</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> Other</a>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> Send My Documents</a>
                     </li>
                 </ul>
             </div>
