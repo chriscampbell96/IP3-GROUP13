@@ -94,12 +94,61 @@ class USER
 
  public function getID($userId)
  {
-  $stmt = $this->db->prepare("SELECT * FROM tbl_users WHERE userId=:id");
+  $stmt = $this->conn->prepare("SELECT * FROM tbl_users WHERE userId=:id");
   $stmt->execute(array(":id"=>$userId));
   $editRow=$stmt->fetch(PDO::FETCH_ASSOC);
   return $editRow;
  }
 
+public function editUser($userId)
+{
+  $stmt = $this->conn->prepare("SELECT * FROM tbl_users WHERE userId=:id");
+    $stmt->execute(array(":id"=>$userId));
+      $row=$stmt->fetch(PDO::FETCH_LAZY);
+      ?>
+      <form method="post">
+      <table width ="360px">
+        <td> <input type='text' name="id" value="<?php echo $row[0]?>" hidden></td>
+        <tr>
+          <td> UserName </td>
+          <td><input type="text" name="fname" value="<?php echo $row[1]?>"></td>
+        </tr>
+        <tr>
+          <td> FirstName </td>
+          <td><input type="text" name="lname" value="<?php echo $row[2];?>"></td>
+        </tr>
+        <tr>
+          <td> Surname </td>
+          <td><input type="text" name="uname" value="<?php echo $row[3];?>"></td>
+        </tr>
+        <tr>
+          <td> User Email </td>
+          <td><input type="text" name="email" value="<?php echo $row[4];?>"></td>
+        </tr>
+        <tr>
+          <td> Password </td>
+          <td><input type="text" name="upass" value="<?php echo $row[5];?>"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" name="update" value"update"></td>
+        </table>
+        </form>
+        <?php
+}
+
+  public function updateUser($fname,$lname,$uname,$email,$upass)
+{
+     try
+     {
+      $stmt = $this->conn->prepare("UPDATE tbl_users SET  userName=:uname userFirstName=:fname userSurname=:lname userEmail=:email_id userPass=:upass WHERE userId=:id");
+      $stmt->execute(array(":fname"=>$fname, ":lname"=>$lname, ":uname"=>$uname, ":email_id"=>$email, ":upass"=>$upass));
+      return $stmt;
+    }
+    catch (Exception $e) {
+
+    }
+  }
 
 
 
