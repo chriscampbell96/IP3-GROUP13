@@ -91,8 +91,7 @@ class USER
    echo $ex->getMessage();
   }
  }
-
-
+ 
 
 
  public function is_logged_in()

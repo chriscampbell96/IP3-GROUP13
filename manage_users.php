@@ -63,6 +63,17 @@ $msg = "
 
 
 ?>
+  <?php
+if(isset($_GET['blank']))
+{
+ ?>
+          <div class='alert alert-error'>
+  <button class='close' data-dismiss='alert'>&times;</button>
+  <strong>Sorry!</strong> You can't leave a field blank!
+ </div>
+          <?php
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -152,13 +163,18 @@ $msg = "
                     <td><?php echo $row['userStatus']?></td>
 
                   <td>
+                    <a href ="updateUser.php?id=<?php echo $row['userID'];?>">Edit</a>
 
                     <?php if($row['userStatus'] == ('N')){
                       echo '  <button type="submit" class="btn btn-info" name="btn-activate"><i class="glyphicon glyphicon-ok"></i> Activate</button>';
                       }else{
                       echo '  <button class="btn btn-default"><i class="glyphicon glyphicon-eye-close"></i> Archive</button>';
                     } ?>
+<<<<<<< HEAD
                     <button data-toggle="modal" data-target="#myModal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+=======
+                    <button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></a></i> Edit</button>
+>>>>>>> origin/master
 
                   </td>
                 </tr>
