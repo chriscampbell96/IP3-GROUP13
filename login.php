@@ -50,7 +50,20 @@ $user_login->redirect('dashboard.php');
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="templates/css/sb-admin.css" rel="stylesheet">
+    <link href="templates/homepage.css" rel="stylesheet">
+    <link href="templates/header.css" rel="stylesheet">
+    <link href="templates/login.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <?php include 'templates/header.php';?>
   </head>
+
+
 
   <body id="login">
     <div class="container">
@@ -65,6 +78,7 @@ $user_login->redirect('dashboard.php');
             <?php
   }
   ?>
+  <div class="signin-container">
         <form class="form-signin" method="post">
         <?php
         if(isset($_GET['error']))
@@ -78,13 +92,17 @@ $user_login->redirect('dashboard.php');
             <?php
   }
   ?>
-        <h2 class="form-signin-heading">Sign In.</h2><hr />
+
+  
+        <h2 class="form-signin-heading" style="color:white">Please Sign In</h2><hr />
         <input type="email" class="input-block-level" placeholder="Email address" name="txtemail" required />
         <input type="password" class="input-block-level" placeholder="Password" name="txtupass" required />
+
       <hr />
         <button class="btn btn-large btn-primary" type="submit" name="btn-login">Sign in</button>
         <a href="#">Lost your Password ? </a>
       </form>
+    </div>
 
     </div> <!-- /container -->
     <script src="assets/js/jquery-1.9.1.min.js"></script>
