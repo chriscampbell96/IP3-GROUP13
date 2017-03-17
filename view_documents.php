@@ -48,15 +48,20 @@ if(!$user_home->is_logged_in())
 
       <div class="container-fluid">
 
-    <h1>Shared Documents</h1>
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
 
-    <!-- SIMPLE PAGE BREADCRUMB-->
-    <ul class="breadcrumb">
-      <li><a href="dashboard.php">Dashboard</a></li>
-      <li class="active">Shared Documents</li>
-    </ul>
-    <!--END BREAD CRUMB-->
-
+                </h1>
+                <ol class="breadcrumb">
+                    <li class="active">
+                        <i class="fa fa-share-alt"></i> Shared Documents
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
 
 
 

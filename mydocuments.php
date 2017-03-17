@@ -44,15 +44,20 @@ if(!$user_home->is_logged_in())
 
   <div class="container-fluid">
 
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
 
-    <h1>My Documents</h1>
-
-    <!-- SIMPLE PAGE BREADCRUMB-->
-    <ul class="breadcrumb">
-      <li><a href="dashboard.php">Dashboard</a></li>
-      <li class="active">Shared Documents</li>
-    </ul>
-    <!--END BREAD CRUMB-->
+            </h1>
+            <ol class="breadcrumb">
+                <li class="active">
+                    <i class="fa fa-book"></i> My Documents
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
 
     <form action="upload_document.php">
       <button type="submit" name="Create New document" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-upload"></i>Upload New Document</button>
