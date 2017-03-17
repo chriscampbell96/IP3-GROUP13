@@ -56,11 +56,11 @@
                         <a href="mydocuments.php" style="color:white"><i class="fa fa-fw fa-book"></i> My Documents</a>
                     </li>
                     <li>
-<<<<<<< HEAD
+
                         <a href="createdocument.php" style="color:white"><i class="fa fa-fw fa-file-text-o" style="color:white"></i> Create Document Online</a>
-=======
+
                         <a href="#" style="color:white"><i class="fa fa-fw fa-file-text-o"></i> Create Document</a>
->>>>>>> origin/master
+
                     </li>
                     <li>
                         <a href="#" style="color:white"><i class="fa fa-fw fa-upload"></i> Upload Document</a>
