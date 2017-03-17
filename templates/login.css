@@ -8,7 +8,7 @@ body {
   color: #5a5a5a;
 }
 
-.signin-container{
+.signin-container {
   background-image: url("img/bg5.jpg");
   height: 500px;
   background-size: 100% auto;
@@ -55,8 +55,4 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
-
-.container-footer {
-  margin-left: 20px;
 }

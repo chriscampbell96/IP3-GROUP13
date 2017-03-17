@@ -60,13 +60,12 @@ $user_login->redirect('dashboard.php');
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <?php include 'templates/header.php';?>
+    <?php include 'templates/head.php';?>
   </head>
 
-
-
   <body id="login">
-    <div class="container">
+      <div class="signin-container">
+
   <?php
   if(isset($_GET['inactive']))
   {
@@ -78,13 +77,12 @@ $user_login->redirect('dashboard.php');
             <?php
   }
   ?>
-  <div class="signin-container">
         <form class="form-signin" method="post">
         <?php
         if(isset($_GET['error']))
   {
    ?>
-            <div class='alert alert-success'>
+            <div class='alert' style="background-color:#F3F4F5; color:#0a3245">
     <button class='close' data-dismiss='alert'>&times;</button>
     <strong>Please check your credentials.</strong>
    </div>
@@ -93,18 +91,23 @@ $user_login->redirect('dashboard.php');
   }
   ?>
 
-  
+
         <h2 class="form-signin-heading" style="color:white">Please Sign In</h2><hr />
         <input type="email" class="input-block-level" placeholder="Email address" name="txtemail" required />
         <input type="password" class="input-block-level" placeholder="Password" name="txtupass" required />
 
       <hr />
+        <div class="signin-button">
         <button class="btn btn-large btn-primary" type="submit" name="btn-login">Sign in</button>
-        <a href="#">Lost your Password ? </a>
+        <br>
+        <a href="#" style="color:white;">Forgot your Password? </a>
+      </div>
       </form>
-    </div>
 
     </div> <!-- /container -->
+
+<?php include 'templates/foot.php';?>
+
     <script src="assets/js/jquery-1.9.1.min.js"></script>
     <script src="assests/js/bootstrap.min.js"></script>
   </body>
