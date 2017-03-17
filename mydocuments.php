@@ -54,10 +54,12 @@ if(!$user_home->is_logged_in())
     </ul>
     <!--END BREAD CRUMB-->
 
+    <form action="upload_document.php">
+      <button type="submit" name="Create New document" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-upload"></i>Upload New Document</button>
+    </form>
 
 
-
-      <p></p>
+<br>
 
     <!-- Viewing users.. -->
     <div class="table-responsive">

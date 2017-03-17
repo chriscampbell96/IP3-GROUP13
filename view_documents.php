@@ -144,7 +144,7 @@ if(!$user_home->is_logged_in())
 
 </div>
 
-<!-- Modal -->
+<!-- Modal for upload document
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -183,7 +183,7 @@ if(!$user_home->is_logged_in())
 </div>
 </div>
 
-
+-->
 
 
       <!-- jQuery -->

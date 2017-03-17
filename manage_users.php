@@ -100,15 +100,16 @@ if(isset($_GET['blank']))
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <?php include("templates/header.php"); ?>
-    <?php include("templates/sidebar.php"); ?>
+
   </head>
   <body>
 
+    <?php include("templates/header.php"); ?>
+    <?php include("templates/sidebar.php"); ?>
     <div id="wrapper">
-    <div id="page-wrapper">
+<div id="page-wrapper">
 
-      <div class="container-fluid">
+  <div class="container-fluid">
     <h1>User Management</h1>
 
     <!-- SIMPLE PAGE BREADCRUMB-->
@@ -120,9 +121,7 @@ if(isset($_GET['blank']))
 
       <form action="user_register.php">
         <button type="submit" name="Create New user" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-plus"></i>Create User</button>
-
       </form>
-      <!--FUZZY SEARCH FEATURE-->
 
       <br>
 

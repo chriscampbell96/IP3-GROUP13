@@ -56,10 +56,10 @@
                         <a href="mydocuments.php" style="color:white"><i class="fa fa-fw fa-book"></i> My Documents</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-file-text-o"></i> Create Document</a>
+                        <a href="createdocument.php" style="color:white"><i class="fa fa-fw fa-file-text-o"></i> Create Document</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-upload"></i> Upload Document</a>
+                        <a href="upload_document.php" style="color:white"><i class="fa fa-fw fa-upload"></i> Upload Document</a>
                     </li>
                     <li>
                         <a href="view_documents.php" style="color:white"><i class="fa fa-fw fa-share-alt"></i> Shared Documents</a>
