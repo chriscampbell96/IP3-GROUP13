@@ -92,14 +92,6 @@ class USER
   }
  }
 
- public function getID($userId)
- {
-  $stmt = $this->db->prepare("SELECT * FROM tbl_users WHERE userId=:id");
-  $stmt->execute(array(":id"=>$userId));
-  $editRow=$stmt->fetch(PDO::FETCH_ASSOC);
-  return $editRow;
- }
-
 
 
 
@@ -156,6 +148,39 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
  {
   session_destroy();
   $_SESSION['userSession'] = false;
+ }
+
+ public function getID($id)
+ {
+  $stmt = $this->db->prepare("SELECT * FROM tbl_users WHERE userId=:id");
+  $stmt->execute(array(":userId"=>$id));
+  $editRow=$stmt->fetch(PDO::FETCH_ASSOC);
+  return $editRow;
+ }
+
+ public function update($fname,$lname,$uname,$email)
+ {
+  try
+  {
+   $stmt=$this->db->prepare("UPDATE tbl_users SET first_name=:fname,
+                                                 last_name=:lname,
+                                                 user_name=:uname,
+                                                userEmail=:email,
+             WHERE userId=:id ");
+   $stmt->bindparam(":fname",$fname);
+   $stmt->bindparam(":lname",$lname);
+   $stmt->bindparam(":uname",$uname);
+   $stmt->bindparam(":userEmail",$email);
+   $stmt->bindparam(":userId",$id);
+   $stmt->execute();
+
+   return true;
+  }
+  catch(PDOException $e)
+  {
+   echo $e->getMessage();
+   return false;
+  }
  }
 
 // function send_mail($email,$message,$subject)

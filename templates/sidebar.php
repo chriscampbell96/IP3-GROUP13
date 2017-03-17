@@ -56,7 +56,7 @@
                         <a href="mydocuments.php" style="color:white"><i class="fa fa-fw fa-book" style="color:white"></i> My Documents</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-file-text-o" style="color:white"></i> Create Document Online</a>
+                        <a href="createdocument.php" style="color:white"><i class="fa fa-fw fa-file-text-o" style="color:white"></i> Create Document Online</a>
                     </li>
                     <li>
                         <a href="view_documents.php" style="color:white"><i class="fa fa-fw fa-bug" style="color:white"></i> Shared Documents</a>
