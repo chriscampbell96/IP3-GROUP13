@@ -29,7 +29,7 @@ if(!$user_home->is_logged_in())
 
     <!-- Custom CSS -->
     <link href="templates/css/sb-admin.css" rel="stylesheet">
-    <link href="templates/home.css" rel="stylesheet">
+    <link href="templates/homepage.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="templates/css/plugins/morris.css" rel="stylesheet">
@@ -43,6 +43,7 @@ if(!$user_home->is_logged_in())
   </head>
   <body>
 
+<div id="wrapper">
     <div id="page-wrapper">
 
       <div class="container-fluid">
@@ -107,7 +108,8 @@ if(!$user_home->is_logged_in())
                     <!-- ADDING VIEW USER BUTTON TO CHANGE -->
                     <button class="btn btn-sm btn-info"><i class="glyphicon glyphicon-pencil"></i> Upload Revision</button>
                     <br>
-                    <a href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>">Download Document</a>
+
+                    <a href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>">Download</a>
                   </td>
                 </tr>
 
@@ -177,6 +179,7 @@ if(!$user_home->is_logged_in())
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
 

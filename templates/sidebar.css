@@ -1,3 +1,5 @@
+/* Side Navigation */
+
 @media(min-width:768px) {
 
     .side-nav {
@@ -27,9 +29,9 @@
 
     .side-nav li a:hover,
     .side-nav li a:focus {
+        color: white;
         outline: none;
         background-color: #222E32 !important;
-        color: white;
     }
 }
 
