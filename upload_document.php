@@ -73,8 +73,28 @@ if(isset($_POST['btn-upload']))
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    <link href="templates/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="templates/css/sb-admin.css" rel="stylesheet">
+    <link href="templates/homepage.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <?php include 'templates/header.php';
+    include 'templates/sidebar.php';?>
+
   </head>
   <body id="login">
+
+    <div id="wrapper">
+    <div id="page-wrapper">
+
+      <div class="container-fluid">
+
     <div class="form-group">
     <?php if(isset($msg)) echo $msg;  ?>
       <form class="form-signin" method="post" enctype="multipart/form-data">
@@ -86,6 +106,9 @@ if(isset($_POST['btn-upload']))
         <button class="btn btn-large btn-primary" type="submit" name="btn-upload">Upload</button>
       </form>
 
+</div>
+</div>
+</div>
     </div> <!-- /container -->
     <script src="vendors/jquery-1.9.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>

@@ -29,6 +29,7 @@ if(!$user_home->is_logged_in())
 
     <!-- Custom CSS -->
     <link href="templates/css/sb-admin.css" rel="stylesheet">
+    <link href="templates/create.css" rel="stylesheet">
     <link href="templates/homepage.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
