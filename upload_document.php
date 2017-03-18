@@ -69,7 +69,7 @@ if(isset($_POST['btn-upload']))
 
     <!-- Custom CSS -->
     <link href="templates/css/sb-admin.css" rel="stylesheet">
-    <link href="templates/homepagejoin.css" rel="stylesheet">
+    <link href="templates/upload.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -101,19 +101,20 @@ if(isset($_POST['btn-upload']))
         <!-- /.row -->
 
 
-        <div class="form-group">
+
+        <form class="form-group">
             <?php if(isset($msg)) echo $msg;  ?>
               <form class="form-signin" method="post" enctype="multipart/form-data">
-                <input type="docTitle" class="form-control" style="width:350px;" placeholder="Document Title" name="txtdocTitle" required />
-                <input type="docDesc" class="form-control" style="width:350px;" placeholder="Document Description" name="txtdocDesc" required />
-                    <input type="file" name="file" />
-              <hr />
+                  <input class="form-control" id="comment" placeholder="Document Title" required />
+                  <input class="form-control" id="comment" placeholder="Document Description" required />
+                    <input class="work" type="file" name="file" />
+
+              <div class="button">
                 <button class="btn btn-large btn-info" type="submit" name="btn-upload">Upload</button>
-              </form>
-
-
-
-  </div>
+              </div>
+            </form>
+        </form>
+</div>
 </div>
 </div>
 <?php include 'templates/foot.php';?>

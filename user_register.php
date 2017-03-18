@@ -38,16 +38,20 @@ if(isset($_POST['btn-signup']))
  }
 }
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Register New Users</title>
+    <title>Home Page</title>
     <link href="templates/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="templates/css/sb-admin.css" rel="stylesheet">
-    <link href="templates/signup.css" rel="stylesheet">
+    <link href="templates/sign.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -56,15 +60,17 @@ if(isset($_POST['btn-signup']))
     <?php include 'templates/header.php';
     include 'templates/sidebar.php';?>
   </head>
-  <body id="login">
+
+  <body>
     <div id="wrapper">
-      <div id="page-wrapper">
+    <div id="page-wrapper">
+
+      <div class="container-fluid">
 
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Welcome <small> <?php echo $_SESSION['userEmail'] ?></small>
                 </h1>
                 <ol class="breadcrumb">
                     <li class="active">
@@ -75,25 +81,31 @@ if(isset($_POST['btn-signup']))
         </div>
         <!-- /.row -->
 
-        <div class="container-fluid">
-
-    <div class="form-group">
+        <div class="form-group">
     <?php if(isset($msg)) echo $msg;  ?>
       <div class="container-signin" method="post">
-        <input type="fname" class="form-control" style="width:400px" placeholder="First Name" name="txtfname" required />
-        <input type="lname" class="form-control" style="width:400px" placeholder="Last Name" name="txtlname" required />
-        <input type="text" class="form-control" style="width:400px" placeholder="Username" name="txtuname" required />
-        <input type="email" class="form-control" style="width:400px" placeholder="Email address" name="txtemail" required />
-        <input type="password" class="form-control" style="width:400px" placeholder="Password" name="txtpass" required />
-        <button class="btn btn-info" type="submit" name="btn-signup">Sign Up</button>
-      </div>
 
-    </div> <!-- /container -->
+        <div class="form-group">
+ <input type="fname" class="form-control" id="comment" placeholder="First Name" name="txtfname" required />
+ <input type="lname" class="form-control" placeholder="Last Name" name="txtlname" required />
+       <input type="text" class="form-control" placeholder="Username" name="txtuname" required />
+       <input type="email" class="form-control" placeholder="Email address" name="txtemail" required />
+       <input type="password" class="form-control" placeholder="Password" name="txtpass" required />
+       <button class="btn btn-info" type="submit" name="btn-signup">Sign Up</button>
+     </div>
+
+
   </div>
-  <?php include 'templates/foot.php';?>
 </div>
 </div>
-    <script src="vendors/jquery-1.9.1.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+<?php include 'templates/foot.php';?>
+
+
+    <!-- jQuery -->
+    <script src="templates/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="templates/js/bootstrap.min.js"></script>
+
   </body>
 </html>

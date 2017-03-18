@@ -183,12 +183,21 @@ ul.alert-dropdown {
     color: #fff;
 }
 
-.form-control {
-  text-align: center;
-  padding: 20px;
+.container-footer {
+  margin-left: 20px;
 }
 
-.container-signin {
-  text-align: center;
+.form-control {
+  padding:20px;
+  margin-bottom: 10px;
+}
+
+
+.form-group {
   align-items: center;
+  text-align: center;
+}
+
+.button {
+  margin-top: 20px;
 }

@@ -135,6 +135,7 @@ if(isset($_GET['blank']))
       <br>
 
     <!-- Viewing users.. -->
+    <div class="table-responsive">
     <table class="table table-striped table-bordered">
 
     <thead>
@@ -193,6 +194,7 @@ if(isset($_GET['blank']))
 
        </tbody>
     </table>
+  </div>
 
     <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

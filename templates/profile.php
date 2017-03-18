@@ -141,45 +141,31 @@
 
                 <div class="container-back">
 
+                  <button data-toggle="modal" data-target="#myModal" class="btn btn-info"><i class="fa fa-fw fa-unlock-alt"></i> Change Password</button>
+
                   <!-- Modal -->
                   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                   <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="exampleModalLabel">Edit User</h4>
+                      <h4 class="modal-title" id="exampleModalLabel">Change Password</h4>
                     </div>
                     <div class="modal-body">
                       <form>
                         <div class="form-group">
-                          <label for="recipient-name" class="control-label">Username:</label>
+                          <label for="recipient-name" class="control-label">Enter Old Password: </label>
                           <input type="text" class="form-control" id="recipient-name">
                         </div>
                         <div class="form-group">
-                          <label for="recipient-name" class="control-label">Email:</label>
+                          <label for="recipient-name" class="control-label">Enter New Password: </label>
                           <input type="text" class="form-control" id="recipient-name">
                         </div>
                         <div class="form-group">
-                          <label for="recipient-name" class="control-label">Password:</label>
+                          <label for="recipient-name" class="control-label">Re-Enter New Password: </label>
                           <input type="text" class="form-control" id="recipient-name">
                         </div>
-                        <div class="form-group">
-                          <label for="recipient-name" class="control-label">Role:</label>
 
-                        <select class="form-control">
-                          <option>Admin</option>
-                          <option>Doc Creator</option>
-                          <option>Distributee</option>
-                        </select>
-                        </div>
-                        <div class="form-group">
-                        <div class="checkbox">
-                          <label>
-                            <input type="checkbox" value="">
-                            Activate User
-                          </label>
-                        </div>
-                      </div>
                       </form>
                     </div>
                     <div class="modal-footer">
