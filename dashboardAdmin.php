@@ -33,7 +33,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <!-- Custom CSS -->
     <link href="templates/css/sb-admin.css" rel="stylesheet">
-    <link href="templates/homepage.css" rel="stylesheet">
+    <link href="templates/homepagejoin.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">

@@ -29,11 +29,8 @@ if(!$user_home->is_logged_in())
 
     <!-- Custom CSS -->
     <link href="templates/css/sb-admin.css" rel="stylesheet">
-    <link href="templates/homepage.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="templates/css/plugins/morris.css" rel="stylesheet">
-
+    <link href="templates/homepagejoin.css" rel="stylesheet">
+    
     <!-- Custom Fonts -->
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
