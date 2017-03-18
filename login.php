@@ -52,9 +52,8 @@ $user_login->redirect('dashboard.php');
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <!-- Custom CSS -->
     <link href="templates/css/sb-admin.css" rel="stylesheet">
-    <link href="templates/homepage.css" rel="stylesheet">
-    <link href="templates/header.css" rel="stylesheet">
-    <link href="templates/login.css" rel="stylesheet">
+    <link href="templates/signin.css" rel="stylesheet">
+    <link href="templates/homepagejoin.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -82,19 +81,18 @@ $user_login->redirect('dashboard.php');
         if(isset($_GET['error']))
   {
    ?>
-            <div class='alert' style="background-color:#F3F4F5; color:#0a3245">
-    <button class='close' data-dismiss='alert'>&times;</button>
+            <div class="alert" style="background-color:#F3F4F5; color:#0a3245">
+    <button class="close" class="btn btn-default" data-dismiss="alert">&times;</button>
     <strong>Please check your credentials.</strong>
    </div>
-
             <?php
   }
   ?>
 
 
         <h2 class="form-signin-heading" style="color:white">Please Sign In</h2><hr />
-        <input type="email" class="input-block-level" placeholder="Email address" name="txtemail" required />
-        <input type="password" class="input-block-level" placeholder="Password" name="txtupass" required />
+        <input type="email" class="form-control" placeholder="Email address" name="txtemail" required />
+        <input type="password" class="form-control" placeholder="Password" name="txtupass" required />
 
       <hr />
         <div class="signin-button">
