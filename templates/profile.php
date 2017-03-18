@@ -139,7 +139,8 @@
                 </div>
                 <!-- /.row -->
 
-                <div class="container-back">
+
+
 
                   <button data-toggle="modal" data-target="#myModal" class="btn btn-info"><i class="fa fa-fw fa-unlock-alt"></i> Change Password</button>
 
@@ -176,10 +177,40 @@
                   </div>
                   </div>
 
+                  <button data-toggle="modal" data-target="#myModalTwo" class="btn btn-info"><i class="fa fa-fw fa-at"></i> Change Email</button>
 
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModalTwo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="exampleModalLabel">Change Email Address</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <label for="recipient-name" class="control-label">Enter Old Email Address: </label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                          <label for="recipient-name" class="control-label">Enter New Email Address: </label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                          <label for="recipient-name" class="control-label">Re-Enter New Email Address: </label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
 
-
-              </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
 
 
 

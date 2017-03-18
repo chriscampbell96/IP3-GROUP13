@@ -29,7 +29,7 @@ if(!$user_home->is_logged_in())
 
     <!-- Custom CSS -->
     <link href="templates/css/sb-admin.css" rel="stylesheet">
-    <link href="templates/homepagejoin.css" rel="stylesheet">
+    <link href="templates/mydocs.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -66,13 +66,15 @@ if(!$user_home->is_logged_in())
 
 <br>
 
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="Search My Documents">
+</div>
+
     <!-- Viewing users.. -->
     <div class="table-responsive">
     <table class="table table-striped table-bordered">
       <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search My Documents">
-        </div>
+
       </form>
 
     <thead>
@@ -128,7 +130,9 @@ echo '  <button class="btn btn-sm btn-info"><i class="glyphicon glyphicon-ok"></
 
        </tbody>
     </table>
-    <nav aria-label="Page navigation">
+  </div>
+
+    <nav class="pages" aria-label="Page navigation">
       <ul class="pagination">
         <li>
           <a href="#" aria-label="Previous">
@@ -149,8 +153,6 @@ echo '  <button class="btn btn-sm btn-info"><i class="glyphicon glyphicon-ok"></
     </nav>
     <tbody>
 
-
-</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
