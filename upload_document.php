@@ -122,6 +122,8 @@ if(isset($_POST['btn-upload']))
 </div>
 </div>
 </div>
+
+<?php include 'templates/foot.php';?>
     </div> <!-- /container -->
     <script src="vendors/jquery-1.9.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>

@@ -30,7 +30,7 @@ if(!$user_home->is_logged_in())
     <!-- Custom CSS -->
     <link href="templates/css/sb-admin.css" rel="stylesheet">
     <link href="templates/homepagejoin.css" rel="stylesheet">
-    
+
     <!-- Custom Fonts -->
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -181,11 +181,14 @@ if(!$user_home->is_logged_in())
       </div>
     </div>
   </div>
-</div>
+-->
 </div>
 </div>
 
--->
+<?php include 'templates/foot.php';?>
+</div>
+
+
 
 
       <!-- jQuery -->
@@ -194,10 +197,6 @@ if(!$user_home->is_logged_in())
       <!-- Bootstrap Core JavaScript -->
       <script src="templates/js/bootstrap.min.js"></script>
 
-      <!-- Morris Charts JavaScript -->
-      <script src="templates/js/plugins/morris/raphael.min.js"></script>
-      <script src="templates/js/plugins/morris/morris.min.js"></script>
-      <script src="templates/js/plugins/morris/morris-data.js"></script>
 
   </body>
 </html>

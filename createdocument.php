@@ -92,11 +92,15 @@ if(!$user_home->is_logged_in())
             </div>
             <!-- /.container-fluid -->
 
+
         </div>
         <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
+
+<?php include 'templates/footer.php';?>
+
 </div>
 
     <!-- jQuery -->
@@ -104,11 +108,6 @@ if(!$user_home->is_logged_in())
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script>
 
 </body>
 
