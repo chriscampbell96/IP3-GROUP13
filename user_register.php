@@ -41,32 +41,58 @@ if(isset($_POST['btn-signup']))
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Register New Users</title>
-    <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-    <link href="assets/styles.css" rel="stylesheet" media="screen">
-     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <link href="templates/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="templates/css/sb-admin.css" rel="stylesheet">
+    <link href="templates/signup.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <?php include 'templates/header.php';
+    include 'templates/sidebar.php';?>
   </head>
   <body id="login">
+    <div id="wrapper">
+      <div id="page-wrapper">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Welcome <small> <?php echo $_SESSION['userEmail'] ?></small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li class="active">
+                        <i class="fa fa-plus"></i> Register User
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="container-fluid">
+
     <div class="form-group">
     <?php if(isset($msg)) echo $msg;  ?>
-      <form class="form-signin" method="post">
-        <h2 class="form-signin-heading">Sign Up</h2><hr />
-        <input type="fname" class="input-block-level" placeholder="First Name" name="txtfname" required />
-        <input type="lname" class="input-block-level" placeholder="Last Name" name="txtlname" required />
-        <input type="text" class="input-block-level" placeholder="Username" name="txtuname" required />
-        <input type="email" class="input-block-level" placeholder="Email address" name="txtemail" required />
-        <input type="password" class="input-block-level" placeholder="Password" name="txtpass" required />
-      <hr />
-        <button class="btn btn-large btn-primary" type="submit" name="btn-signup">Sign Up</button>
-      </form>
+      <div class="container-signin" method="post">
+        <input type="fname" class="form-control" style="width:400px" placeholder="First Name" name="txtfname" required />
+        <input type="lname" class="form-control" style="width:400px" placeholder="Last Name" name="txtlname" required />
+        <input type="text" class="form-control" style="width:400px" placeholder="Username" name="txtuname" required />
+        <input type="email" class="form-control" style="width:400px" placeholder="Email address" name="txtemail" required />
+        <input type="password" class="form-control" style="width:400px" placeholder="Password" name="txtpass" required />
+        <button class="btn btn-info" type="submit" name="btn-signup">Sign Up</button>
+      </div>
 
     </div> <!-- /container -->
+  </div>
+  <?php include 'templates/foot.php';?>
+</div>
+</div>
     <script src="vendors/jquery-1.9.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
   </body>

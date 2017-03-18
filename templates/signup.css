@@ -183,24 +183,12 @@ ul.alert-dropdown {
     color: #fff;
 }
 
-.container-back {
-  height: 40%;
-  background-color: #F3F4F5;
-  width: 100%;
+.form-control {
+  text-align: center;
+  padding: 20px;
 }
 
-.container-footer {
-  margin-left: 20px;
-}
-
-.marketing {
-  padding-top: 50px;
-}
-
-#editor {
-  height: 390px;
-}
-
-.container-buttons {
-  padding-top: 20px;
+.container-signin {
+  text-align: center;
+  align-items: center;
 }

@@ -13,18 +13,10 @@ if(!$user_home->is_logged_in())
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-
-    <title>Create Document</title>
-
-
-    <!-- Bootstrap -->
     <link href="templates/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -36,11 +28,12 @@ if(!$user_home->is_logged_in())
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <?php include 'templates/header.php';
+    include 'templates/sidebar.php';?>
   </head>
   <body>
-    <?php include("templates/header.php"); ?>
-    <?php include("templates/sidebar.php"); ?>
-    <div id="wrapper">
+
+<div id="wrapper">
 <div id="page-wrapper">
 
   <div class="container-fluid">
