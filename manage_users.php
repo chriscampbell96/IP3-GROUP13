@@ -91,7 +91,7 @@ if(isset($_GET['blank']))
 
     <!-- Custom CSS -->
     <link href="templates/css/sb-admin.css" rel="stylesheet">
-    <link href="templates/home.css" rel="stylesheet">
+    <link href="templates/homepagejoin.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="templates/css/plugins/morris.css" rel="stylesheet">
@@ -110,17 +110,26 @@ if(isset($_GET['blank']))
 <div id="page-wrapper">
 
   <div class="container-fluid">
-    <h1>User Management</h1>
 
-    <!-- SIMPLE PAGE BREADCRUMB-->
-    <ul class="breadcrumb">
-      <li><a href="dashboard.php">Dashboard</a></li>
-      <li class="active">Manage Users</li>
-    </ul>
-    <!--END BREAD CRUMB-->
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+
+            </h1>
+            <ol class="breadcrumb">
+                <li class="active">
+                    <i class="fa fa-users"></i> Manage Users
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
 
       <form action="user_register.php">
-        <button type="submit" name="Create New user" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-plus"></i>Create User</button>
+        <button type="submit" name="Create New user" class="btn btn-info"><i class="fa fa-fw fa-plus"></i>Create User</button>
       </form>
 
       <br>
@@ -165,12 +174,12 @@ if(isset($_GET['blank']))
 
 
                     <?php if($row['userStatus'] == ('N')){
-                      echo '  <button type="submit" class="btn btn-info" name="btn-activate"><i class="glyphicon glyphicon-ok"></i> Activate</button>';
+                      echo '  <button type="submit" class="btn btn-info" name="btn-activate"><i class="fa fa-fw fa-check"></i> Activate</button>';
                       }else{
-                      echo '  <button class="btn btn-default"><i class="glyphicon glyphicon-eye-close"></i> Archive</button>';
+                      echo '  <button class="btn btn-default"><i class="fa fa-fw fa-archive"></i> Archive</button>';
                     } ?>
 
-                    <button data-toggle="modal" data-target="#myModal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-warning"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+                    <button data-toggle="modal" data-target="#myModal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-warning"><i class="fa fa-fw fa-pencil"></i> Edit</button>
 
 
 
