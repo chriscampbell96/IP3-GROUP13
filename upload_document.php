@@ -95,15 +95,28 @@ if(isset($_POST['btn-upload']))
 
       <div class="container-fluid">
 
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                </h1>
+                <ol class="breadcrumb">
+                    <li class="active">
+                        <i class="fa fa-upload"></i> Upload Document
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
     <div class="form-group">
     <?php if(isset($msg)) echo $msg;  ?>
       <form class="form-signin" method="post" enctype="multipart/form-data">
-        <h2 class="form-signin-heading">Upload Document</h2><hr />
-        <input type="docTitle" class="input-block-level" placeholder="Document Title" name="txtdocTitle" required />
-        <input type="docDesc" class="input-block-level" placeholder="Document Description" name="txtdocDesc" required />
+        <input type="docTitle" class="form-control" style="width:350px;" placeholder="Document Title" name="txtdocTitle" required />
+        <input type="docDesc" class="form-control" style="width:350px;" placeholder="Document Description" name="txtdocDesc" required />
             <input type="file" name="file" />
       <hr />
-        <button class="btn btn-large btn-primary" type="submit" name="btn-upload">Upload</button>
+        <button class="btn btn-large btn-info" type="submit" name="btn-upload">Upload</button>
       </form>
 
 </div>

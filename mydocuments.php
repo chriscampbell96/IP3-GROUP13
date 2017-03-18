@@ -60,7 +60,7 @@ if(!$user_home->is_logged_in())
     <!-- /.row -->
 
     <form action="upload_document.php">
-      <button type="submit" name="Create New document" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-upload"></i>Upload New Document</button>
+      <button type="submit" name="Create New document" class="btn btn-info"><i class="fa fa-fw fa-upload"></i>Upload New Document</button>
     </form>
 
 

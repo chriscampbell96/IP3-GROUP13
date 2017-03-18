@@ -83,7 +83,7 @@ if(!$user_home->is_logged_in())
 <br>
                 <div class="container-buttons">
 
-                  <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944" class="btn btn-primary">Save</a>
+                  <a href="#" class="btn btn btn-info">Save</a>
 
 
                 </div>
