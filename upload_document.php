@@ -124,8 +124,5 @@ if(isset($_POST['btn-upload']))
 <!-- Bootstrap Core JavaScript -->
 <script src="templates/js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="templates/js/bootstrap.min.js"></script>
-
   </body>
 </html>
