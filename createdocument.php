@@ -73,9 +73,9 @@ if(!$user_home->is_logged_in())
                         </script>
         <br>
                         <div class="container-button">
-                          <hr />
 
-                          <a href="#" class="btn btn btn-info" style="border-radius: 10px;">Save</a>
+
+                          <a href="#" class="btn btn btn-info" style="border-radius: 10px; margin-top:-15px;">Save</a>
 
 
                         </div>
