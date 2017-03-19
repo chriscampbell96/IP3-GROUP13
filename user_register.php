@@ -80,21 +80,19 @@ if(isset($_POST['btn-signup']))
             </div>
         </div>
         <!-- /.row -->
-
-        <div class="form-group">
-    <?php if(isset($msg)) echo $msg;  ?>
-      <div class="container-signin" method="post">
-
-        <div class="form-group">
-        <input type="fname" class="form-control" id="comment" placeholder="First Name" name="txtfname" style="border-radius:10px;" required />
-        <input type="lname" class="form-control" placeholder="Last Name" name="txtlname" style="border-radius:10px;" required />
-       <input type="text" class="form-control" placeholder="Username" name="txtuname" style="border-radius:10px;" required />
-       <input type="email" class="form-control" placeholder="Email address" name="txtemail" style="border-radius:10px;" required />
-       <input type="password" class="form-control" placeholder="Password" name="txtpass" style="border-radius:10px;" required />
-       <button class="btn btn-info" type="submit" name="btn-signup">Sign Up</button>
-     </div>
-
-
+        <body id="login">
+          <div class="form-group">
+          <?php if(isset($msg)) echo $msg;  ?>
+            <form class="form-signin" method="post">
+              <h2 class="form-signin-heading">Sign Up</h2><hr />
+              <input type="fname" class="input-block-level" placeholder="First Name" name="txtfname" required />
+              <input type="lname" class="input-block-level" placeholder="Last Name" name="txtlname" required />
+              <input type="text" class="input-block-level" placeholder="Username" name="txtuname" required />
+              <input type="email" class="input-block-level" placeholder="Email address" name="txtemail" required />
+              <input type="password" class="input-block-level" placeholder="Password" name="txtpass" required />
+            <hr />
+              <button class="btn btn-large btn-primary" type="submit" name="btn-signup">Sign Up</button>
+            </form>
   </div>
 </div>
 </div>

@@ -102,28 +102,30 @@ if(isset($_POST['btn-upload']))
 
 
 
-        <form class="form-group">
-            <?php if(isset($msg)) echo $msg;  ?>
-              <form class="form-signin" method="post" enctype="multipart/form-data">
-                  <input type="docTitle" class="form-control" id="comment" placeholder="Document Title" style="border-radius:10px;" required />
-                  <input type="docDesc" class="form-control" id="comment" placeholder="Document Description" style="border-radius:10px;" required />
-                    <input type="file" class="work" type="file" name="file" />
-
-              <div class="button">
-                <button class="btn btn-large btn-info" type="submit" style="border-radius:10px;" name="btn-upload">Upload</button>
-              </div>
+        <body id="login">
+          <div class="form-group">
+          <?php if(isset($msg)) echo $msg;  ?>
+            <form class="form-signin" method="post" enctype="multipart/form-data">
+              <h2 class="form-signin-heading">Upload Document</h2><hr />
+              <input type="docTitle" class="input-block-level" placeholder="Document Title" name="txtdocTitle" required />
+              <input type="docDesc" class="input-block-level" placeholder="Document Description" name="txtdocDesc" required />
+                  <input type="file" name="file" />
+            <hr />
+              <button class="btn btn-large btn-primary" type="submit" name="btn-upload">Upload</button>
             </form>
-        </form>
 </div>
 </div>
 </div>
 <?php include 'templates/foot.php';?>
 
+<!-- jQuery -->
+<script src="templates/js/jquery.js"></script>
 
-    <!-- jQuery -->
-    <script src="templates/js/jquery.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="templates/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="templates/js/bootstrap.min.js"></script>
+
   </body>
 </html>
