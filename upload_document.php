@@ -105,9 +105,9 @@ if(isset($_POST['btn-upload']))
         <form class="form-group">
             <?php if(isset($msg)) echo $msg;  ?>
               <form class="form-signin" method="post" enctype="multipart/form-data">
-                  <input class="form-control" id="comment" placeholder="Document Title" style="border-radius:10px;" required />
-                  <input class="form-control" id="comment" placeholder="Document Description" style="border-radius:10px;" required />
-                    <input class="work" type="file" name="file" />
+                  <input type="docTitle" class="form-control" id="comment" placeholder="Document Title" style="border-radius:10px;" required />
+                  <input type="docDesc" class="form-control" id="comment" placeholder="Document Description" style="border-radius:10px;" required />
+                    <input type="file" class="work" type="file" name="file" />
 
               <div class="button">
                 <button class="btn btn-large btn-info" type="submit" style="border-radius:10px;" name="btn-upload">Upload</button>
@@ -125,3 +125,5 @@ if(isset($_POST['btn-upload']))
 
     <!-- Bootstrap Core JavaScript -->
     <script src="templates/js/bootstrap.min.js"></script>
+  </body>
+</html>
