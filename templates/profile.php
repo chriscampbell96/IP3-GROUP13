@@ -178,22 +178,22 @@
                       <form>
                         <div class="form-group">
                           <label for="recipient-name" class="control-label">Enter Old Password: </label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
                         </div>
                         <div class="form-group">
                           <label for="recipient-name" class="control-label">Enter New Password: </label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
                         </div>
                         <div class="form-group">
                           <label for="recipient-name" class="control-label">Re-Enter New Password: </label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
                         </div>
 
                       </form>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal"style="border-radius:10px;">Close</button>
+                      <button type="button" class="btn btn-info" style="border-radius:10px;">Save</button>
                     </div>
                   </div>
                   </div>
@@ -211,22 +211,22 @@
                       <form>
                         <div class="form-group">
                           <label for="recipient-name" class="control-label">Enter Old Email Address: </label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
                         </div>
                         <div class="form-group">
                           <label for="recipient-name" class="control-label">Enter New Email Address: </label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
                         </div>
                         <div class="form-group">
                           <label for="recipient-name" class="control-label">Re-Enter New Email Address: </label>
-                          <input type="text" class="form-control" id="recipient-name">
+                          <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
                         </div>
 
                       </form>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius:10px;">Close</button>
+                      <button type="button" class="btn btn-info" style="border-radius:10px;">Save</button>
                     </div>
                   </div>
                   </div>
