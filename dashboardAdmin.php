@@ -87,7 +87,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                      <div class="panel-body">
                                          <h4>Create</h4>
                                          <p>Create and personalise your own documents. Its super quick and easy to do.</p>
-                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944" class="btn btn-primary">Learn More</a>
+                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>
@@ -102,7 +102,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                      <div class="panel-body">
                                          <h4>Share</h4>
                                          <p>Once you are happy with your document, share it with your friends and colleagues.</p>
-                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944" class="btn btn-primary">Learn More</a>
+                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>
@@ -117,7 +117,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                      <div class="panel-body">
                                          <h4>View</h4>
                                          <p>View all the documents that you have created easily and make any changes.</p>
-                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944" class="btn btn-primary">Learn More</a>
+                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>
@@ -132,7 +132,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                      <div class="panel-body">
                                          <h4>Delete</h4>
                                          <p>Delete any documents that you are not happy with easily and quickly.</p>
-                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944" class="btn btn-primary">Learn More</a>
+                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>

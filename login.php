@@ -69,8 +69,8 @@ $user_login->redirect('dashboard.php');
   if(isset($_GET['inactive']))
   {
    ?>
-            <div class='alert alert-error'>
-    <button class='close' data-dismiss='alert'>&times;</button>
+            <div class="alert" style="background-color:#F3F4F5; color:#0a3245">
+    <button class="close" data-dismiss="alert">&times;</button>
     <strong>Sorry!</strong> This Account is not Activated. Please contact the System Administrator.
    </div>
             <?php
@@ -91,12 +91,12 @@ $user_login->redirect('dashboard.php');
 
 
         <h2 class="form-signin-heading" style="color:white">Please Sign In</h2><hr />
-        <input type="email" class="form-control" placeholder="Email address" name="txtemail" required />
-        <input type="password" class="form-control" placeholder="Password" name="txtupass" required />
+        <input type="email" class="form-control" placeholder="Email address" style="border-radius: 10px; margin-bottom: 10px;" name="txtemail" required />
+        <input type="password" class="form-control" placeholder="Password" style="border-radius: 10px;" name="txtupass" required />
 
       <hr />
         <div class="signin-button">
-        <button class="btn btn-large btn-primary" type="submit" name="btn-login">Sign in</button>
+        <button class="btn btn-large btn-primary" type="submit" style="border-radius: 10px;" name="btn-login">Sign in</button>
         <br>
         <a href="#" style="color:white;">Forgot your Password? </a>
       </div>

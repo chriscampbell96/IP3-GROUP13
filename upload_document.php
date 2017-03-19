@@ -110,7 +110,7 @@ if(isset($_POST['btn-upload']))
                     <input class="work" type="file" name="file" />
 
               <div class="button">
-                <button class="btn btn-large btn-info" type="submit" name="btn-upload">Upload</button>
+                <button class="btn btn-large btn-info" type="submit" style="border-radius:10px;" name="btn-upload">Upload</button>
               </div>
             </form>
         </form>
