@@ -105,8 +105,8 @@ if(isset($_POST['btn-upload']))
         <form class="form-group">
             <?php if(isset($msg)) echo $msg;  ?>
               <form class="form-signin" method="post" enctype="multipart/form-data">
-                  <input class="form-control" id="comment" placeholder="Document Title" required />
-                  <input class="form-control" id="comment" placeholder="Document Description" required />
+                  <input class="form-control" id="comment" placeholder="Document Title" style="border-radius:10px;" required />
+                  <input class="form-control" id="comment" placeholder="Document Description" style="border-radius:10px;" required />
                     <input class="work" type="file" name="file" />
 
               <div class="button">

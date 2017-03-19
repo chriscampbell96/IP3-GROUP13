@@ -86,11 +86,11 @@ if(isset($_POST['btn-signup']))
       <div class="container-signin" method="post">
 
         <div class="form-group">
-        <input type="fname" class="form-control" id="comment" placeholder="First Name" name="txtfname" required />
-        <input type="lname" class="form-control" placeholder="Last Name" name="txtlname" required />
-       <input type="text" class="form-control" placeholder="Username" name="txtuname" required />
-       <input type="email" class="form-control" placeholder="Email address" name="txtemail" required />
-       <input type="password" class="form-control" placeholder="Password" name="txtpass" required />
+        <input type="fname" class="form-control" id="comment" placeholder="First Name" name="txtfname" style="border-radius:10px;" required />
+        <input type="lname" class="form-control" placeholder="Last Name" name="txtlname" style="border-radius:10px;" required />
+       <input type="text" class="form-control" placeholder="Username" name="txtuname" style="border-radius:10px;" required />
+       <input type="email" class="form-control" placeholder="Email address" name="txtemail" style="border-radius:10px;" required />
+       <input type="password" class="form-control" placeholder="Password" name="txtpass" style="border-radius:10px;" required />
        <button class="btn btn-info" type="submit" name="btn-signup">Sign Up</button>
      </div>
 

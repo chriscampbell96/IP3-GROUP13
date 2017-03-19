@@ -139,10 +139,39 @@
                 </div>
                 <!-- /.row -->
 
+<div class="details">
+
+<div class="boxes" style="text-align: center;">
+
+     <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
+        Name
+      </div>
+      <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
+         Email
+       </div>
+       <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
+          Other
+        </div>
+        <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
+           Other
+         </div>
+         <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
+            Other
+         </div>
+          <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px">
+             Other
+          </div>
+</div>
+
+        <button data-toggle="modal" data-target="#myModal" class="btn btn-info" style="margin-top: 10px; width: 100%"><i class="fa fa-fw fa-unlock-alt"></i> Change Password</button>
+        <button data-toggle="modal" data-target="#myModalTwo" class="btn btn-info" style="margin-top: 10px; width:100%"><i class="fa fa-fw fa-at"></i> Change Email</button>
+    </div>
+  </div>
 
 
 
-                  <button data-toggle="modal" data-target="#myModal" class="btn btn-info"><i class="fa fa-fw fa-unlock-alt"></i> Change Password</button>
+
+
 
                   <!-- Modal -->
                   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -176,8 +205,6 @@
                   </div>
                   </div>
                   </div>
-
-                  <button data-toggle="modal" data-target="#myModalTwo" class="btn btn-info"><i class="fa fa-fw fa-at"></i> Change Email</button>
 
                   <!-- Modal -->
                   <div class="modal fade" id="myModalTwo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
