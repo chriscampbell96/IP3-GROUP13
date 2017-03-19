@@ -84,19 +84,18 @@ if(isset($_POST['btn-signup']))
           <div class="form-group">
           <?php if(isset($msg)) echo $msg;  ?>
             <form class="form-signin" method="post">
-              <h2 class="form-signin-heading">Sign Up</h2><hr />
-              <input type="fname" class="input-block-level" placeholder="First Name" name="txtfname" required />
-              <input type="lname" class="input-block-level" placeholder="Last Name" name="txtlname" required />
-              <input type="text" class="input-block-level" placeholder="Username" name="txtuname" required />
-              <input type="email" class="input-block-level" placeholder="Email address" name="txtemail" required />
-              <input type="password" class="input-block-level" placeholder="Password" name="txtpass" required />
-            <hr />
-              <button class="btn btn-large btn-primary" type="submit" name="btn-signup">Sign Up</button>
+              <input type="fname" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="First Name" name="txtfname" required />
+              <input type="lname" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Last Name" name="txtlname" required />
+              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Username" name="txtuname" required />
+              <input type="email" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Email address" name="txtemail" required />
+              <input type="password" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Password" name="txtpass" required />
+
+              <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-signup">Sign Up</button>
             </form>
   </div>
 </div>
-</div>
 <?php include 'templates/foot.php';?>
+</div>
 
 
     <!-- jQuery -->

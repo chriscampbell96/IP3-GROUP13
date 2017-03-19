@@ -106,12 +106,12 @@ if(isset($_POST['btn-upload']))
           <div class="form-group">
           <?php if(isset($msg)) echo $msg;  ?>
             <form class="form-signin" method="post" enctype="multipart/form-data">
-              <h2 class="form-signin-heading">Upload Document</h2><hr />
-              <input type="docTitle" class="input-block-level" placeholder="Document Title" name="txtdocTitle" required />
-              <input type="docDesc" class="input-block-level" placeholder="Document Description" name="txtdocDesc" required />
+            
+              <input type="docTitle" class="input-block-level" style="border-radius:10px; width:100%; margin-bottom:10px; padding:10px;" placeholder="Document Title" name="txtdocTitle" required />
+              <input type="docDesc" class="input-block-level" style="border-radius:10px; width:100%; padding:10px; margin-bottom:10px;" placeholder="Document Description" name="txtdocDesc" required />
                   <input type="file" name="file" />
-            <hr />
-              <button class="btn btn-large btn-primary" type="submit" name="btn-upload">Upload</button>
+
+              <button class="btn btn-info" style="border-radius:10px" type="submit" name="btn-upload">Upload</button>
             </form>
 </div>
 </div>
