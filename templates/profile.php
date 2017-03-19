@@ -144,23 +144,20 @@
 <div class="boxes" style="text-align: center;">
 
      <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
-        <i class="fa fa-fw fa-user"></i> Name:  Heather Reid
+      First Name:  Heather
       </div>
       <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
-         <i class="fa fa-fw fa-at"></i> Email:  heathz2222@gmail.com
+        Last Name:  Reid
        </div>
        <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
-          <i class="fa fa-fw fa-bug"></i> Other:
+          Username:
         </div>
+      <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
+          Email:  heathz2222@gmail.com
+       </div>
         <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
-           <i class="fa fa-fw fa-bug"></i> Other:
+           Documents:
          </div>
-         <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
-           <i class="fa fa-fw fa-bug"></i> Other:
-         </div>
-          <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px;">
-             <i class="fa fa-fw fa-bug"></i> Other:
-          </div>
 
   <button data-toggle="modal" data-target="#myModal" class="btn btn-info" style="width: 49%; margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-unlock-alt"></i> Change Password</button>
  <button data-toggle="modal" data-target="#myModalTwo" class="btn btn-info" style="width: 49%;  margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-at"></i> Change Email</button>
@@ -178,15 +175,16 @@
                       <form>
                         <div class="form-group">
                           <label for="recipient-name" class="control-label">Enter Old Password: </label>
-                          <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
+                          <input type="password" class="form-control" id="recipient-name" style="border-radius:10px;" required />
                         </div>
                         <div class="form-group">
                           <label for="recipient-name" class="control-label">Enter New Password: </label>
-                          <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
+                          <input type="password" class="form-control" id="recipient-name" style="border-radius:10px;" required />
                         </div>
+
                         <div class="form-group">
                           <label for="recipient-name" class="control-label">Re-Enter New Password: </label>
-                          <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
+                          <input type="password" class="form-control" id="recipient-name" style="border-radius:10px;" required />
                         </div>
 
                       </form>
