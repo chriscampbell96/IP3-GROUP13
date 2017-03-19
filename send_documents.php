@@ -46,14 +46,19 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
       <div class="container-fluid">
 
-        <h1>Send Documents</h1>
-
-        <!-- SIMPLE PAGE BREADCRUMB-->
-        <ul class="breadcrumb">
-          <li><a href="dashboard.php">Dashboard</a></li>
-          <li class="active">Send Documents</li>
-        </ul>
-        <!--END BREAD CRUMB-->
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                </h1>
+                <ol class="breadcrumb">
+                    <li class="active">
+                        <i class="fa fa-envelope"></i> Send Documents
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
 
         <form>
   <div class="form-group">

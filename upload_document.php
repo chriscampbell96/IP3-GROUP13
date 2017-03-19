@@ -125,5 +125,5 @@ if(isset($_POST['btn-upload']))
 <!-- Bootstrap Core JavaScript -->
 <script src="templates/js/bootstrap.min.js"></script>
 
-  </body>
+</body>
 </html>
