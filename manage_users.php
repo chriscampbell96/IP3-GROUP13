@@ -73,6 +73,35 @@ if(isset($_GET['blank']))
  </div>
           <?php
 }
+
+
+if(isset($_POST['btn-update']))
+{
+ $id = $_GET['edit_id'];
+ $fname = $_POST['first_name'];
+ $lname = $_POST['last_name'];
+ $email = $_POST['uname'];
+ $contact = $_POST['email'];
+
+ if($crud->update($id,$fname,$lname,$uname,$email))
+ {
+  $msg = "<div class='alert alert-info'>
+    <strong>WOW!</strong> Record was updated successfully <a href='index.php'>HOME</a>!
+    </div>";
+ }
+ else
+ {
+  $msg = "<div class='alert alert-warning'>
+    <strong>SORRY!</strong> ERROR while updating record !
+    </div>";
+ }
+}
+
+if(isset($_GET['edit_id']))
+{
+ $id = $_GET['edit_id'];
+ extract($crud->getID($id));
+}
 ?>
 
 <!DOCTYPE html>
