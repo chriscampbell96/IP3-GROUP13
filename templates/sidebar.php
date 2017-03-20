@@ -18,9 +18,6 @@
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="sidebar.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="css/plugins/morris.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -68,10 +65,10 @@
                         <a href="send_documents.php" style="color:white"><i class="fa fa-fw fa-envelope-o"></i> Send Documents</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-pencil"></i> Revisions</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-pencil"></i> Revisions</a>
+                        <a href="#" style="color:white"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
                     </li>
                 </ul>
             </div>
