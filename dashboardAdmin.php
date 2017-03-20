@@ -147,7 +147,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
         echo " Your UserID is: ";
         echo $_SESSION['userSession'];
         echo "Your role is: ";
-        echo $_SESSION['userRole']; ?>
+        echo $_SESSION['userRole'];?>
     <form action="logout.php">
       <input type="submit" value="logout" />
     </form>
