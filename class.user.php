@@ -66,6 +66,9 @@ class USER
       $_SESSION['userSession'] = $userRow['userID'];
       $_SESSION['userEmail'] = $userRow['userEmail'];
       $_SESSION['userRole'] = $userRow['userRole'];
+      $_SESSION['userFirstName'] = $userRow['userFirstName'];
+      $_SESSION['userSecondName'] = $userRow['userSecondName'];
+      $_SESSION['userName'] = $userRow['userName'];
 
 
       return true;
