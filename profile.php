@@ -74,7 +74,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
               First Name:  <?php echo $_SESSION['userFirstName']; ?>
               </div>
               <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
-                Last Name: <?php echo $_SESSION['userSecondName']; ?>
+                Last Name: <?php echo $_SESSION['userSurname']; ?>
                </div>
                <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
                   Username: <?php echo $_SESSION['userName']; ?>
