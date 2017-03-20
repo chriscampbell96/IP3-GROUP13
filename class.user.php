@@ -133,10 +133,12 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
  public function delete_doc($docId){
 
     $stmt = $this->conn->prepare("DELETE FROM tbl_documents WHERE docId=:id");
-    $stmt->execute(array(':id'=>$id));
+    $stmt->bindparam(":id",$id);
+    $stmt->execute();
+    return true;
+   }
 
-
- }
+ 
 
  public function activate_doc(){
    #

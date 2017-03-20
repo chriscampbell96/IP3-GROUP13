@@ -60,7 +60,7 @@ if(!$user_home->is_logged_in())
     <!-- /.row -->
 
     <form action="upload_document.php">
-      <button type="submit" name="Create New document" class="btn btn-info" style="border-radius: 10px"><i class="fa fa-fw fa-upload"></i>Upload New Document</button>
+      <button type="submit" name="Create New document" class="btn btn-info" style="border-radius: 10px"><i class="fa fa-fw fa-upload"></i> Upload New Document</button>
     </form>
 
 
@@ -108,6 +108,9 @@ if(!$user_home->is_logged_in())
                     <td><?php echo $row['docLastChange']?></td>
                     <td><?php echo $row['docFile']?></td>
                     <td><?php echo $row['docStatus']?></td>
+                    <td>
+                       <a href="deleteDoc.php?delete_id=<?php print($row['docID']); ?>"> Call the cops im off my chops </a>
+                    </td>
 
 
                   <td>
