@@ -112,13 +112,13 @@ if(!$user_home->is_logged_in())
 
                   <td>
  <?php if($row['docStatus'] == ('Draft')){
-echo '  <button class="btn btn-sm btn-info"><i class="glyphicon glyphicon-ok"></i> Activate</button>';
+echo '  <button class="btn btn-info" style="border-radius:10px;"><i class="fa fa-fw fa-check"></i>Activate</button>';
 
  }else{
-   echo '  <button class="btn btn-default"><i class="glyphicon glyphicon-eye-close"></i> Draft</button>';
+   echo '  <button class="btn btn-default" style="margin-top:10px; border-radius:10px;"><i class="fa fa-fw fa-file-o"></i>  Draft</button>';
  } ?>
 
-<button class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Delete</button>
+<button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; border-radius:10px;"><i class="fa fa-fw fa-trash-o"></i> Delete</button>
 
                   </td>
                 </tr>

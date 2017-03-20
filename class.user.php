@@ -66,6 +66,10 @@ class USER
       $_SESSION['userSession'] = $userRow['userID'];
       $_SESSION['userEmail'] = $userRow['userEmail'];
       $_SESSION['userRole'] = $userRow['userRole'];
+      $_SESSION['userName'] = $userRow['userName'];
+      $_SESSION['userFirstName'] = $userRow['userFirstName'];
+      $_SESSION['userSecondName'] = $userRow['userSecondName'];
+
       return true;
      }
      else
@@ -91,7 +95,7 @@ class USER
    echo $ex->getMessage();
   }
  }
- 
+
 
 
  public function is_logged_in()

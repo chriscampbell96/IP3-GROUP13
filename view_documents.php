@@ -110,10 +110,10 @@ if(!$user_home->is_logged_in())
 
                   <td>
                     <!-- ADDING VIEW USER BUTTON TO CHANGE -->
-                    <button class="btn btn-sm btn-info"><i class="glyphicon glyphicon-pencil"></i> Upload Revision</button>
+                    <button class="btn btn-info" style="border-radius:10px;"><i class="glyphicon glyphicon-pencil"></i> Upload Revision</button>
                     <br>
 
-                    <a href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>">Download</a>
+                    <button class="btn btn-info" style="color:white; margin-top:10px; background-color:#BF691E; border:1pt solid #BF691E; border-radius:10px;"><i class="glyphicon glyphicon-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
                   </td>
                 </tr>
 

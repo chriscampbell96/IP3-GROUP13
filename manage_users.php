@@ -122,9 +122,6 @@ if(isset($_GET['edit_id']))
     <link href="templates/css/sb-admin.css" rel="stylesheet">
     <link href="templates/homepagejoin.css" rel="stylesheet">
 
-    <!-- Morris Charts CSS -->
-    <link href="templates/css/plugins/morris.css" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -158,7 +155,7 @@ if(isset($_GET['edit_id']))
 
 
       <form action="user_register.php">
-        <button type="submit" name="Create New user" class="btn btn-info"><i class="fa fa-fw fa-plus"></i>Create User</button>
+        <button type="submit" name="Create New user" style="border-radius:10px;" class="btn btn-info"><i class="fa fa-fw fa-plus"></i>Create User</button>
       </form>
 
       <br>
@@ -204,12 +201,12 @@ if(isset($_GET['edit_id']))
 
 
                     <?php if($row['userStatus'] == ('N')){
-                      echo '  <button type="submit" class="btn btn-info" name="btn-activate"><i class="fa fa-fw fa-check"></i> Activate</button>';
+                      echo '  <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-activate"><i class="fa fa-fw fa-check"></i> Activate</button>';
                       }else{
-                      echo '  <button class="btn btn-default"><i class="fa fa-fw fa-archive"></i> Archive</button>';
+                      echo '  <button class="btn btn-default" style="border-radius:10px;"><i class="fa fa-fw fa-archive"></i> Archive</button>';
                     } ?>
 
-                    <button data-toggle="modal" data-target="#myModal" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn btn-warning"><i class="fa fa-fw fa-pencil"></i> Edit</button>
+                    <button data-toggle="modal" data-target="#myModal" style="border-radius:10px; background-color:#BF691E; color:white" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"></i> Edit</button>
 
 
 
