@@ -53,7 +53,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Welcome <small> <?php echo $_SESSION['userEmail'] ?></small>
+                    Welcome <small> <?php echo $_SESSION['userName']; ?></small>
                 </h1>
                 <ol class="breadcrumb">
                     <li class="active">

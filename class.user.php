@@ -67,6 +67,7 @@ class USER
       $_SESSION['userEmail'] = $userRow['userEmail'];
       $_SESSION['userRole'] = $userRow['userRole'];
 
+
       return true;
      }
      else

@@ -75,7 +75,7 @@ if(isset($_POST['btn-upload']))
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <?php include 'templates/header.php';
+ <?php include 'templates/header.php';
     include 'templates/sidebar.php';?>
   </head>
 
@@ -106,8 +106,8 @@ if(isset($_POST['btn-upload']))
           <div class="form-group">
           <?php if(isset($msg)) echo $msg;  ?>
             <form class="form-signin" method="post" enctype="multipart/form-data">
-            
-              <input type="docTitle" class="input-block-level" style="border-radius:10px; width:100%; margin-bottom:10px; padding:10px;" placeholder="Document Title" name="txtdocTitle" required />
+
+             <input type="docTitle" class="input-block-level" style="border-radius:10px; width:100%; margin-bottom:10px; padding:10px;" placeholder="Document Title" name="txtdocTitle" required />
               <input type="docDesc" class="input-block-level" style="border-radius:10px; width:100%; padding:10px; margin-bottom:10px;" placeholder="Document Description" name="txtdocDesc" required />
                   <input type="file" name="file" />
 
