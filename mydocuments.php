@@ -108,9 +108,7 @@ if(!$user_home->is_logged_in())
                     <td><?php echo $row['docLastChange']?></td>
                     <td><?php echo $row['docFile']?></td>
                     <td><?php echo $row['docStatus']?></td>
-                    <td>
-                       <a href="deleteDoc.php?delete_id=<?php print($row['docID']); ?>"> Call the cops im off my chops </a>
-                    </td>
+                    
 
 
                   <td>
@@ -121,7 +119,7 @@ echo '  <button class="btn btn-info" style="border-radius:10px;"><i class="fa fa
    echo '  <button class="btn btn-default" style="margin-top:10px; border-radius:10px;"><i class="fa fa-fw fa-file-o"></i>  Draft</button>';
  } ?>
 
-<button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; border-radius:10px;"><i class="fa fa-fw fa-trash-o"></i> Delete</button>
+<button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; border-radius:10px;"><a href="deleteDoc.php?delete_id=<?php print($row['docID']); ?>" style="color:white"><i class="fa fa-fw fa-trash-o"></i> Delete</a></button>
 
                   </td>
                 </tr>

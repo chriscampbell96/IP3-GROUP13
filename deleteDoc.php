@@ -47,15 +47,20 @@ if(isset($_POST['btn-del']))
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  </head>
-  <body>
+
     <?php include("templates/header.php"); ?>
     <?php include("templates/sidebar.php"); ?>
-  </body>
 
-<div class="clearfix"></div>
+  </head>
+  <body>
 
-<div class="container">
+<div id="wrapper">
+  <div id="page-wrapper">
+
+    <div class="container-fluid">
+
+
+<br>
 
  <?php
  if(isset($_GET['deleted']))
@@ -70,21 +75,18 @@ if(isset($_POST['btn-del']))
  {
   ?>
         <div class="alert alert-danger">
-     <strong>Sure !</strong> to remove the following record ?
+     <strong>Are you Sure!</strong> to remove the following record?
   </div>
         <?php
  }
  ?>
-</div>
 
-<div class="clearfix"></div>
-
-<div class="container">
 
   <?php
   if(isset($_GET['delete_id']))
   {
    ?>
+      <div class="table-responsive">
          <table class='table table-bordered'>
          <tr>
            <th>Document ID</th>
@@ -118,12 +120,12 @@ if(isset($_POST['btn-del']))
          }
          ?>
          </table>
+       </div>
          <?php
   }
   ?>
-</div>
 
-<div class="container">
+
 <p>
 <?php
 if(isset($_GET['delete_id']))
@@ -131,24 +133,27 @@ if(isset($_GET['delete_id']))
  ?>
    <form method="post">
     <input type="hidden" name="id" value="<?php echo $row['docID']; ?>" />
-    <button class="btn btn-large btn-primary" type="submit" name="btn-del"><i class="glyphicon glyphicon-trash"></i> &nbsp; YES</button>
-    <a href="mydocuments.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; NO</a>
+    <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-del"><i class="fa fa-trash-o"></i> &nbsp; YES</button>
+    <a href="mydocuments.php" style="border-radius:10px;" class="btn btn-success"><i class="fa fa-undo"></i> &nbsp; NO</a>
     </form>
  <?php
 }
 else
 {
  ?>
-    <a href="mydocuments.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Back to index</a>
+    <a href="mydocuments.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to index</a>
     <?php
 }
 ?>
 </p>
+
+
+</div>
+<?php include 'templates/foot.php';?></div>
 </div>
 <script src="templates/js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="templates/js/bootstrap.min.js"></script>
-<?php include 'templates/foot.php';?>
-
+</body>
 </html>
