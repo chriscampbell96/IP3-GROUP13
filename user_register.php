@@ -90,6 +90,15 @@ if(isset($_POST['btn-signup']))
               <input type="email" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Email address" name="txtemail" required />
               <input type="password" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Password" name="txtpass" required />
 
+              <div class="form-group">
+                <label for="role" class="control-label">Select Level:</label>
+
+              <select class="form-control" style="border-radius:10px; padding:5px">
+                <option>Admin</option>
+                <option>Document Creater</option>
+              </select>
+              </div>
+
               <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-signup">Sign Up</button>
             </form>
   </div>

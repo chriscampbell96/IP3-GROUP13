@@ -52,7 +52,7 @@ if(!$user_home->is_logged_in())
             </h1>
             <ol class="breadcrumb">
                 <li class="active">
-                      <i class="fa fa-book"></i> My Revsions
+                      <i class="fa fa-pencil"></i> My Revsions
                 </li>
             </ol>
         </div>
