@@ -108,7 +108,7 @@ if(isset($_POST['btn-upload']))
             <form class="form-signin" method="post" enctype="multipart/form-data">
 
              <input type="docTitle" class="input-block-level" style="border-radius:10px; width:100%; margin-bottom:10px; padding:10px;" placeholder="Document Title" name="txtdocTitle" required />
-              <input type="docDesc" class="input-block-level" style="border-radius:10px; width:100%; padding:10px; margin-bottom:10px;" placeholder="Document Description" name="txtdocDesc" required />
+              <textarea input type="docDesc" class="input-block-level" rows="3" style="border-radius:10px; width:100%; padding:10px; margin-bottom:10px;" placeholder="Document Description" name="txtdocDesc" required /></textarea>
                   <input type="file" name="file" />
 
               <button class="btn btn-info" style="border-radius:10px" type="submit" name="btn-upload">Upload</button>
