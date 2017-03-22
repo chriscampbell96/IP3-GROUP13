@@ -130,6 +130,29 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
 
  }
 
+ public function create_rev($revTitle,$revDesc,$file,$file_type,$new_size,$docID,$userID){
+    try
+    {
+      $stmt = $this->conn->prepare("INSERT INTO tbl_revisions(revTitle,revDesc,revFile,revType,revSize,docID,userID)
+                                                   VALUES(:rev_title, :rev_desctiption, :rev_file, :rev_Type, :rev_Size, :docRevised, :userUpload)");
+
+      $stmt->bindparam(":rev_title",$revTitle);
+      $stmt->bindparam(":rev_desctiption",$revDesc);
+      $stmt->bindparam("rev_file",$file);
+      $stmt->bindparam("rev_Type",$file_type);
+      $stmt->bindparam("rev_Size",$new_size);
+      $stmt->bindparam(":docRevised",$docID);
+      $stmt->bindparam(":userUpload",$userID);
+      $stmt->execute();
+      return $stmt;
+    }
+    catch(PDOException $ex)
+    {
+     echo $ex->getMessage();
+    }
+
+  }
+
  public function delete_doc($docId){
 
     $stmt = $this->conn->prepare("DELETE FROM tbl_documents WHERE docId=:id");
@@ -138,7 +161,7 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
     return true;
    }
 
- 
+
 
  public function activate_doc(){
    #

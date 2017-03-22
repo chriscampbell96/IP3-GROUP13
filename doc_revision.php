@@ -4,7 +4,7 @@ session_start();
 include_once 'config.php';
 
 require_once 'class.user.php';
-
+$user_home = new USER();
 $deldoc = new USER();
 
 if(!$deldoc->is_logged_in())
@@ -19,6 +19,51 @@ if(isset($_POST['btn-del']))
  $deldoc->delete_doc($docId);
  header("Location: deleteDoc.php?deleted");
 }
+
+if(isset($_POST['btn-upload']))
+{
+   $revTitle = trim($_POST['txtrevTitle']);
+   $revDesc = trim($_POST['txtrevDesc']);
+   $file = rand(1000,100000)."-".$_FILES['file']['name'];
+   $file_loc = $_FILES['file']['tmp_name'];
+   $file_size = $_FILES['file']['size'];
+   $file_type = $_FILES['file']['type'];
+   $folder="revisions/";
+   $docID = trim($_GET['delete_id']);
+   $userID = trim($_SESSION['userSession']);
+
+   // new file size in KB
+ $new_size = $file_size/1024;
+ // new file size in KB
+
+ // make file name in lower case
+ $new_file_name = strtolower($file);
+ // make file name in lower case
+//  $fleExt = strtolower(pathinfo($file,PATHINFO_EXTENSION)); // get file extension
+//  $valid_extensions = array('doc', 'docx', 'pdf', 'txt');
+
+
+ $final_file=str_replace(' ','-',$new_file_name);
+
+ //if(in_array($fleExt, $valid_extensions)){
+
+   if(move_uploaded_file($file_loc,$folder.$final_file)){
+
+    if($user_home->create_rev($revTitle,$revDesc,$file,$file_type,$new_size,$docID,$userID))
+    {
+      $user_home->redirect('view_documents.php');
+
+    }
+    else{
+     echo "sorry , Query could no execute...";
+
+   }
+  }
+}else{
+
+
+}
+
 
 
 
@@ -147,11 +192,11 @@ if(isset($_POST['btn-del']))
     <?php if(isset($msg)) echo $msg;  ?>
       <form class="form-signin" method="post" enctype="multipart/form-data">
 
-       <input type="docTitle" class="input-block-level" style="border-radius:10px; width:100%; margin-bottom:10px; padding:10px;" placeholder="Document Title" name="txtdocTitle" required />
+       <input type="docTitle" class="input-block-level" style="border-radius:10px; width:100%; margin-bottom:10px; padding:10px;" placeholder="Document Title" name="txtrevTitle" required />
 
         <!-- <input type="docDesc" class="input-block-level" rows="3" style="border-radius:10px; width:100%; padding:10px; margin-bottom:10px;" placeholder="Document Description" name="txtdocDesc" required /> -->
 
-        <textarea type="docDesc" class="input-block-level" rows="3" style="border-radius:10px; width:100%; padding:10px; margin-bottom:10px;" placeholder="Please describe your revision" name="txtdocDesc" required></textarea>
+        <textarea type="docDesc" class="input-block-level" rows="3" style="border-radius:10px; width:100%; padding:10px; margin-bottom:10px;" placeholder="Please describe your revision" name="txtrevDesc" required></textarea>
 
             <input type="file" name="file" />
 <br>

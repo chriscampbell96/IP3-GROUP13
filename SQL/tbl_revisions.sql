@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2017 at 03:09 PM
+-- Generation Time: Mar 22, 2017 at 04:34 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -28,10 +28,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_revisions` (
   `revID` int(11) NOT NULL,
+  `revTitle` varchar(100) NOT NULL,
   `revDesc` varchar(255) NOT NULL,
+  `revFile` varchar(100) NOT NULL,
+  `revSize` int(11) NOT NULL,
+  `revType` varchar(10) NOT NULL,
+  `revStatus` enum('Active','Draft') NOT NULL DEFAULT 'Active',
   `docID` int(11) NOT NULL,
   `userID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_revisions`
+--
+
+INSERT INTO `tbl_revisions` (`revID`, `revTitle`, `revDesc`, `revFile`, `revSize`, `revType`, `revStatus`, `docID`, `userID`) VALUES
+(4, 'test', 'revision test', '60238-SysPrgLab4.doc', 54, 'applicatio', 'Active', 14, 1);
 
 --
 -- Indexes for dumped tables
@@ -54,7 +66,7 @@ ALTER TABLE `tbl_revisions`
 -- AUTO_INCREMENT for table `tbl_revisions`
 --
 ALTER TABLE `tbl_revisions`
-  MODIFY `revID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `revID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
