@@ -52,6 +52,8 @@ if(isset($_POST['btn-upload']))
     if($user_home->create_rev($revTitle,$revDesc,$file,$file_type,$new_size,$docID,$userID))
     {
       $user_home->redirect('view_documents.php');
+      header("Location: view_documents.php?success");
+
 
     }
     else{

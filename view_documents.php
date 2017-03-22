@@ -45,12 +45,24 @@ if(!$user_home->is_logged_in())
 
       <div class="container-fluid">
 
+
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
 
                 </h1>
+
+                <?php
+                if(isset($_GET['success']))
+                {
+                 ?>
+                       <div class="alert alert-success">
+                    <strong>Success!</strong> You created a new revsion...
+                 </div>
+                       <?php
+                }
+                 ?>
                 <ol class="breadcrumb">
                     <li class="active">
                         <i class="fa fa-share-alt"></i> Shared Documents
