@@ -67,7 +67,7 @@ if(isset($_POST['btn-del']))
  {
   ?>
         <div class="alert alert-success">
-     <strong>Success!</strong> record was deleted...
+     <strong>Success!</strong> document was revised...
   </div>
         <?php
  }
@@ -75,11 +75,13 @@ if(isset($_POST['btn-del']))
  {
   ?>
         <div class="alert alert-danger">
-     <strong>Are you Sure!</strong> to remove the following record?
+     <strong>Please ensure</strong> you want to revise this document?
   </div>
         <?php
  }
  ?>
+<hr>
+ <h2>Original Document</h2>
 
 
   <?php
@@ -124,6 +126,27 @@ if(isset($_POST['btn-del']))
          <?php
   }
   ?>
+<hr>
+  <h2>Upload Revised Document</h2>
+
+  <body id="login">
+    <div class="form-group">
+    <?php if(isset($msg)) echo $msg;  ?>
+      <form class="form-signin" method="post" enctype="multipart/form-data">
+
+       <input type="docTitle" class="input-block-level" style="border-radius:10px; width:100%; margin-bottom:10px; padding:10px;" placeholder="Document Title" name="txtdocTitle" required />
+
+        <!-- <input type="docDesc" class="input-block-level" rows="3" style="border-radius:10px; width:100%; padding:10px; margin-bottom:10px;" placeholder="Document Description" name="txtdocDesc" required /> -->
+
+        <textarea type="docDesc" class="input-block-level" rows="3" style="border-radius:10px; width:100%; padding:10px; margin-bottom:10px;" placeholder="Please describe your revision" name="txtdocDesc" required></textarea>
+
+            <input type="file" name="file" />
+<br>
+        <button class="btn btn-info" style="border-radius:10px" type="submit" name="btn-upload">Upload</button>
+        <a href="view_documents.php" style="border-radius:10px;" class="btn btn-success"><i class="fa fa-undo"></i> &nbsp; Cancel</a>
+
+      </form>
+</div>
 
 
 <p>
@@ -133,8 +156,6 @@ if(isset($_GET['delete_id']))
  ?>
    <form method="post">
     <input type="hidden" name="id" value="<?php echo $row['docID']; ?>" />
-    <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-del"><i class="fa fa-trash-o"></i> &nbsp; YES</button>
-    <a href="mydocuments.php" style="border-radius:10px;" class="btn btn-success"><i class="fa fa-undo"></i> &nbsp; NO</a>
     </form>
  <?php
 }

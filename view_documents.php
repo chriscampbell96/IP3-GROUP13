@@ -94,7 +94,7 @@ if(!$user_home->is_logged_in())
           $conn = $db;
 
 
-                  $query = "SELECT * FROM tbl_documents";
+                  $query = "SELECT * FROM tbl_documents WHERE docStatus='Active'";
                   $stmt = $conn->prepare($query);
                   $stmt->execute();
                   while($row=$stmt->fetch(PDO::FETCH_ASSOC)){

@@ -94,8 +94,10 @@ if(!$user_home->is_logged_in())
           $database = new Database();
           $db = $database->dbConnection();
           $conn = $db;
+          $uid = $_SESSION['userSession'];
 
-                  $query = "SELECT * FROM tbl_documents";
+
+                  $query = "SELECT * FROM tbl_documents WHERE userId='$uid'";
                   $stmt = $conn->prepare($query);
                   $stmt->execute();
                   while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
@@ -108,7 +110,7 @@ if(!$user_home->is_logged_in())
                     <td><?php echo $row['docLastChange']?></td>
                     <td><?php echo $row['docFile']?></td>
                     <td><?php echo $row['docStatus']?></td>
-                    
+
 
 
                   <td>
