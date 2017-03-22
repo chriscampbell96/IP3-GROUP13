@@ -59,8 +59,21 @@ if(isset($_POST['btn-del']))
 
     <div class="container-fluid">
 
+      <!-- Page Heading -->
+                      <div class="row">
+                          <div class="col-lg-12">
+                              <h1 class="page-header">
+                                <small></small>
+                              </h1>
+                              <ol class="breadcrumb">
+                                  <li class="active">
+                                      <i class="fa fa-pencil"></i> Revisions
+                                  </li>
+                              </ol>
+                          </div>
+                      </div>
+                      <!-- /.row -->
 
-<br>
 
  <?php
  if(isset($_GET['deleted']))
@@ -162,7 +175,7 @@ if(isset($_GET['delete_id']))
 else
 {
  ?>
-    <a href="mydocuments.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to index</a>
+    <a href="mydocuments.php" class="btn btn-info"><i class="fa fa-arrow-left" style="border-radius:10px;"></i> &nbsp; Back to index</a>
     <?php
 }
 ?>
