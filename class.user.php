@@ -159,12 +159,18 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
     $stmt->bindparam(":id",$id);
     $stmt->execute();
     return true;
-   }
+  }
 
 
 
- public function activate_doc(){
-   #
+
+ public function activate_doc($docStatus){
+   $stmt = $this->conn->prepare("INSERT INTO tbl_documents(docStatus)
+                                                VALUES(:doc_status)");
+   $stmt->bindparam("doc_status",$docStatus);
+   $stmt->execute();
+   return $stmt;
+
  }
 
 

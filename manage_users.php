@@ -21,16 +21,15 @@ if(isset($_POST['btn-activate'])){
    $statusY = "Y";
    $statusN = "N";
 
-$stmt = $user->runQuery("SELECT userID,userStatus FROM tbl_users WHERE userID=:uID");
+$stmt = $user->runQuery("SELECT userID,userStatus FROM tbl_users WHERE userID=:$id");
 $stmt->execute(array(":userID"=>$userId));
 $row=$stmt->fetch(PDO::FETCH_ASSOC);
 if($stmt->rowCount() > 0)
 {
 if($row['userStatus']==$statusN)
 {
-$stmt = $user->runQuery("UPDATE tbl_users SET userStatus=:status WHERE userId=:userID");
+$stmt = $user->runQuery("UPDATE tbl_users SET userStatus=:status WHERE userId=:$id");
 $stmt->bindparam(":status",$statusY);
-$stmt->bindparam(":userID",$userId);
 $stmt->execute();
 
 $msg = "

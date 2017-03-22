@@ -65,7 +65,7 @@
                         <a href="send_documents.php" style="color:white"><i class="fa fa-fw fa-envelope-o"></i> Send Documents</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-pencil"></i> Revisions</a>
+                        <a href="myrevisions.php" style="color:white"><i class="fa fa-fw fa-pencil"></i> My Revisions</a>
                     </li>
                     <li>
                         <a href="#" style="color:white"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>

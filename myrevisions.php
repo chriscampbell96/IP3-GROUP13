@@ -21,7 +21,7 @@ if(!$user_home->is_logged_in())
 
 
 
-    <title>My Documents</title>
+    <title>My Revisions</title>
 
 
     <!-- Bootstrap -->
@@ -52,19 +52,17 @@ if(!$user_home->is_logged_in())
             </h1>
             <ol class="breadcrumb">
                 <li class="active">
-                    <i class="fa fa-book"></i> My Documents
+                      <i class="fa fa-book"></i> My Revsions
                 </li>
             </ol>
         </div>
     </div>
     <!-- /.row -->
 
-    <form action="upload_document.php">
+    <!-- <form action="upload_document.php">
       <button type="submit" name="Create New document" class="btn btn-info" style="border-radius: 10px"><i class="fa fa-fw fa-upload"></i> Upload New Document</button>
-    </form>
+    </form> -->
 
-
-<br>
 
 <div class="form-group">
   <input type="text" class="form-control" placeholder="Search My Documents">
@@ -80,12 +78,12 @@ if(!$user_home->is_logged_in())
     <thead>
         <tr>
 
-        <th>Document ID</th>
-        <th>Doument Title</th>
-        <th>Document Description</th>
-        <th>Last Changed</th>
-        <th>Document File</th>
-        <th>Document Status</th>
+        <th>Revision ID</th>
+        <th>Revision Title</th>
+        <th>Revision Description</th>
+        <th>Revision File</th>
+        <th>Original Document ID</th>
+        <th>Revision Status</th>
         <th>Actions</th>
         </tr>
     </thead>
@@ -97,24 +95,24 @@ if(!$user_home->is_logged_in())
           $uid = $_SESSION['userSession'];
 
 
-                  $query = "SELECT * FROM tbl_documents WHERE userId='$uid'";
+                  $query = "SELECT * FROM tbl_revisions WHERE userId='$uid'";
                   $stmt = $conn->prepare($query);
                   $stmt->execute();
                   while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
                   ?>
                   <tr>
 
+                    <td><?php echo $row['revID']?></td>
+                    <td><?php echo $row['revTitle']?></td>
+                    <td><?php echo $row['revDesc']?></td>
+                    <td><?php echo $row['revFile']?></td>
                     <td><?php echo $row['docID']?></td>
-                    <td><?php echo $row['docTitle']?></td>
-                    <td><?php echo $row['docDesc']?></td>
-                    <td><?php echo $row['docLastChange']?></td>
-                    <td><?php echo $row['docFile']?></td>
-                    <td><?php echo $row['docStatus']?></td>
+                    <td><?php echo $row['revStatus']?></td>
 
 
 
                   <td>
- <?php if($row['docStatus'] == ('Draft')){
+ <?php if($row['revStatus'] == ('Draft')){
 echo '  <button class="btn btn-info" style="border-radius:10px;"><i class="fa fa-fw fa-check" name"btn-activate"></i>Activate</button>';
 
  }else{
