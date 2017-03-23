@@ -153,12 +153,15 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
 
   }
 
- public function delete_doc($docId){
+ public function delete_doc($docID, $id){
 
-    $stmt = $this->conn->prepare("DELETE FROM tbl_documents WHERE docId=:id");
+       $stmt = $this->conn->prepare("INSERT INTO tbl_documentsdel
+         SELECT * FROM tbl_documents WHERE docID=$id");
+
+    $stmt = $this->conn->prepare("DELETE FROM tbl_documents WHERE docID=:id");
     $stmt->bindparam(":id",$id);
     $stmt->execute();
-    return true;
+    return $stmt;
   }
 
 

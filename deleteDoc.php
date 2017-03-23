@@ -16,7 +16,7 @@ if(!$deldoc->is_logged_in())
 if(isset($_POST['btn-del']))
 {
  $id = $_GET['delete_id'];
- $deldoc->delete_doc($docId);
+ $deldoc->delete_doc($docID, $id);
  header("Location: deleteDoc.php?deleted");
 }
 
@@ -116,7 +116,7 @@ if(isset($_POST['btn-del']))
          $db = $database->dbConnection();
          $conn = $db;
 
-         $stmt =  $db->prepare("SELECT * FROM tbl_documents WHERE docId=:id");
+         $stmt =  $db->prepare("SELECT * FROM tbl_documents WHERE docID=:id");
          $stmt->execute(array(":id"=>$_GET['delete_id']));
          while($row=$stmt->fetch(PDO::FETCH_BOTH))
          {
