@@ -99,7 +99,7 @@ if(isset($_POST['btn-update']))
 if(isset($_GET['edit_id']))
 {
  $id = $_GET['edit_id'];
- extract($crud->getID($id));
+ extract($user_home->getID($id));
 }
 ?>
 

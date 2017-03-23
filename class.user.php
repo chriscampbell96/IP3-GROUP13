@@ -187,8 +187,8 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
 
  public function getID($id)
  {
-  $stmt = $this->db->prepare("SELECT * FROM tbl_users WHERE userId=:id");
-  $stmt->execute(array(":userId"=>$id));
+  $stmt = $this->db->prepare("SELECT * FROM tbl_users WHERE userID=:id");
+  $stmt->execute(array(":userID"=>$id));
   $editRow=$stmt->fetch(PDO::FETCH_ASSOC);
   return $editRow;
  }

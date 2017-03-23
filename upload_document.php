@@ -33,7 +33,7 @@ if(isset($_POST['btn-upload']))
  $new_file_name = strtolower($file);
  // make file name in lower case
 $fleExt = strtolower(pathinfo($file,PATHINFO_EXTENSION)); // get file extension
- $valid_extensions = array('doc', 'docx', 'pdf', 'txt');
+ $valid_extensions = array('doc', 'docx', 'pdf', 'txt', 'xlsx');
 
 
  $final_file=str_replace(' ','-',$new_file_name);
