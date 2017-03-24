@@ -10,10 +10,10 @@ if(!$user_home->is_logged_in())
  $user_home->redirect('login.php');
 }
 
-if ($_SESSION['userRole'] !== ('Admin'))
-{
-   $user_home->redirect('dashboard.php');
-}
+// if ($_SESSION['userRole'] !== ('Admin'))
+// {
+//    $user_home->redirect('dashboard.php');
+// }
 
 $stmt = $user_home->runQuery("SELECT * FROM tbl_users WHERE userID=:uid");
 $stmt->execute(array(":uid"=>$_SESSION['userSession']));

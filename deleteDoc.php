@@ -60,7 +60,20 @@ if(isset($_POST['btn-del']))
     <div class="container-fluid">
 
 
-<br>
+      <!-- Page Heading -->
+      <div class="row">
+          <div class="col-lg-12">
+              <h1 class="page-header">
+
+              </h1>
+              <ol class="breadcrumb">
+                  <li class="active">
+                      <i class="fa fa-trash"></i> Delete Document
+                  </li>
+              </ol>
+          </div>
+      </div>
+      <!-- /.row -->
 
  <?php
  if(isset($_GET['deleted']))

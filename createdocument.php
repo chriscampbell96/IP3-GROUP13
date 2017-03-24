@@ -75,7 +75,7 @@ if(!$user_home->is_logged_in())
                         <div class="container-button">
 
 
-                          <a href="#" class="btn btn btn-info" style="border-radius: 10px; margin-top:-15px;">Save</a>
+                          <a href="#" class="btn btn btn-info" style="border-radius: 10px; margin-top:-15px;"><i class="fa fa-check-circle-o"></i> Save</a>
 
 
                         </div>
