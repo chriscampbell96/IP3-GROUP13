@@ -205,7 +205,7 @@ if(isset($_GET['edit_id']))
                       echo '  <button class="btn btn-default" style="border-radius:10px;"><i class="fa fa-fw fa-archive"></i> Archive</button>';
                     } ?>
 
-                    <button data-toggle="modal" data-target="#myModal" style="border-radius:10px; background-color:#BF691E; color:white" data-id="<?php echo $row['userID']; ?>" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"></i> Edit</button>
+                    <button data-toggle="modal" data-target="#myModal" style="border-radius:10px; background-color:#BF691E; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"><a href="editUser.php?edit_id=<?php echo $row['userID']; ?>" style="color:white"></i> Edit</a></button>
 
 
 
@@ -222,7 +222,7 @@ if(isset($_GET['edit_id']))
   </div>
 
     <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -268,7 +268,7 @@ if(isset($_GET['edit_id']))
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 

@@ -190,17 +190,17 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
 
  public function getID($id)
  {
-  $stmt = $this->db->prepare("SELECT * FROM tbl_users WHERE userID=:id");
-  $stmt->execute(array(":userID"=>$id));
+  $stmt = $this->conn->prepare("SELECT * FROM tbl_users WHERE userID=:id");
+  $stmt->execute(array(":id"=>$id));
   $editRow=$stmt->fetch(PDO::FETCH_ASSOC);
   return $editRow;
  }
 
- public function update($fname,$lname,$uname,$email)
+ public function update($id,$fname,$lname,$uname,$email)
  {
   try
   {
-   $stmt=$this->db->prepare("UPDATE tbl_users SET first_name=:fname,
+   $stmt=$this->conn->prepare("UPDATE tbl_users SET userFirstName=:fname,
                                                  last_name=:lname,
                                                  user_name=:uname,
                                                 userEmail=:email,
@@ -208,7 +208,7 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
    $stmt->bindparam(":fname",$fname);
    $stmt->bindparam(":lname",$lname);
    $stmt->bindparam(":uname",$uname);
-   $stmt->bindparam(":userEmail",$email);
+   $stmt->bindparam(":email",$email);
    $stmt->bindparam(":userId",$id);
    $stmt->execute();
 
