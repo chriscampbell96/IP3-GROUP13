@@ -59,7 +59,8 @@ if(isset($_GET['edit_id']))
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-
+    <?php include("templates/header.php"); ?>
+    <?php include("templates/sidebar.php"); ?>
 
   </head>
   <body>
