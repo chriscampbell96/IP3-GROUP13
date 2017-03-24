@@ -201,15 +201,15 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
   try
   {
    $stmt=$this->conn->prepare("UPDATE tbl_users SET userFirstName=:fname,
-                                                 last_name=:lname,
-                                                 user_name=:uname,
-                                                userEmail=:email,
-             WHERE userId=:id ");
+                                                 userSurname=:lname,
+                                                 userName=:uname,
+                                                userEmail=:email
+             WHERE userID=:id ");
    $stmt->bindparam(":fname",$fname);
    $stmt->bindparam(":lname",$lname);
    $stmt->bindparam(":uname",$uname);
    $stmt->bindparam(":email",$email);
-   $stmt->bindparam(":userId",$id);
+   $stmt->bindparam(":id",$id);
    $stmt->execute();
 
    return true;
