@@ -79,7 +79,7 @@ if(isset($_GET['edit_id']))
               </h1>
               <ol class="breadcrumb">
                   <li class="active">
-                      <i class="fa fa-trash"></i> Edit User
+                      <i class="fa fa-pencil-square-o"></i> Edit User
                   </li>
               </ol>
           </div>
@@ -106,34 +106,32 @@ if(isset($msg))
 
         <tr>
             <td>First Name</td>
-            <td><input type='text' name='first_name' class='form-control' value="<?php echo $userFirstName; ?>" required></td>
+            <td><input type='text' name='first_name' style="border-radius:10px;" class='form-control' value="<?php echo $userFirstName; ?>" required></td>
         </tr>
 
         <tr>
             <td>Last Name</td>
-            <td><input type='text' name='last_name' class='form-control' value="<?php echo $userSurname; ?>" required></td>
+            <td><input type='text' name='last_name' style="border-radius:10px;" class='form-control' value="<?php echo $userSurname; ?>" required></td>
         </tr>
 
         <tr>
             <td>User Name</td>
-            <td><input type='text' name='uname' class='form-control' value="<?php echo $userName; ?>" required></td>
+            <td><input type='text' name='uname' class='form-control' style="border-radius:10px;" value="<?php echo $userName; ?>" required></td>
         </tr>
 
         <tr>
             <td>Your E-mail ID</td>
-            <td><input type='text' name='userEmail' class='form-control' value="<?php echo $userEmail; ?>" required></td>
+            <td><input type='text' name='userEmail' style="border-radius:10px;" class='form-control' value="<?php echo $userEmail; ?>" required></td>
         </tr>
 
-        <tr>
-            <td colspan="2">
-                <button type="submit" class="btn btn-primary" name="btn-update">
-       <span class="glyphicon glyphicon-edit"></span>  Update this Record
-    </button>
-                <a href="manage_users.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; CANCEL</a>
-            </td>
-        </tr>
 
     </table>
+
+    <button type="submit" class="btn btn-primary" style="border-radius:10px;" name="btn-update">
+<span class="fa fa-check"></span>  Update
+</button>
+    <a href="manage_users.php" class="btn btn-success" style="border-radius:10px;"><i class="fa fa-ban"></i> &nbsp; Cancel</a>
+
 </form>
 
 

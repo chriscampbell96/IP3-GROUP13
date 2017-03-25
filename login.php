@@ -69,7 +69,7 @@ $user_login->redirect('dashboard.php');
   if(isset($_GET['inactive']))
   {
    ?>
-            <div class="alert" style="background-color:#F3F4F5; color:#0a3245">
+            <div class="alert" style="background-color:#F3F4F5; color:#0a3245; margin-top:-40px;">
     <button class="close" data-dismiss="alert">&times;</button>
     <strong>Sorry!</strong> This Account is not Activated. Please contact the System Administrator.
    </div>
