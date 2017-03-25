@@ -96,7 +96,7 @@ if(isset($msg))
 ?>
 </div>
 
-<div class="clearfix"></div><br />
+<div class="clearfix"></div>
 
 <div class="container">
 
