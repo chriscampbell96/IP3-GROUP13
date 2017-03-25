@@ -127,7 +127,7 @@ if(isset($msg))
 
     </table>
 
-    <button type="submit" class="btn btn-primary" style="border-radius:10px;" name="btn-update">
+    <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-update">
 <span class="fa fa-check"></span>  Update
 </button>
     <a href="manage_users.php" class="btn btn-success" style="border-radius:10px;"><i class="fa fa-ban"></i> &nbsp; Cancel</a>
