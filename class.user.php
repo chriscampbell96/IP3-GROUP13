@@ -167,14 +167,25 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
 
 
 
- public function activate_doc($docStatus){
-   $stmt = $this->conn->prepare("INSERT INTO tbl_documents(docStatus)
-                                                VALUES(:doc_status)");
-   $stmt->bindparam("doc_status",$docStatus);
-   $stmt->execute();
-   return $stmt;
+  public function activate_user($id,$userStatus)
+  {
+   try
+   {
+     $user_stat = "Y";
+    $stmt=$this->conn->prepare("UPDATE tbl_users SET userStatus=:user_stat
+              WHERE userID=:id ");
+    $stmt->bindparam(":user_stat",$userStatus);
+    $stmt->bindparam(":id",$id);
+    $stmt->execute();
 
- }
+    return true;
+   }
+   catch(PDOException $e)
+   {
+    echo $e->getMessage();
+    return false;
+   }
+  }
 
 
  public function redirect($url)

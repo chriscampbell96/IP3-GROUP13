@@ -6,6 +6,16 @@ require_once 'class.user.php';
 
 $edituser = new USER();
 
+if(!$edituser->is_logged_in())
+{
+ $user_home->redirect('login.php');
+}
+
+if ($_SESSION['userRole'] !== ('Admin'))
+{
+   $user_home->redirect('dashboard.php');
+}
+
 if(isset($_POST['btn-update']))
 {
  $id = $_GET['edit_id'];
@@ -32,6 +42,26 @@ if(isset($_GET['edit_id']))
 {
  $id = $_GET['edit_id'];
  extract($edituser->getID($id));
+}
+
+if(isset($_POST['btn-activate']))
+{
+ $user_stat ="Y";
+ $user_status = $user_stat;
+ $userStatus = $_POST['user_status'];
+
+ if($edituser->activate_user($id,$userStatus))
+ {
+  $msg = "<div class='alert alert-info'>
+    <strong>Success!</strong> User Activated <a href='manage_users.php'>HOME</a>!
+    </div>";
+ }
+ else
+ {
+  $msg = "<div class='alert alert-warning'>
+    <strong>Error!</strong> Somthing went wrong. Please Try again!
+    </div>";
+ }
 }
 
 ?>
@@ -123,6 +153,11 @@ if(isset($msg))
             <td>Your E-mail ID</td>
             <td><input type='text' name='userEmail' style="border-radius:10px;" class='form-control' value="<?php echo $userEmail; ?>" required></td>
         </tr>
+        <tr>
+            <td>User Status</td>
+            <td><input type='text' name='userStatus' style="border-radius:10px;" class='form-control' value="<?php echo $userStatus; ?>" disabled></td>
+        </tr>
+
 
 
     </table>
@@ -130,6 +165,11 @@ if(isset($msg))
     <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-update">
 <span class="fa fa-check"></span>  Update
 </button>
+<?php if($userStatus == ('N')){
+  echo '  <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-activate"><i class="fa fa-fw fa-check"></i> Activate</button>';
+  }else{
+  echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-draft"><i class="fa fa-fw fa-archive"></i> Draft</button>';
+} ?>
     <a href="manage_users.php" class="btn btn-success" style="border-radius:10px; background-color:#BF3944; border:#BF3944;"><i class="fa fa-ban"></i> &nbsp;Cancel</a>
 
 </form>

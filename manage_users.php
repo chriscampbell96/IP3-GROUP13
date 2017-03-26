@@ -13,54 +13,6 @@ if ($_SESSION['userRole'] !== ('Admin'))
    $user_home->redirect('dashboard.php');
 }
 
-if(isset($_POST['btn-activate'])){
-
-   $id = $_GET['id'];
-   extract($user_home->getID($userId));
-
-   $statusY = "Y";
-   $statusN = "N";
-
-$stmt = $user->runQuery("SELECT userID,userStatus FROM tbl_users WHERE userID=:$id");
-$stmt->execute(array(":userID"=>$userId));
-$row=$stmt->fetch(PDO::FETCH_ASSOC);
-if($stmt->rowCount() > 0)
-{
-if($row['userStatus']==$statusN)
-{
-$stmt = $user->runQuery("UPDATE tbl_users SET userStatus=:status WHERE userId=:$id");
-$stmt->bindparam(":status",$statusY);
-$stmt->execute();
-
-$msg = "
-          <div class='alert alert-success'>
-    <button class='close' data-dismiss='alert'>&times;</button>
-    <strong>WoW !</strong>  Your Account is Now Activated : <a href='manage_users.php'></a>
-       </div>
-       ";
-}
-else
-{
-$msg = "
-          <div class='alert alert-error'>
-    <button class='close' data-dismiss='alert'>&times;</button>
-    <strong>sorry !</strong>  Your Account is allready Activated : <a href='manage_users.php'></a>
-       </div>
-       ";
-}
-}
-else
-{
-$msg = "
-      <div class='alert alert-error'>
-   <button class='close' data-dismiss='alert'>&times;</button>
-   <strong>sorry !</strong>  No Account Found : <a href='manage_users.php'></a>
-   </div>
-   ";
-}
-}
-
-
 ?>
   <?php
 if(isset($_GET['blank']))
@@ -199,11 +151,6 @@ if(isset($_GET['edit_id']))
                   <td style="text-align:center; align-items:center;">
 
 
-                    <?php if($row['userStatus'] == ('N')){
-                      echo '  <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-activate"><i class="fa fa-fw fa-check"></i> Activate</button>';
-                      }else{
-                      echo '  <button class="btn btn-default" style="border-radius:10px;"><i class="fa fa-fw fa-archive"></i> Archive</button>';
-                    } ?>
 
                     <button data-toggle="modal" data-target="#myModal" style="border-radius:10px; background-color:#f05133; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"><a href="editUser.php?edit_id=<?php echo $row['userID']; ?>" style="color:white"></i> Edit</a></button>
 
