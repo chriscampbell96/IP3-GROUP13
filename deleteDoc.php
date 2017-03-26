@@ -88,7 +88,7 @@ if(isset($_POST['btn-del']))
  {
   ?>
         <div class="alert alert-danger">
-     <strong>Are you Sure!</strong> to remove the following record?
+     <strong>Warning!</strong> Are you sure you want to remove the following record?
   </div>
         <?php
  }
@@ -147,14 +147,14 @@ if(isset($_GET['delete_id']))
    <form method="post">
     <input type="hidden" name="id" value="<?php echo $row['docID']; ?>" />
     <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-del"><i class="fa fa-trash-o"></i> &nbsp; YES</button>
-    <a href="mydocuments.php" style="border-radius:10px;" class="btn btn-success"><i class="fa fa-undo"></i> &nbsp; NO</a>
+    <a href="mydocuments.php" style="border-radius:10px; background-color:#f05133; color:white;" class="btn"><i class="fa fa-undo"></i> &nbsp; NO</a>
     </form>
  <?php
 }
 else
 {
  ?>
-    <a href="mydocuments.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to index</a>
+    <a href="mydocuments.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to My Documents</a>
     <?php
 }
 ?>
