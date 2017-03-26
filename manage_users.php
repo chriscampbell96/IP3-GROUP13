@@ -205,21 +205,44 @@ if(isset($_GET['edit_id']))
                       echo '  <button class="btn btn-default" style="border-radius:10px;"><i class="fa fa-fw fa-archive"></i> Archive</button>';
                     } ?>
 
-                    <button data-toggle="modal" data-target="#myModal" style="border-radius:10px; background-color:#BF691E; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"><a href="editUser.php?edit_id=<?php echo $row['userID']; ?>" style="color:white"></i> Edit</a></button>
+                    <button data-toggle="modal" data-target="#myModal" style="border-radius:10px; background-color:#f05133; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"><a href="editUser.php?edit_id=<?php echo $row['userID']; ?>" style="color:white"></i> Edit</a></button>
 
 
 
                   </td>
                 </tr>
 
+
+
                   <?php
                 }
              ?>
 
 
+
        </tbody>
     </table>
   </div>
+
+  <nav class="pages" aria-label="Page navigation" style="text-align:center; align-items;center;">
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
     <!-- Modal -->
 <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

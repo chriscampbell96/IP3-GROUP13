@@ -128,7 +128,7 @@ if(!$user_home->is_logged_in())
 
                     <br>
 
-                    <button class="btn btn-info" style="color:white; margin-top:10px; background-color:#BF691E; border:1pt solid #BF691E; border-radius:10px;"><i class="glyphicon glyphicon-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
+                    <button class="btn btn-info" style="color:white; margin-top:10px; background-color:#f05133; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
                   </td>
                 </tr>
 

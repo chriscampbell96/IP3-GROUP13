@@ -82,7 +82,9 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
               <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
                   Email: <?php echo $_SESSION['userEmail']; ?>
                </div>
-
+               <div class="box" style="border:1pt solid #D3D3D3; padding:10px; border-radius:10px; margin-bottom:10px;">
+                   Role: <?php echo $_SESSION['userRole']; ?>
+                </div>
 
           <button data-toggle="modal" data-target="#myModal" class="btn btn-info" style="width: 49%; margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-unlock-alt"></i> Change Password</button>
          <button data-toggle="modal" data-target="#myModalTwo" class="btn btn-info" style="width: 49%;  margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-at"></i> Change Email</button>

@@ -64,7 +64,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
         </div>
         <!-- /.row -->
 
-        <div class="container-big">
+
         <div class="container-back">
           <!-- Image Header -->
                   <div class="row">
@@ -137,10 +137,15 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                  </div>
                              </div>
                          </div>
-        </div>
+                       </div>
+<br>
+
+                      <form action="manage_users.php" class="container-admin" style="padding:10px; background-color:#F3F4F5; padding:10px; margin-left:10px; margin-right:10px;">
+                        <button class="btn" style="border-radius:10px; background-color:#BF3944; color:white; width:80%; margin-left:100px; margin-right:100px;" type="submit; " name="btn-upload"><i class="fa fa-users"></i> Manage Users</button>
+                      </form>
 
 
-
+<br><br><br>
 
         <?php echo "WELCOME: ";
         echo $_SESSION['userEmail'];
@@ -175,7 +180,9 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <form action="createdocument.php">
       <input type="submit" value="Create document online" />
     </form>
+
   </div>
+
 </div>
 </div>
 <?php include 'templates/footer.php';?>

@@ -17,13 +17,13 @@ if(isset($_POST['btn-update']))
  if($edituser->update($id,$fname,$lname,$email,$uname))
  {
   $msg = "<div class='alert alert-info'>
-    <strong>WOW!</strong> Record was updated successfully <a href='manage_users.php'>HOME</a>!
+    <strong>Success!</strong> Record was updated <a href='manage_users.php'>HOME</a>!
     </div>";
  }
  else
  {
   $msg = "<div class='alert alert-warning'>
-    <strong>SORRY!</strong> ERROR while updating record !
+    <strong>Error!</strong> Somthing went wrong!
     </div>";
  }
 }
@@ -130,7 +130,7 @@ if(isset($msg))
     <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-update">
 <span class="fa fa-check"></span>  Update
 </button>
-    <a href="manage_users.php" class="btn btn-success" style="border-radius:10px;"><i class="fa fa-ban"></i> &nbsp; Cancel</a>
+    <a href="manage_users.php" class="btn btn-success" style="border-radius:10px; background-color:#BF3944; border:#BF3944;"><i class="fa fa-ban"></i> &nbsp;Cancel</a>
 
 </form>
 
