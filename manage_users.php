@@ -196,7 +196,7 @@ if(isset($_GET['edit_id']))
                     <td><?php echo $row['userRole']?></td>
                     <td><?php echo $row['userStatus']?></td>
 
-                  <td>
+                  <td style="text-align:center; align-items:center;">
 
 
                     <?php if($row['userStatus'] == ('N')){

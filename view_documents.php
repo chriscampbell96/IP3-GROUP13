@@ -120,7 +120,7 @@ if(!$user_home->is_logged_in())
                     <td><?php echo $row['docFile']?></td>
                     <td><?php echo $row['userID']?></td>
 
-                  <td>
+                  <td style="text-align:center; align-items:center;">
                     <!-- ADDING VIEW USER BUTTON TO CHANGE
                   <button class="btn btn-info" style="border-radius:10px;"><i class="glyphicon glyphicon-pencil"><a href="doc_revision.php?delete_id=<?php print($row['docID']); ?>" style="color:white"</i> Create Revision</a></button>
                   -->

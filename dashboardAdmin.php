@@ -87,7 +87,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                      <div class="panel-body">
                                          <h4>Create</h4>
                                          <p>Create and personalise your own documents. Its super quick and easy to do.</p>
-                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
+                                         <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Easily create your documents by selecting 'Create Document' from the sidebar. From there you will be able to type up your document." style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>
@@ -102,7 +102,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                      <div class="panel-body">
                                          <h4>Share</h4>
                                          <p>Once you are happy with your document, share it with your friends and colleagues.</p>
-                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
+                                         <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Share your documents with any other user by selecting 'Send Documents' from the sidebar. You will then be able to send your chosen documents to whoever you want." style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>
@@ -117,7 +117,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                      <div class="panel-body">
                                          <h4>View</h4>
                                          <p>View all the documents that you have created easily and make any changes.</p>
-                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
+                                         <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Select 'My Documents' from the sidebar and from there you will be able to download." style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>
@@ -132,15 +132,14 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                      <div class="panel-body">
                                          <h4>Delete</h4>
                                          <p>Delete any documents that you are not happy with easily and quickly.</p>
-                                         <a href="#" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
+                                         <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Not happy with your document? Easily delete it by selecting 'My Documents from the sidebar.'" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>
                          </div>
                        </div>
-<br>
 
-                      <form action="manage_users.php" class="container-admin" style="padding:10px; background-color:#F3F4F5; padding:10px; margin-left:10px; margin-right:10px;">
+                      <form action="manage_users.php" class="container-admin" style="padding:10px; padding:10px; margin-left:10px; margin-right:10px;">
                         <button class="btn" style="border-radius:10px; background-color:#BF3944; color:white; width:80%; margin-left:100px; margin-right:100px;" type="submit; " name="btn-upload"><i class="fa fa-users"></i> Manage Users</button>
                       </form>
 
@@ -193,6 +192,12 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <!-- Bootstrap Core JavaScript -->
     <script src="templates/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 
   </body>
 </html>
