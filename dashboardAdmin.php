@@ -142,7 +142,7 @@ else
                                      <div class="panel-body">
                                          <h4>Delete</h4>
                                          <p>Delete any documents that you are not happy with easily and quickly.</p>
-                                         <br>
+                                         
                                          <a href="#info" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Not happy with your document? Easily delete it by selecting 'My Documents from the sidebar.'" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
