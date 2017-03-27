@@ -95,8 +95,17 @@ if(isset($_POST['btn-upload']))
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    <?php include("templates/header.php"); ?>
-    <?php include("templates/sidebar.php"); ?>
+    <?php  if ($_SESSION['userRole'] == ('Admin'))
+      {
+        include 'templates/headadmin.php';
+      }
+  else
+  {
+    include 'templates/header.php';
+  }
+      ?>
+
+      <?php include 'templates/sidebar.php';?>
 
   </head>
   <body>

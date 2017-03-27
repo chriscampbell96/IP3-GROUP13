@@ -37,8 +37,18 @@ if(!$user_home->is_logged_in())
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
-    <?php include("templates/header.php"); ?>
-    <?php include("templates/sidebar.php"); ?>
+    <?php  if ($_SESSION['userRole'] == ('Admin'))
+      {
+        include 'templates/headadmin.php';
+      }
+  else
+  {
+    include 'templates/header.php';
+  }
+      ?>
+
+      <?php include 'templates/sidebar.php';?>
+      
     <div id="wrapper">
 <div id="page-wrapper">
 

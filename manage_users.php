@@ -80,9 +80,18 @@ if(isset($_GET['edit_id']))
 
   </head>
   <body>
+    <?php  if ($_SESSION['userRole'] == ('Admin'))
+      {
+        include 'templates/headadmin.php';
+      }
+    else
+    {
+    include 'templates/header.php';
+    }
+      ?>
 
-    <?php include("templates/header.php"); ?>
-    <?php include("templates/sidebar.php"); ?>
+      <?php include 'templates/sidebar.php';?>
+      
     <div id="wrapper">
 <div id="page-wrapper">
 

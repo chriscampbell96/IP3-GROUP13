@@ -41,8 +41,17 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <?php include 'templates/header.php';
-    include 'templates/sidebar.php';?>
+    <?php  if ($_SESSION['userRole'] == ('Admin'))
+      {
+        include 'templates/headadmin.php';
+      }
+  else
+  {
+    include 'templates/header.php';
+  }
+      ?>
+
+      <?php include 'templates/sidebar.php';?>
   </head>
 
   <body>

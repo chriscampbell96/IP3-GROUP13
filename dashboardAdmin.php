@@ -39,8 +39,18 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <?php include 'templates/header.php';
-    include 'templates/sidebar.php';?>
+
+  <?php  if ($_SESSION['userRole'] == ('Admin'))
+    {
+      include 'templates/headadmin.php';
+    }
+else
+{
+  include 'templates/header.php';
+}
+    ?>
+
+    <?php include 'templates/sidebar.php';?>
   </head>
 
   <body>
@@ -139,11 +149,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                          </div>
                        </div>
 
-                      <form action="manage_users.php" class="container-admin" style="padding:10px; padding:10px; margin-left:10px; margin-right:10px;">
-                        <button class="btn" style="border-radius:10px; background-color:#BF3944; color:white; width:80%; margin-left:100px; margin-right:100px;" type="submit; " name="btn-upload"><i class="fa fa-users"></i> Manage Users</button>
-                      </form>
-
-
+        
 <br><br><br>
 
         <?php echo "WELCOME: ";
