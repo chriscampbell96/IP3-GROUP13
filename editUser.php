@@ -89,8 +89,17 @@ if(isset($_POST['btn-activate']))
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    <?php include("templates/header.php"); ?>
-    <?php include("templates/sidebar.php"); ?>
+    <?php  if ($_SESSION['userRole'] == ('Admin'))
+      {
+        include 'templates/headadmin.php';
+      }
+  else
+  {
+    include 'templates/header.php';
+  }
+      ?>
+
+      <?php include 'templates/sidebar.php';?>
 
   </head>
   <body>
@@ -115,23 +124,25 @@ if(isset($_POST['btn-activate']))
           </div>
       </div>
 
-<div class="clearfix"></div>
+      <a href="manage_users.php" class="btn btn-info" style="border-radius:10px; margin-bottom:10px;"><i class="fa fa-users"></i> &nbsp;Back to Users</a>
 
-<div class="container">
+
+
 <?php
 if(isset($msg))
 {
  echo $msg;
 }
 ?>
-</div>
+
 
 <div class="clearfix"></div>
 
-<div class="container">
 
      <form method='post'>
 
+
+       <div class="table-responsive">
     <table class='table table-bordered'>
 
         <tr>
@@ -161,6 +172,7 @@ if(isset($msg))
 
 
     </table>
+  </div>
 
     <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-update">
 <span class="fa fa-check"></span>  Update
