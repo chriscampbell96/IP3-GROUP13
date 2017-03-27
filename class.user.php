@@ -232,6 +232,36 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
   }
  }
 
+ public function getdID($id)
+ {
+  $stmt = $this->conn->prepare("SELECT * FROM tbl_documents WHERE docID=:id");
+  $stmt->execute(array(":id"=>$id));
+  $editRow=$stmt->fetch(PDO::FETCH_ASSOC);
+  return $editRow;
+ }
+
+
+ public function updateDoc($id,$dname,$ddesc)
+ {
+  try
+  {
+   $stmt=$this->conn->prepare("UPDATE tbl_documents SET docTitle=:dname,
+                                                 docDesc=:ddesc
+             WHERE docID=:id ");
+   $stmt->bindparam(":dname",$dname);
+   $stmt->bindparam(":ddesc",$ddesc);
+   $stmt->bindparam(":id",$id);
+   $stmt->execute();
+
+   return true;
+  }
+  catch(PDOException $e)
+  {
+   echo $e->getMessage();
+   return false;
+  }
+ }
+
 // function send_mail($email,$message,$subject)
  //{
 //  require_once('mailer/class.phpmailer.php');

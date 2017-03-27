@@ -9,8 +9,35 @@ if(!$user_home->is_logged_in())
  $user_home->redirect('login.php');
 }
 
+if(isset($_POST['btn-update']))
+{
+ $id = $_GET['edit_id'];
+ $dname = $_POST['docTitle'];
+ $ddesc = $_POST['docDesc'];
 
+ if($editDoc->updateDoc($id,$dname,$ddesc))
+ {
+  $msg = "<div class='alert alert-info'>
+    <strong>WOW!</strong> Record was updated successfully <a href='index.php'>HOME</a>!
+    </div>";
+ }
+ else
+ {
+  $msg = "<div class='alert alert-warning'>
+    <strong>SORRY!</strong> ERROR while updating record !
+    </div>";
+ }
+}
+
+if(isset($_GET['edit_id']))
+{
+ $id = $_GET['edit_id'];
+ extract($user_home->getdID($id));
+}
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +75,7 @@ if(!$user_home->is_logged_in())
       ?>
 
       <?php include 'templates/sidebar.php';?>
-      
+
     <div id="wrapper">
 <div id="page-wrapper">
 
@@ -132,6 +159,9 @@ echo '  <button class="btn btn-info" style="border-radius:10px; margin-top:9px;"
  } ?>
 
 <button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; border-radius:10px;"><a href="deleteDoc.php?delete_id=<?php print($row['docID']); ?>" style="color:white"><i class="fa fa-fw fa-trash-o"></i> Delete</a></button>
+
+<button class="btn btn-info" style="border-radius:10px; margin-bottom:10px; margin-top:15px;"><a href="editDoc.php?edit_id=<?php echo $row['docID']; ?>" style="color:white"><i class="fa fa-book"></i> Edit</a>
+
 
 <button class="btn btn-info" style="color:white; margin-top:10px; background-color:#f05133; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
 

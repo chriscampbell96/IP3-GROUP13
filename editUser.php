@@ -21,10 +21,11 @@ if(isset($_POST['btn-update']))
  $id = $_GET['edit_id'];
  $fname = $_POST['first_name'];
  $lname = $_POST['last_name'];
- $email = $_POST['userEmail'];
  $uname = $_POST['uname'];
+ $email = $_POST['userEmail'];
 
- if($edituser->update($id,$fname,$lname,$email,$uname))
+
+ if($edituser->update($id,$fname,$lname,$uname,$email))
  {
   $msg = "<div class='alert alert-info'>
     <strong>Success!</strong> Record was updated <a href='manage_users.php'>HOME</a>!
