@@ -97,7 +97,7 @@ else
                                      <div class="panel-body">
                                          <h4>Create</h4>
                                          <p>Create and personalise your own documents. Its super quick and easy to do.</p>
-                                         <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Easily create your documents by selecting 'Create Document' from the sidebar. From there you will be able to type up your document." style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
+                                         <a href="#info" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Easily create your documents by selecting 'Create Document' from the sidebar. From there you will be able to type up your document." style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>
@@ -112,7 +112,7 @@ else
                                      <div class="panel-body">
                                          <h4>Share</h4>
                                          <p>Once you are happy with your document, share it with your friends and colleagues.</p>
-                                         <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Share your documents with any other user by selecting 'Send Documents' from the sidebar. You will then be able to send your chosen documents to whoever you want." style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
+                                         <a href="#info" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Share your documents with any other user by selecting 'Send Documents' from the sidebar. You will then be able to send your chosen documents to whoever you want." style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>
@@ -127,7 +127,7 @@ else
                                      <div class="panel-body">
                                          <h4>View</h4>
                                          <p>View all the documents that you have created easily and make any changes.</p>
-                                         <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Select 'My Documents' from the sidebar and from there you will be able to download." style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
+                                         <a href="#info" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Select 'My Documents' from the sidebar and from there you will be able to download." style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>
@@ -142,49 +142,15 @@ else
                                      <div class="panel-body">
                                          <h4>Delete</h4>
                                          <p>Delete any documents that you are not happy with easily and quickly.</p>
-                                         <a href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Not happy with your document? Easily delete it by selecting 'My Documents from the sidebar.'" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
+                                         <br>
+                                         <a href="#info" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Not happy with your document? Easily delete it by selecting 'My Documents from the sidebar.'" style="background-color:#BF3944; border:1pt solid #BF3944; border-radius: 10px" class="btn btn-primary">Learn More</a>
                                      </div>
                                  </div>
                              </div>
                          </div>
                        </div>
+ <br><br><br>
 
-        
-<br><br><br>
-
-        <?php echo "WELCOME: ";
-        echo $_SESSION['userEmail'];
-        echo " Your UserID is: ";
-        echo $_SESSION['userSession'];
-        echo "Your role is: ";
-        echo $_SESSION['userRole'];?>
-    <form action="logout.php">
-      <input type="submit" value="logout" />
-    </form>
-    <br>
-    <form action="manage_users.php">
-      <input type="submit" value="Manage Users" />
-    </form>
-    <br>
-    <form action="mydocuments.php">
-      <input type="submit" value="My Documents" />
-    </form>
-    <br>
-    <form action="view_documents.php">
-      <input type="submit" value="View shared documents" />
-    </form>
-    <br>
-    <form action="#">
-      <input type="submit" value="My Notifications" />
-    </form>
-    <br>
-    <form action="#">
-      <input type="submit" value="My Revisions" />
-    </form>
-    <br>
-    <form action="createdocument.php">
-      <input type="submit" value="Create document online" />
-    </form>
 
   </div>
 

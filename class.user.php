@@ -165,14 +165,14 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
   }
 
 
-
+//UPDATE `tbl_users` SET `userStatus` = 'N' WHERE `tbl_users`.`userID` = 17;
 
   public function activate_user($id,$userStatus)
   {
    try
    {
      $user_stat = "Y";
-    $stmt=$this->conn->prepare("UPDATE tbl_users SET userStatus=:user_stat
+    $stmt=$this->conn->prepare("UPDATE tbl_users SET userStatus= 'Y'
               WHERE userID=:id ");
     $stmt->bindparam(":user_stat",$userStatus);
     $stmt->bindparam(":id",$id);
