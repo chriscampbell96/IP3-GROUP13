@@ -151,19 +151,11 @@ if(isset($_GET['edit_id']))
 
 
                   <td style="text-align:center; align-items:center;">
- <?php if($row['docStatus'] == ('Draft')){
-echo '  <button class="btn btn-info" style="border-radius:10px; margin-top:9px;"><i class="fa fa-fw fa-check" name"btn-activate"></i>Activate</button>';
 
- }else{
-   echo '  <button class="btn btn-default" style="margin-top:10px; border-radius:10px;"><i class="fa fa-fw fa-file-o"></i>  Draft</button>';
- } ?>
-
-<button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; border-radius:10px;"><a href="deleteDoc.php?delete_id=<?php print($row['docID']); ?>" style="color:white"><i class="fa fa-fw fa-trash-o"></i> Delete</a></button>
-
-<button class="btn btn-info" style="border-radius:10px; margin-bottom:10px; margin-top:15px;"><a href="editDoc.php?edit_id=<?php echo $row['docID']; ?>" style="color:white"><i class="fa fa-book"></i> Edit</a>
+                    <button class="btn btn-info" style="color:white; background-color:#f05133; margin-bottom:10px; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
 
 
-<button class="btn btn-info" style="color:white; margin-top:10px; background-color:#f05133; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
+<button class="btn btn-info" style="border-radius:10px; margin-bottom:10px;"><a href="editDoc.php?edit_id=<?php echo $row['docID']; ?>" style="color:white"><i class="fa fa-book"></i> Edit/Delete</a>
 
                   </td>
                 </tr>

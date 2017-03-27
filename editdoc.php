@@ -104,8 +104,6 @@ if(isset($_GET['edit_id']))
 
       <a href="mydocuments.php" class="btn btn-info" style="border-radius:10px; margin-bottom:10px;"><i class="fa fa-book"></i> &nbsp;Back to My Documents</a>
 
-
-
 <?php
 if(isset($msg))
 {
@@ -141,7 +139,16 @@ if(isset($msg))
 <span class="fa fa-check"></span>  Update
 </button>
 
-    <a href="mydocuments.php" class="btn btn-success" style="border-radius:10px; background-color:#BF3944; border:#BF3944;"><i class="fa fa-ban"></i> &nbsp;Cancel</a>
+    <?php if($docStatus == ('N')){
+   echo '  <button class="btn btn-info" style="border-radius:10px; margin-top:9px;"><i class="fa fa-fw fa-check" name"btn-activate"></i>Activate</button>';
+
+    }else{
+      echo '  <button class="btn btn-default" style="margin-top:10px; margin-bottom:10px; border-radius:10px;"><i class="fa fa-fw fa-file-o"></i>  Draft</button>';
+    } ?>
+
+   <button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><a href="deleteDoc.php?delete_id=<?php print($row['docID']); ?>" style="color:white"><i class="fa fa-fw fa-trash-o"></i> Delete</a></button>
+
+
 
 </form>
 
