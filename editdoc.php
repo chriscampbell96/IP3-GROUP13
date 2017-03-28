@@ -128,6 +128,10 @@ if(isset($msg))
             <td>Document Desc</td>
             <td><input type='text' name='docDesc' style="border-radius:10px;" class='form-control' value="<?php echo $docDesc; ?>" required></td>
         </tr>
+        <tr>
+            <td>Document Status</td>
+            <td><input type='text' name='docStatus' style="border-radius:10px;" class='form-control' value="<?php echo $docStatus; ?>" disabled></td>
+        </tr>
 
 
 
@@ -139,8 +143,8 @@ if(isset($msg))
 <span class="fa fa-check"></span>  Update
 </button>
 
-    <?php if($docStatus == ('N')){
-   echo '  <button class="btn btn-info" style="border-radius:10px; margin-top:9px;"><i class="fa fa-fw fa-check" name"btn-activate"></i>Activate</button>';
+    <?php if($docStatus == ('Draft')){
+   echo ' <button class="btn btn-info" style="border-radius:10px; margin-top:9px;"><i class="fa fa-fw fa-check" name"btn-activate"></i>Activate</button>';
 
     }else{
       echo '  <button class="btn btn-default" style="margin-top:10px; margin-bottom:10px; border-radius:10px;"><i class="fa fa-fw fa-file-o"></i>  Draft</button>';

@@ -91,7 +91,7 @@ if(isset($_GET['edit_id']))
       ?>
 
       <?php include 'templates/sidebar.php';?>
-      
+
     <div id="wrapper">
 <div id="page-wrapper">
 
@@ -112,6 +112,28 @@ if(isset($_GET['edit_id']))
         </div>
     </div>
     <!-- /.row -->
+
+    <?php
+    if(isset($_GET['success']))
+    {
+     ?>
+           <div class="alert alert-success">
+        <strong>Success!</strong> user was activated.
+     </div>
+           <?php
+    }
+     ?>
+     <?php
+     if(isset($_GET['deactivated']))
+     {
+      ?>
+            <div class="alert alert-success">
+         <strong>Success!</strong> user was deactivated.
+      </div>
+            <?php
+     }
+      ?>
+
 
 
       <form action="user_register.php">

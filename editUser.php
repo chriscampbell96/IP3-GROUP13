@@ -45,25 +45,67 @@ if(isset($_GET['edit_id']))
  extract($edituser->getID($id));
 }
 
+
+
 if(isset($_POST['btn-activate']))
 {
- $user_stat ="Y";
- $user_status = $user_stat;
- $userStatus = $_POST['user_status'];
+  try
+  {
+    $database = new Database();
+    $db = $database->dbConnection();
+    $conn = $db;
 
- if($edituser->activate_user($id,$userStatus))
- {
-  $msg = "<div class='alert alert-info'>
-    <strong>Success!</strong> User Activated <a href='manage_users.php'>HOME</a>!
-    </div>";
- }
- else
- {
-  $msg = "<div class='alert alert-warning'>
-    <strong>Error!</strong> Somthing went wrong. Please Try again!
-    </div>";
- }
-}
+   $stmt=$conn->prepare("UPDATE tbl_users SET userStatus='Y'
+             WHERE userID=$id ");
+   $stmt->bindparam("userStatus",$userStatus);
+   $stmt->bindparam(":id",$id);
+   $stmt->execute();
+   $edituser->redirect('manage_users.php?success');
+   return true;
+  }
+  catch(PDOException $e)
+  {
+   echo $e->getMessage();
+   return false;
+  }
+  }
+
+  if(isset($_POST['btn-draft']))
+  {
+    try
+    {
+      $database = new Database();
+      $db = $database->dbConnection();
+      $conn = $db;
+
+     $stmt=$conn->prepare("UPDATE tbl_users SET userStatus='N'
+               WHERE userID=$id ");
+     $stmt->bindparam("userStatus",$userStatus);
+     $stmt->bindparam(":id",$id);
+     $stmt->execute();
+     $edituser->redirect('manage_users.php?deactivated');
+     return true;
+    }
+    catch(PDOException $e)
+    {
+     echo $e->getMessage();
+     return false;
+    }
+    }
+ // $userStatus = $_POST['userStatus'];
+ //
+ // if($edituser->activate_user($userStatus))
+ // {
+ //  $msg = "<div class='alert alert-info'>
+ //    <strong>Success!</strong> User Activated <a href='manage_users.php'>HOME</a>!
+ //    </div>";
+ // }
+ // else
+ // {
+ //  $msg = "<div class='alert alert-warning'>
+ //    <strong>Error!</strong> Somthing went wrong. Please Try again!
+ //    </div>";
+ // }
 
 ?>
 <!DOCTYPE html>
@@ -128,13 +170,6 @@ if(isset($_POST['btn-activate']))
       <a href="manage_users.php" class="btn btn-info" style="border-radius:10px; margin-bottom:10px;"><i class="fa fa-users"></i> &nbsp;Back to Users</a>
 
 
-
-<?php
-if(isset($msg))
-{
- echo $msg;
-}
-?>
 
 
 <div class="clearfix"></div>
