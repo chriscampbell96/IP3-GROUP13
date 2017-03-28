@@ -127,8 +127,8 @@ if(isset($_GET['edit_id']))
      if(isset($_GET['deactivated']))
      {
       ?>
-            <div class="alert alert-success">
-         <strong>Success!</strong> user was <strong><u>deactivated.</u></strong>
+            <div class="alert alert-warning">
+          User was <strong><u>deactivated.</u></strong>
       </div>
             <?php
      }
