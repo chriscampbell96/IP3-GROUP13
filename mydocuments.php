@@ -96,6 +96,27 @@ if(isset($_GET['edit_id']))
     </div>
     <!-- /.row -->
 
+    <?php
+    if(isset($_GET['published']))
+    {
+     ?>
+           <div class="alert alert-success">
+        <strong>Success!</strong> Your document was <strong><u>published.</u></strong>
+     </div>
+           <?php
+    }
+     ?>
+     <?php
+     if(isset($_GET['draft']))
+     {
+      ?>
+            <div class="alert alert-warning">
+              Your document was set to <strong><u>draft.</u></strong>
+      </div>
+            <?php
+     }
+      ?>
+
     <form action="upload_document.php">
       <button type="submit" name="Create New document" class="btn btn-info" style="border-radius: 10px"><i class="fa fa-fw fa-upload"></i> Upload New Document</button>
     </form>

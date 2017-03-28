@@ -42,6 +42,54 @@ if(isset($_GET['edit_id']))
  extract($editDoc->getdID($id));
 }
 
+if(isset($_POST['btn-activate']))
+{
+  try
+  {
+    $database = new Database();
+    $db = $database->dbConnection();
+    $conn = $db;
+
+    $stmt=$conn->prepare("UPDATE tbl_documents SET docStatus='Active'
+              WHERE docID=$id ");
+    $stmt->bindparam("docStatus",$docStatus);
+    $stmt->bindparam(":id",$id);
+    $stmt->execute();
+    $editDoc->redirect('mydocuments.php?published');
+    return true;
+  }
+  catch(PDOException $e)
+  {
+   echo $e->getMessage();
+   return false;
+  }
+  }
+
+  if(isset($_POST['btn-draft']))
+  {
+    try
+    {
+      $database = new Database();
+      $db = $database->dbConnection();
+      $conn = $db;
+
+     $stmt=$conn->prepare("UPDATE tbl_documents SET docStatus='Draft'
+               WHERE docID=$id ");
+     $stmt->bindparam("docStatus",$docStatus);
+     $stmt->bindparam(":id",$id);
+     $stmt->execute();
+     $editDoc->redirect('mydocuments.php?draft');
+     return true;
+    }
+    catch(PDOException $e)
+    {
+     echo $e->getMessage();
+     return false;
+    }
+    }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -144,10 +192,10 @@ if(isset($msg))
 </button>
 
     <?php if($docStatus == ('Draft')){
-   echo ' <button class="btn btn-info" style="border-radius:10px; margin-top:9px;"><i class="fa fa-fw fa-check" name"btn-activate"></i>Activate</button>';
+   echo ' <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-activate"><i class="fa fa-fw fa-check"></i> Activate</button>';
 
     }else{
-      echo '  <button class="btn btn-default" style="margin-top:10px; margin-bottom:10px; border-radius:10px;"><i class="fa fa-fw fa-file-o"></i>  Draft</button>';
+      echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-draft"><i class="fa fa-fw fa-archive"></i> Draft</button>';
     } ?>
 
    <button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><a href="deleteDoc.php?delete_id=<?php print($row['docID']); ?>" style="color:white"><i class="fa fa-fw fa-trash-o"></i> Delete</a></button>
