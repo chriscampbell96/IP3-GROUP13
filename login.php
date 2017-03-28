@@ -65,17 +65,6 @@ $user_login->redirect('dashboard.php');
   <body id="login">
       <div class="signin-container">
 
-  <?php
-  if(isset($_GET['inactive']))
-  {
-   ?>
-            <div class="alert" style="background-color:#F3F4F5; color:#0a3245; margin-top:-40px;">
-    <button class="close" data-dismiss="alert">&times;</button>
-    <strong>Sorry!</strong> This Account is not Activated. Please contact the System Administrator.
-   </div>
-            <?php
-  }
-  ?>
         <form class="form-signin" method="post">
         <?php
         if(isset($_GET['error']))
@@ -84,6 +73,18 @@ $user_login->redirect('dashboard.php');
             <div class="alert" style="background-color:#F3F4F5; color:#0a3245">
     <button class="close" class="btn btn-default" data-dismiss="alert">&times;</button>
     <strong>Please check your credentials.</strong>
+   </div>
+            <?php
+  }
+  ?>
+
+  <?php
+  if(isset($_GET['inactive']))
+  {
+   ?>
+   <div class="alert" style="background-color:#F3F4F5; color:#0a3245">
+     <button class="close" class="btn btn-default" data-dismiss="alert">&times;</button>
+    <strong>Sorry!</strong> This Account is not Activated. Please contact the System Administrator.
    </div>
             <?php
   }
