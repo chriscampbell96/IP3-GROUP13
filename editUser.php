@@ -167,7 +167,7 @@ if(isset($_POST['btn-activate']))
           </div>
       </div>
 
-      <a href="manage_users.php" class="btn btn-info" style="border-radius:10px; margin-bottom:10px;"><i class="fa fa-users"></i> &nbsp;Back to Users</a>
+      <a href="manage_users.php" class="btn btn-info" style="border-radius:10px; margin-bottom:20px;"><i class="fa fa-arrow-left"></i> &nbsp;Back to Users</a>
 
 
 

@@ -150,7 +150,7 @@ if(isset($_POST['btn-activate']))
           </div>
       </div>
 
-      <a href="mydocuments.php" class="btn btn-info" style="border-radius:10px; margin-bottom:10px;"><i class="fa fa-book"></i> &nbsp;Back to My Documents</a>
+      <a href="mydocuments.php" class="btn btn-info" style="border-radius:10px; margin-bottom:20px;"><i class="fa fa-arrow-left"></i> &nbsp;Back to My Documents</a>
 
 <?php
 if(isset($msg))
