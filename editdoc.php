@@ -11,10 +11,7 @@ if(!$editDoc->is_logged_in())
  $user_home->redirect('login.php');
 }
 
-if ($_SESSION['userRole'] !== ('Admin'))
-{
-   $user_home->redirect('dashboard.php');
-}
+
 
 if(isset($_POST['btn-update']))
 {
