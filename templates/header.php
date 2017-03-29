@@ -15,7 +15,6 @@
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
-    <link href="header.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -31,6 +30,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#F3F4F5; border:#F3F4F5">
             <!-- Brand and toggle get grouped for better mobile display -->
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -39,11 +39,12 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand">
-                  <img src="img/logo1.jpg" height="40" width="160">
+                  <img src="img/logo1.jpg" height="30" width="140">
                 </a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
+              
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" style="color:#0a3245" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
@@ -77,11 +78,6 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="js/plugins/morris/raphael.min.js"></script>
-    <script src="js/plugins/morris/morris.min.js"></script>
-    <script src="js/plugins/morris/morris-data.js"></script>
 
 </body>
 

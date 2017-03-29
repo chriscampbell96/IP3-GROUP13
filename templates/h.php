@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <title>SB Admin - Bootstrap Admin Template</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +22,6 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-
 </head>
 
 <body>
@@ -30,7 +31,6 @@
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#F3F4F5; border:#F3F4F5">
             <!-- Brand and toggle get grouped for better mobile display -->
-
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -38,20 +38,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand">
+                <a class="navbar-brand" href="index.html">
                   <img src="img/logo1.jpg" height="30" width="140">
                 </a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" style="color:#0a3245" data-toggle="dropdown"><i class="fa fa-users "></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                      <li>
-                          <a href="manage_users.php"><i class="fa fa-fw fa-user"></i> Manage Users</a>
-                      </li>
-                    </ul>
-                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" style="color:#0a3245" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
@@ -77,6 +69,13 @@
                     </ul>
                 </li>
             </ul>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
     </div>
     <!-- /#wrapper -->
 
@@ -85,6 +84,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
 
 </body>
 
