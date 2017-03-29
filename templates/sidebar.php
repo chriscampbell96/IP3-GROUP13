@@ -33,7 +33,7 @@
 
 <div class="head-container">
 
-<h4 class="header" style="color:white; padding:10px;"><?php echo $_SESSION['userEmail'] ?></h4>
+<h4 class="header" style="color:white;"><?php echo $_SESSION['userEmail'] ?></h4>
 
 </div>
 
