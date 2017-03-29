@@ -33,7 +33,7 @@
 
 <div class="head-container">
 
-<h4 class="header" style="color:white"><?php echo $_SESSION['userEmail'] ?></h4>
+<h4 class="header" style="color:white; padding:20px;"><?php echo $_SESSION['userEmail'] ?></h4>
 
 </div>
 
@@ -46,7 +46,7 @@
   <div class="progress-bar" role="progressbar" style="background-color:#8C9AA1; width: 33.333%; height:5px"aria-valuenow="33.333" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
-                    <li class="active">
+                    <li class="active" style="margin-top:-20px;">
                         <a href="dashboardAdmin.php" style="color:white"><i class="fa fa-fw fa-home"></i> Home</a>
                     </li>
                     <li>
