@@ -44,7 +44,7 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-              
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" style="color:#0a3245" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
