@@ -214,7 +214,7 @@ if(isset($_POST['btn-activate']))
 <span class="fa fa-check"></span>  Update
 </button>
 <?php if($userStatus == ('N')){
-  echo '  <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-activate"><i class="fa fa-fw fa-check"></i> Activate</button>';
+  echo '  <button type="submit" class="btn" style="border-radius:10px; background-color:#f05133; color:white;" name="btn-activate"><i class="fa fa-fw fa-toggle-right"></i> Activate</button>';
   }else{
   echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-draft"><i class="fa fa-fw fa-archive"></i> Archive</button>';
 } ?>

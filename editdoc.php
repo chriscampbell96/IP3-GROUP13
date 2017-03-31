@@ -239,7 +239,7 @@ if(isset($msg))
 </button>
 
     <?php if($docStatus == ('Draft')){
-   echo ' <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-activate"><i class="fa fa-fw fa-check"></i> Activate</button>';
+   echo ' <button type="submit" class="btn" style="border-radius:10px; background-color:#f05133; color:white" name="btn-activate"><i class="fa fa-fw fa-toggle-right"></i> Activate</button>';
 
     }else{
       echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-draft"><i class="fa fa-fw fa-archive"></i> Draft</button>';
@@ -283,7 +283,7 @@ if(isset($msg))
          <td><?php echo $row['revStatus']?></td>
          <td>   <?php
              if($revStatus == ('Draft')){
-           echo ' <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-revActivate"><i class="fa fa-fw fa-check"></i> Activate Revision</button>';
+           echo ' <button type="submit" class="btn" style="border-radius:10px; background-color:#f05133; color:white" name="btn-revActivate"><i class="fa fa-fw fa-toggle-right"></i> Activate Revision</button>';
             }else{
               echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-revDraft"><i class="fa fa-fw fa-archive"></i> Draft Revision</button>';
             } ?></td>
