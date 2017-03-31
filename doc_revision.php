@@ -39,13 +39,13 @@ if(isset($_POST['btn-upload']))
  // make file name in lower case
  $new_file_name = strtolower($file);
  // make file name in lower case
-//  $fleExt = strtolower(pathinfo($file,PATHINFO_EXTENSION)); // get file extension
-//  $valid_extensions = array('doc', 'docx', 'pdf', 'txt');
+ $fleExt = strtolower(pathinfo($file,PATHINFO_EXTENSION)); // get file extension
+  $valid_extensions = array('doc', 'docx', 'pdf', 'txt');
 
 
  $final_file=str_replace(' ','-',$new_file_name);
 
- //if(in_array($fleExt, $valid_extensions)){
+ if(in_array($fleExt, $valid_extensions)){
 
    if(move_uploaded_file($file_loc,$folder.$final_file)){
 
@@ -63,9 +63,10 @@ if(isset($_POST['btn-upload']))
   }
 }else{
 
+  header("Location: doc_revision.php?invalidfile");
 
 }
-
+}
 
 
 
@@ -132,7 +133,7 @@ if(isset($_POST['btn-upload']))
 
 
  <?php
- if(isset($_GET['deleted']))
+ if(isset($_GET['success']))
  {
   ?>
         <div class="alert alert-success">
@@ -140,16 +141,17 @@ if(isset($_POST['btn-upload']))
   </div>
         <?php
  }
- else
+ ?>
+ <?php
+ if(isset($_GET['invalidfile']))
  {
   ?>
-        <div class="alert alert-danger">
-     <strong>Please ensure</strong> you want to revise this document?
-  </div>
-        <?php
- }
- ?>
-<hr>
+  <div class="alert alert-danger">
+<strong>Invalid File!</strong> Please Make sure your document is of the following formats: '.doc', '.docx', '.pdf', '.txt'.
+</div>
+<?php
+}
+?>
  <h3>Original Document</h3>
 
 

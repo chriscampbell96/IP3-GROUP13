@@ -197,8 +197,6 @@ if(isset($msg))
 
    <button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><a href="deleteDoc.php?delete_id=<?php print($docID); ?>" style="color:white"><i class="fa fa-fw fa-trash-o"></i> Delete</a></button>
 
-
-
 </form>
 <hr>
 <div class="table-responsive">
