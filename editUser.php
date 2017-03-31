@@ -216,7 +216,7 @@ if(isset($_POST['btn-activate']))
 <?php if($userStatus == ('N')){
   echo '  <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-activate"><i class="fa fa-fw fa-check"></i> Activate</button>';
   }else{
-  echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-draft"><i class="fa fa-fw fa-archive"></i> Draft</button>';
+  echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-draft"><i class="fa fa-fw fa-archive"></i> Archive</button>';
 } ?>
     <a href="manage_users.php" class="btn btn-success" style="border-radius:10px; background-color:#BF3944; border:#BF3944;"><i class="fa fa-ban"></i> &nbsp;Cancel</a>
 
