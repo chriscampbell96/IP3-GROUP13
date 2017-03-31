@@ -200,8 +200,50 @@ if(isset($msg))
 
 
 </form>
+<hr>
+<div class="table-responsive">
+   <table class='table table-bordered'>
+   <tr>
+     <th>Revision ID</th>
+     <th>Revision Title</th>
+     <th>Revision Description</th>
+     <th>File</th>
+     <th>Revision Status</th>
+     <th>Actions</th>
 
+   </tr>
+   <?php
 
+   $database = new Database();
+   $db = $database->dbConnection();
+   $conn = $db;
+
+   $stmt =  $db->prepare("SELECT * FROM tbl_revisions WHERE docID=:id");
+   $stmt->execute(array(":id"=>$_GET['edit_id']));
+   while($row=$stmt->fetch(PDO::FETCH_BOTH))
+   {
+  $revStatus =  $row['revStatus'];
+
+       ?>
+       <tr>
+         <td><?php echo $row['revID']?></td>
+         <td><?php echo $row['revTitle']?></td>
+         <td><?php echo $row['revDesc']?></td>
+         <td><?php echo $row['revFile']?></td>
+         <td><?php echo $row['revStatus']?></td>
+         <td>   <?php
+             if($revStatus == ('Draft')){
+           echo ' <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-revActivate"><i class="fa fa-fw fa-check"></i> Activate Revision</button>';
+            }else{
+              echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-revDraft"><i class="fa fa-fw fa-archive"></i> Draft Revision</button>';
+            } ?></td>
+       </tr>
+       <?php
+   }
+   ?>
+   </table>
+
+ </div>
 </div>
 <?php include 'templates/foot.php';?></div>
 <script src="templates/js/jquery.js"></script>
