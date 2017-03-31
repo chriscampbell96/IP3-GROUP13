@@ -70,7 +70,7 @@ $user_login->redirect('dashboard.php');
         if(isset($_GET['error']))
   {
    ?>
-            <div class="alert" style="background-color:#F3F4F5; color:#0a3245">
+            <div class="alert alert-danger">
     <button class="close" class="btn btn-default" data-dismiss="alert">&times;</button>
     <strong>Please check your credentials.</strong>
    </div>

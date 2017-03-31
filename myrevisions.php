@@ -76,7 +76,7 @@ if(!$user_home->is_logged_in())
 
 
 <div class="form-group">
-  <input type="text" class="form-control" placeholder="Search My Documents">
+  <input type="text" class="form-control" placeholder="Search My Revisions">
 </div>
 
     <!-- Viewing users.. -->

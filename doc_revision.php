@@ -150,7 +150,7 @@ if(isset($_POST['btn-upload']))
  }
  ?>
 <hr>
- <h2>Original Document</h2>
+ <h3>Original Document</h3>
 
 
   <?php
@@ -196,7 +196,7 @@ if(isset($_POST['btn-upload']))
   }
   ?>
 <hr>
-  <h2>Upload Revised Document</h2>
+  <h3>Upload Revised Document</h3>
 
   <body id="login">
     <div class="form-group">
@@ -211,7 +211,7 @@ if(isset($_POST['btn-upload']))
 
             <input type="file" name="file" />
 <br>
-        <button class="btn btn-info" style="border-radius:10px" type="submit" name="btn-upload">Upload</button>
+        <button class="btn btn-info" style="border-radius:10px" type="submit" name="btn-upload"><i class="fa fa-upload"></i> Upload</button>
         <a href="view_documents.php" style="border-radius:10px;" class="btn btn-success"><i class="fa fa-undo"></i> &nbsp; Cancel</a>
 
       </form>
