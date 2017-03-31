@@ -99,7 +99,7 @@ $user_login->redirect('dashboard.php');
         <div class="signin-button">
         <button class="btn btn-large btn-primary" type="submit" style="border-radius: 10px;" name="btn-login">Sign in</button>
         <br>
-        <a href="#" style="color:white;">Forgot your Password? </a>
+        <a href="#" style="color:white; margin-top:10px;">Forgot your Password? </a>
       </div>
       </form>
 
