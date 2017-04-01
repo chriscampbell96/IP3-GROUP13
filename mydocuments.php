@@ -170,7 +170,6 @@ if(isset($_GET['edit_id']))
                     <td><?php echo $row['docStatus']?></td>
 
 
-
                   <td style="text-align:center; align-items:center;">
 
                     <button class="btn btn-info" style="color:white; background-color:#f05133; margin-bottom:10px; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
@@ -189,6 +188,30 @@ if(isset($_GET['edit_id']))
        </tbody>
     </table>
   </div>
+
+  <?php
+  include_once("dbconfig.php");
+  ?>
+  <table align="center" width="50%"  border="1">
+
+  <tr>
+  <td>
+
+          <table align="center" border="1" width="100%" height="100%" id="data">
+          <?php
+          $query = "SELECT * FROM tbl_tutorials";
+  		$records_per_page=3;
+  		$newquery = $paginate->paging($query,$records_per_page);
+  		$paginate->dataview($newquery);
+  		$paginate->paginglink($query,$records_per_page);
+  		?>
+          </table>
+  </td>
+  </tr>
+  </table>
+
+
+
 
     <nav class="pages" aria-label="Page navigation">
       <ul class="pagination">

@@ -1,23 +1,26 @@
 <?php
-
-   header( 'Location: login.php' ) ;
-
+include_once("dbconfig.php");
 ?>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<table align="center" width="50%"  border="1">
+<tr>
+<td><a href="http://cleartuts.blogspot.com/2015/04/how-to-create-pagination-with-php-pdo.html">PHP Pagination with PDO using OOP concept.</a></td>
+</tr>
+<tr>
+<td>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-</head>
-<body>
-<?php
-
-echo "home landing page no logged in...";
-
-?>
-<a href="login.php"><button type="button">login!</button></a>
-
-</body>
-</html>
+        <table align="center" border="1" width="100%" height="100%" id="data">
+        <?php
+        $query = "SELECT * FROM tbl_tutorials";
+		$records_per_page=3;
+		$newquery = $paginate->paging($query,$records_per_page);
+		$paginate->dataview($newquery);
+		$paginate->paginglink($query,$records_per_page);
+		?>
+        </table>
+</td>
+</tr>
+</table>
+<div id="footer">
+<a href="http://cleartuts.blogspot.com/">cleartuts.blogspot.com</a>
+</div>
