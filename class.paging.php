@@ -95,7 +95,7 @@ class paginate
 		{
 			?><div>
 				<nav class="pages" aria-label="Page navigation">
-					<ul class="pagination" style="border:1pt solid #D3D3D3; border-radius:10px; padding:10px; color:black;">
+					<ul class="pagination" style="border:1pt solid #D3D3D3; border-radius:10px; padding:10px;">
 						<?php
 
 			$total_no_of_pages=ceil($total_no_of_records/$records_per_page);

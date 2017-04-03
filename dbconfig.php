@@ -16,4 +16,6 @@ catch(PDOException $exception)
 }
 
 include_once 'class.paging.php';
+
+
 $paginate = new paginate($DB_con);
