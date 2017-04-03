@@ -3,7 +3,7 @@
 $db_host = "localhost";
 $db_user = "root";
 $db_pass = "";
-$db_name = "dbpaging";
+$db_name = "freshburst";
 
 try
 {
