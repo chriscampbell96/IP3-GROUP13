@@ -84,58 +84,56 @@ if(isset($_POST['btn-activate']))
      return false;
     }
     }
-//CODE FOR REVISION............
-    // if(isset($_POST['btn-revActivate']))
-    // {
-    //   try
-    //   {
-    //     $database = new Database();
-    //     $db = $database->dbConnection();
-    //     $conn = $db;
-    //
-    //     $stmt=$conn->prepare("UPDATE tbl_revisions SET revStatus='Active'
-    //               WHERE revID=$rid AND UPDATE tbl_documents SET docStatus='Draft'
-    //                         WHERE docID=$id ");
-    //     $stmt->bindparam("revStatus",$revStatus);
-    //     $stmt->bindparam(":rid",$rid);
-    //     $stmt->bindparam("docStatus",$docStatus);
-    //     $stmt->bindparam(":id",$id);
-    //     $stmt->execute();
-    //     $editDoc->redirect('mydocuments.php?published');
-    //     return true;
-    //   }
-    //   catch(PDOException $e)
-    //   {
-    //    echo $e->getMessage();
-    //    return false;
-    //   }
-    //   }
-    //
-    //   if(isset($_POST['btn-revDraft']))
-    //   {
-    //     try
-    //     {
-    //       $database = new Database();
-    //       $db = $database->dbConnection();
-    //       $conn = $db;
-    //
-    //       $stmt=$conn->prepare("UPDATE tbl_revisions SET revStatus='Draft'
-    //                 WHERE revID=$rid AND UPDATE tbl_documents SET docStatus='Active'
-    //                           WHERE docID=$id ");
-    //       $stmt->bindparam("revStatus",$revStatus);
-    //       $stmt->bindparam(":id",$rid);
-    //       $stmt->bindparam("docStatus",$docStatus);
-    //       $stmt->bindparam(":id",$id);
-    //       $stmt->execute();
-    //       $editDoc->redirect('mydocuments.php?published');
-    //       return true;
-    //     }
-    //     catch(PDOException $e)
-    //     {
-    //      echo $e->getMessage();
-    //      return false;
-    //     }
-    //     }
+
+    if(isset($_POST['btn-revActivate']))
+    {
+      try
+      {
+        $database = new Database();
+        $db = $database->dbConnection();
+        $conn = $db;
+
+        $stmt=$conn->prepare("UPDATE tbl_revisions SET revStatus='Active'
+                  WHERE revID=$rid AND UPDATE tbl_documents SET docStatus='Draft'
+                            WHERE docID=$id ");
+        $stmt->bindparam("docStatus",$docStatus);
+        $stmt->bindparam(":id",$id);
+        $stmt->execute();
+        $editDoc->redirect('mydocuments.php?published');
+        return true;
+      }
+      catch(PDOException $e)
+      {
+       echo $e->getMessage();
+       return false;
+      }
+      }
+
+      // if(isset($_POST['btn-revDraft']))
+      // {
+      //   try
+      //   {
+      //     $database = new Database();
+      //     $db = $database->dbConnection();
+      //     $conn = $db;
+      //
+      //     $stmt=$conn->prepare("UPDATE tbl_revisions SET revStatus='Draft'
+      //               WHERE revID=$rid AND UPDATE tbl_documents SET docStatus='Active'
+      //                         WHERE docID=$id ");
+      //     $stmt->bindparam("revStatus",$revStatus);
+      //     $stmt->bindparam(":id",$rid);
+      //     $stmt->bindparam("docStatus",$docStatus);
+      //     $stmt->bindparam(":id",$id);
+      //     $stmt->execute();
+      //     $editDoc->redirect('mydocuments.php?published');
+      //     return true;
+      //   }
+      //   catch(PDOException $e)
+      //   {
+      //    echo $e->getMessage();
+      //    return false;
+      //   }
+      //   }
 
 ?>
 <!DOCTYPE html>
