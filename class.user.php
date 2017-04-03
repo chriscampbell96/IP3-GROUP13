@@ -261,6 +261,28 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
   }
  }
 
+ public function updatepass($id,$upass)
+{
+ try
+ {
+   $password = sha1($upass);
+  $stmt=$this->conn->prepare("UPDATE tbl_users SET userPass=:upass
+                  WHERE userID=:id ");
+  $stmt->bindparam(":upass",$password);
+  $stmt->bindparam(":id",$id);
+  $stmt->execute();
+
+  return true;
+ }
+ catch(PDOException $e)
+ {
+  echo $e->getMessage();
+  return false;
+ }
+}
+
+
+
 // function send_mail($email,$message,$subject)
  //{
 //  require_once('mailer/class.phpmailer.php');

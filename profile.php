@@ -68,7 +68,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                 </h1>
                                 <ol class="breadcrumb">
                                     <li class="active">
-                                        <i class="fa fa-user"></i> Profile
+                                             <i class="fa fa-user"></i> Profile <a href ="resetpass.php?edit_id=<?php echo $_SESSION['userSession'] ?>"> reset </a>
                                     </li>
                                 </ol>
                             </div>
