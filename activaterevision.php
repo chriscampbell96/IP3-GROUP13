@@ -77,7 +77,7 @@ if(isset($_POST['btn-del']))
               </h1>
               <ol class="breadcrumb">
                   <li class="active">
-                      <i class="fa fa-trash"></i> Delete Document
+                      <i class="fa fa-pencil"></i> Activate Revision
                   </li>
               </ol>
           </div>
@@ -96,27 +96,70 @@ if(isset($_POST['btn-del']))
  else
  {
   ?>
-        <div class="alert alert-danger">
-     <strong>Warning!</strong> Are you sure you want to remove the following record?
+        <div class="alert alert-warning">
+     <strong>Warning!</strong> Are you sure you wish to activate this revision?
   </div>
         <?php
  }
  ?>
 
+ <?php
+ if(isset($_GET['revision_id']))
+ {
+  ?>
+  <h4>Original Document</h4>
+     <div class="table-responsive">
+        <table class='table table-bordered'>
+        <tr>
+          <th>Document ID</th>
+          <th>Documet Title</th>
+          <th>Document Description</th>
+          <th>Document File</th>
+          <th>Document Status</th>
 
+        </tr>
+        <?php
+
+        $database = new Database();
+        $db = $database->dbConnection();
+        $conn = $db;
+
+        $stmt =  $db->prepare("SELECT * FROM tbl_documents WHERE docID=:id");
+        $stmt->execute(array(":id"=>$docID));
+        while($row=$stmt->fetch(PDO::FETCH_BOTH))
+        {
+            ?>
+            <tr>
+              <td><?php echo $row['docID']?></td>
+              <td><?php echo $row['revTitle']?></td>
+              <td><?php echo $row['revDesc']?></td>
+              <td><?php echo $row['revFile']?></td>
+              <td><?php echo $row['revStatus']?></td>
+
+
+            </tr>
+            <?php
+        }
+        ?>
+        </table>
+      </div>
+        <?php
+ }
+ ?>
+<hr>
   <?php
-  if(isset($_GET['delete_id']))
+  if(isset($_GET['revision_id']))
   {
    ?>
+   <h4>Revision</h4>
       <div class="table-responsive">
          <table class='table table-bordered'>
          <tr>
-           <th>Document ID</th>
-           <th>Doument Title</th>
-           <th>Document Description</th>
-           <th>Last Changed</th>
-           <th>Document File</th>
-           <th>Document Status</th>
+           <th>Revisoin ID</th>
+           <th>Revisoin Title</th>
+           <th>Revison Description</th>
+           <th>Revision File</th>
+           <th>Revision Status</th>
 
          </tr>
          <?php
@@ -125,18 +168,19 @@ if(isset($_POST['btn-del']))
          $db = $database->dbConnection();
          $conn = $db;
 
-         $stmt =  $db->prepare("SELECT * FROM tbl_documents WHERE docID=:id");
-         $stmt->execute(array(":id"=>$_GET['delete_id']));
+         $stmt =  $db->prepare("SELECT * FROM tbl_revisions WHERE revID=:id");
+         $stmt->execute(array(":id"=>$_GET['revision_id']));
          while($row=$stmt->fetch(PDO::FETCH_BOTH))
          {
              ?>
              <tr>
-               <td><?php echo $row['docID']?></td>
-               <td><?php echo $row['docTitle']?></td>
-               <td><?php echo $row['docDesc']?></td>
-               <td><?php echo $row['docLastChange']?></td>
-               <td><?php echo $row['docFile']?></td>
-               <td><?php echo $row['docStatus']?></td>
+               <td><?php echo $row['revID']?></td>
+               <td><?php echo $row['revTitle']?></td>
+               <td><?php echo $row['revDesc']?></td>
+               <td><?php echo $row['revFile']?></td>
+               <td><?php echo $row['revStatus']?></td>
+
+
              </tr>
              <?php
          }
@@ -147,16 +191,15 @@ if(isset($_POST['btn-del']))
   }
   ?>
 
-
 <p>
 <?php
-if(isset($_GET['delete_id']))
+if(isset($_GET['revision_id']))
 {
  ?>
    <form method="post">
-    <input type="hidden" name="id" value="<?php echo $row['docID']; ?>" />
-    <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-del"><i class="fa fa-trash-o"></i> &nbsp; YES</button>
-    <a href="mydocuments.php" style="border-radius:10px; background-color:#f05133; color:white;" class="btn"><i class="fa fa-undo"></i> &nbsp; NO</a>
+    <input type="hidden" name="id" value="<?php echo $row['revID']; ?>" />
+    <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-activate"><i class="fa fa-check"></i> &nbsp; Activate</button>
+    <a href="mydocuments.php" style="border-radius:10px; background-color:#f05133; color:white;" class="btn"><i class="fa fa-undo"></i> &nbsp; Cancel</a>
     </form>
  <?php
 }

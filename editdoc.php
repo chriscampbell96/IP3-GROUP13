@@ -84,30 +84,30 @@ if(isset($_POST['btn-activate']))
      return false;
     }
     }
-
-    if(isset($_POST['btn-revActivate']))
-    {
-      try
-      {
-        $database = new Database();
-        $db = $database->dbConnection();
-        $conn = $db;
-
-        $stmt=$conn->prepare("UPDATE tbl_revisions SET revStatus='Active'
-                  WHERE revID=$rid AND UPDATE tbl_documents SET docStatus='Draft'
-                            WHERE docID=$id ");
-        $stmt->bindparam("docStatus",$docStatus);
-        $stmt->bindparam(":id",$id);
-        $stmt->execute();
-        $editDoc->redirect('mydocuments.php?published');
-        return true;
-      }
-      catch(PDOException $e)
-      {
-       echo $e->getMessage();
-       return false;
-      }
-      }
+    //
+    // if(isset($_POST['btn-revActivate']))
+    // {
+    //   try
+    //   {
+    //     $database = new Database();
+    //     $db = $database->dbConnection();
+    //     $conn = $db;
+    //
+    //     $stmt=$conn->prepare("UPDATE tbl_revisions SET revStatus='Active'
+    //               WHERE revID=$rid AND UPDATE tbl_documents SET docStatus='Draft'
+    //                         WHERE docID=$id ");
+    //     $stmt->bindparam("docStatus",$docStatus);
+    //     $stmt->bindparam(":id",$id);
+    //     $stmt->execute();
+    //     $editDoc->redirect('mydocuments.php?published');
+    //     return true;
+    //   }
+    //   catch(PDOException $e)
+    //   {
+    //    echo $e->getMessage();
+    //    return false;
+    //   }
+    //   }
 
       // if(isset($_POST['btn-revDraft']))
       // {
@@ -279,11 +279,14 @@ if(isset($msg))
          <td><?php echo $row['revDesc']?></td>
          <td><?php echo $row['revFile']?></td>
          <td><?php echo $row['revStatus']?></td>
-         <td>   <?php
+         <td>
+           <button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><a href="activaterevision.php?revision_id=<?php print($rid); ?>" style="color:white"><i class="fa fa-fw fa-trash-o"></i> Activate Revision</a></button>
+
+            <?php
              if($revStatus == ('Draft')){
-           echo ' <button type="submit" class="btn" style="border-radius:10px; background-color:#f05133; color:white" name="btn-revActivate"><i class="fa fa-fw fa-toggle-right"></i> Activate Revision</button>';
+           echo ' <button type="submit" class="btn" style="border-radius:10px; background-color:#f05133; color:white"><a href="activaterevision.php?revision_id=<?php print($rid); ?>" style="color:white"><i class="fa fa-fw fa-toggle-right"></i> Activate Revision</button>';
             }else{
-              echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-revDraft"><i class="fa fa-fw fa-archive"></i> Draft Revision</button>';
+              echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;"><i class="fa fa-fw fa-archive"></i> Draft Revision</button>';
             } ?></td>
        </tr>
        <?php
