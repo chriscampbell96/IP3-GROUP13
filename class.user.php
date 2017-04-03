@@ -27,7 +27,7 @@ class USER
   return $stmt;
  }
 
- public function register($fname,$lname,$uname,$email,$upass,$code)
+ public function register($fname,$lname,$uname,$email,$upass)
  {
   try
   {
