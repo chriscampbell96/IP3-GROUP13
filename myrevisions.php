@@ -123,12 +123,6 @@ if(!$user_home->is_logged_in())
 
 
                   <td style="text-align:center; align-items:center;">
- <?php if($row['revStatus'] == ('Draft')){
-echo '  <button class="btn btn-info" style="border-radius:10px;"><i class="fa fa-fw fa-check" name"btn-activate"></i>Activate</button>';
-
- }else{
-   echo '  <button class="btn btn-default" style="margin-top:10px; border-radius:10px;"><i class="fa fa-fw fa-file-o"></i>  Draft</button>';
- } ?>
 
 <button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; border-radius:10px;"><a href="deleteDoc.php?delete_id=<?php print($row['docID']); ?>" style="color:white"><i class="fa fa-fw fa-trash-o"></i> Delete</a></button>
 

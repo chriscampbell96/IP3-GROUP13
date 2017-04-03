@@ -22,7 +22,7 @@ if(isset($_POST['btn-update']))
  if($editDoc->updateDoc($id,$dname,$ddesc))
  {
   $msg = "<div class='alert alert-info'>
-    <strong>Success!</strong> Record was updated <a href='mydocuments.php'>HOME</a>!
+    <strong>Success!</strong> Record was updated!
     </div>";
  }
  else
