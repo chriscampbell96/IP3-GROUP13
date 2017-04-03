@@ -155,7 +155,6 @@ if(isset($_GET['edit_id']))
             		$records_per_page=3;
             		$newquery = $paginate->paging($query,$records_per_page);
             		$paginate->dataview($newquery);
-            		$paginate->paginglink($query,$records_per_page);
             		?>
 
                 </tr>
@@ -168,6 +167,8 @@ if(isset($_GET['edit_id']))
   </div>
 
     <tbody>
+
+<?php $paginate->paginglink($query,$records_per_page); ?>
 
 
 </div>

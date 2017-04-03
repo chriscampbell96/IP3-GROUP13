@@ -6,12 +6,12 @@ require_once 'class.user.php';
 
 $user_home = new USER();
 
-<<<<<<< HEAD
+
 $user_home->redirect('login.php');
 
 
 ?>
-=======
+
         <table align="center" border="1" width="100%" height="100%" id="data">
         <?php
         $query = "SELECT * FROM tbl_documents";
@@ -24,7 +24,3 @@ $user_home->redirect('login.php');
 </td>
 </tr>
 </table>
-<div id="footer">
-<a href="http://cleartuts.blogspot.com/">cleartuts.blogspot.com</a>
-</div>
->>>>>>> origin/master
