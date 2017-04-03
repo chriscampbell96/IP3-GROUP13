@@ -3,7 +3,7 @@ session_start();
 require_once 'class.user.php';
 $user_home = new USER();
 
-
+include('dbconfig.php');
 if(!$user_home->is_logged_in())
 {
  $user_home->redirect('login.php');
@@ -148,130 +148,27 @@ if(isset($_GET['edit_id']))
         </tr>
     </thead>
     <?php
-          //DB CONNECTION
-          $database = new Database();
-          $db = $database->dbConnection();
-          $conn = $db;
+
           $uid = $_SESSION['userSession'];
 
+                $query = "SELECT * FROM tbl_documents WHERE userId='$uid'";
+            		$records_per_page=3;
+            		$newquery = $paginate->paging($query,$records_per_page);
+            		$paginate->dataview($newquery);
+            		$paginate->paginglink($query,$records_per_page);
+            		?>
 
-                  $query = "SELECT * FROM tbl_documents WHERE userId='$uid'";
-                  $stmt = $conn->prepare($query);
-                  $stmt->execute();
-                  while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                  ?>
-                  <tr>
-
-                    <td><?php echo $row['docID']?></td>
-                    <td><?php echo $row['docTitle']?></td>
-                    <td><?php echo $row['docDesc']?></td>
-                    <td><?php echo $row['docLastChange']?></td>
-                    <td><?php echo $row['docFile']?></td>
-                    <td><?php echo $row['docStatus']?></td>
-
-
-                  <td style="text-align:center; align-items:center;">
-
-                    <button class="btn btn-info" style="color:white; background-color:#f05133; margin-bottom:10px; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
-
-
-<button class="btn btn-info" style="border-radius:10px; margin-bottom:10px;"><a href="editDoc.php?edit_id=<?php echo $row['docID']; ?>" style="color:white"><i class="fa fa-book"></i> Edit/Delete</a>
-
-                  </td>
                 </tr>
 
-                  <?php
-                }
-             ?>
+
 
 
        </tbody>
     </table>
   </div>
 
-  <?php
-  include_once("dbconfig.php");
-  ?>
-  <table align="center" width="50%"  border="1">
-
-  <tr>
-  <td>
-
-          <table align="center" border="1" width="100%" height="100%" id="data">
-          <?php
-          $query = "SELECT * FROM tbl_tutorials";
-  		$records_per_page=3;
-  		$newquery = $paginate->paging($query,$records_per_page);
-  		$paginate->dataview($newquery);
-  		$paginate->paginglink($query,$records_per_page);
-  		?>
-          </table>
-  </td>
-  </tr>
-  </table>
-
-
-
-
-    <nav class="pages" aria-label="Page navigation">
-      <ul class="pagination">
-        <li>
-          <a href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-          <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
     <tbody>
 
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Upload Document</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-              <div class="form-group" enctype="multipart/form-data">
-                  <label for="exampleInputEmail1">Document Title</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Document Title">
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" rows="3"  placeholder="Document Description"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="uploa">File input</label>
-                  <input type="file" id="upload">
-                  <p class="help-block">Browse Computer</p>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Publish Document
-                  </label>
-              </div>
-          </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn-upload" method="post">Save changes</button>
-      </div>
-    </div>
-  </div>
-
-</div>
 
 </div>
 </div>

@@ -1,3 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="templates/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="templates/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+
+
+		</body>
+		</html>
+
 <?php
 
 class paginate
@@ -20,9 +45,16 @@ class paginate
 			{
 				?>
                 <tr>
-                <td><?php echo $row['tuts_id']; ?></td>
-                <td><?php echo $row['tuts_title']; ?></td>
-                <td><a href="<?php echo $row['tuts_link']; ?>">visit</a></td>
+                <td><?php echo $row['docID']; ?></td>
+                <td><?php echo $row['docTitle']; ?></td>
+								<td><?php echo $row['docDesc']; ?></td>
+								<td><?php echo $row['docLastChange']; ?></td>
+								<td><?php echo $row['docFile']; ?></td>
+								<td><?php echo $row['docStatus']?></td>
+								<td style="align-items:center; text-align:center;">
+								<button class="btn btn-info" style="color:white; background-color:#f05133; margin-bottom:10px; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
+								<button class="btn btn-info" style="border-radius:10px; margin-bottom:10px;"><a href="editDoc.php?edit_id=<?php echo $row['docID']; ?>" style="color:white"><i class="fa fa-book"></i> Edit/Delete</a>
+								</td>
                 </tr>
                 <?php
 			}
@@ -61,7 +93,11 @@ class paginate
 
 		if($total_no_of_records > 0)
 		{
-			?><tr><td colspan="3"><?php
+			?><div>
+				<nav class="pages" aria-label="Page navigation">
+					<ul class="pagination" style="border:1pt solid #D3D3D3; border-radius:10px; padding:10px;">
+						<?php
+
 			$total_no_of_pages=ceil($total_no_of_records/$records_per_page);
 			$current_page=1;
 			if(isset($_GET["page_no"]))
@@ -78,7 +114,7 @@ class paginate
 			{
 				if($i==$current_page)
 				{
-					echo "<strong><a href='".$self."?page_no=".$i."' style='color:red;text-decoration:none'>".$i."</a></strong>&nbsp;&nbsp;";
+					echo "<strong><a href='".$self."?page_no=".$i."' style='color:black;text-decoration:none'>".$i."</a></strong>&nbsp;&nbsp;";
 				}
 				else
 				{
@@ -91,7 +127,7 @@ class paginate
 				echo "<a href='".$self."?page_no=".$next."'>Next</a>&nbsp;&nbsp;";
 				echo "<a href='".$self."?page_no=".$total_no_of_pages."'>Last</a>&nbsp;&nbsp;";
 			}
-			?></td></tr><?php
+			?></ul></nav></div><?php
 		}
 	}
 }

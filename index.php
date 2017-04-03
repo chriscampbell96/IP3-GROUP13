@@ -11,7 +11,7 @@ include_once("dbconfig.php");
 
         <table align="center" border="1" width="100%" height="100%" id="data">
         <?php
-        $query = "SELECT * FROM tbl_tutorials";
+        $query = "SELECT * FROM tbl_documents";
 		$records_per_page=3;
 		$newquery = $paginate->paging($query,$records_per_page);
 		$paginate->dataview($newquery);
