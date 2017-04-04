@@ -127,15 +127,15 @@ if(isset($_GET['edit_id']))
     <table class='table table-bordered'>
 
         <tr>
-            <td>Enter Current Password </td>
+            <td style="padding:15px;">Enter Current Password </td>
             <td><input type='password' name='current_pass' style="border-radius:10px;" class='form-control'  required></td>
         </tr>
         <tr>
-            <td>Enter New Password </td>
+            <td style="padding:15px;">Enter New Password </td>
             <td><input type='password' name='update_pass' style="border-radius:10px;" class='form-control'  required></td>
         </tr>
         <tr>
-            <td>Re-Enter New Password </td>
+            <td style="padding:15px;">Re-Enter New Password </td>
             <td><input type='password' name='update_pass1' style="border-radius:10px;" class='form-control'  required></td>
         </tr>
 

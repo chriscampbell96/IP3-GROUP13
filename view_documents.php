@@ -3,6 +3,8 @@ session_start();
 require_once 'class.user.php';
 $user_home = new USER();
 
+include('dbconfig.php');
+
 if(!$user_home->is_logged_in())
 {
  $user_home->redirect('login.php');
@@ -111,66 +113,21 @@ if(!$user_home->is_logged_in())
         </tr>
     </thead>
     <?php
-          //DB CONNECTION
-          $database = new Database();
-          $db = $database->dbConnection();
-          $conn = $db;
 
+    $uid = $_SESSION['userSession'];
 
-                  $query = "SELECT * FROM tbl_documents WHERE docStatus='Active'";
-                  $stmt = $conn->prepare($query);
-                  $stmt->execute();
-                  while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                  ?>
-                  <tr>
-
-                    <td><?php echo $row['docID']?></td>
-                    <td><?php echo $row['docTitle']?></td>
-                    <td><?php echo $row['docDesc']?></td>
-                    <td><?php echo $row['docLastChange']?></td>
-                    <td><?php echo $row['docFile']?></td>
-                    <td><?php echo $row['userID']?></td>
-
-                  <td style="text-align:center; align-items:center;">
-                    <!-- ADDING VIEW USER BUTTON TO CHANGE
-                  <button class="btn btn-info" style="border-radius:10px;"><i class="glyphicon glyphicon-pencil"><a href="doc_revision.php?delete_id=<?php print($row['docID']); ?>" style="color:white"</i> Create Revision</a></button>
-                  -->
-                    <button class="btn btn-info" style="color:white; margin-top:10px; border-radius:10px;"><a href="doc_revision.php?delete_id=<?php print($row['docID']); ?>" style="color:white"><i class="fa fa-pencil-square-o"></i> Upload Revision</a></button>
-
-                    <br>
-
-                    <button class="btn btn-info" style="color:white; margin-top:10px; background-color:#f05133; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
-                  </td>
+          $query = "SELECT * FROM tbl_documents WHERE docStatus='Active'";
+          $records_per_page=3;
+          $newquery = $paginate->paging($query,$records_per_page);
+          $paginate->dataviewtwo($newquery);
+          ?>
                 </tr>
-
-                  <?php
-                }
-             ?>
 
 
        </tbody>
     </table>
 </div>
-
-    <nav class="pages" aria-label="Page navigation">
-      <ul class="pagination">
-        <li>
-          <a href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-          <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+<?php $paginate->paginglink($query,$records_per_page); ?>
     <tbody>
 
 

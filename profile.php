@@ -95,7 +95,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                    Role: <?php echo $_SESSION['userRole']; ?>
                 </div>
 
-          <button data-toggle="modal" data-target="#myModal" class="btn btn-info" style="width: 49%; margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-unlock-alt"></i> Change Password</button>
+          <button class="btn btn-info" style="width: 49%; margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-unlock-alt"></i><a href="resetpass.php" style="color:white;"> Change Password</a></button>
          <button data-toggle="modal" data-target="#myModalTwo" class="btn btn-info" style="width: 49%;  margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-at"></i> Change Email</button>
         </div>
             </div>

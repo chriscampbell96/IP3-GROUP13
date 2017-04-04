@@ -158,10 +158,6 @@ if(isset($_GET['edit_id']))
             		?>
 
                 </tr>
-
-
-
-
        </tbody>
     </table>
   </div>
