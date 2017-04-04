@@ -68,7 +68,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                 </h1>
                                 <ol class="breadcrumb">
                                     <li class="active">
-                                             <i class="fa fa-user"></i> Profile <a href ="resetpass.php?edit_id=<?php echo $_SESSION['userSession'] ?>"> reset </a>
+                                             <i class="fa fa-user"></i> Profile
                                     </li>
                                 </ol>
                             </div>
@@ -95,7 +95,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                    Role: <?php echo $_SESSION['userRole']; ?>
                 </div>
 
-          <button class="btn btn-info" style="width: 49%; margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-unlock-alt"></i><a href="resetpass.php" style="color:white;"> Change Password</a></button>
+          <button class="btn btn-info" style="width: 49%; margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-unlock-alt"></i><a href ="resetpass.php?edit_id=<?php echo $_SESSION['userSession'] ?>" style="color:white;"> Change Password</a></button>
          <button data-toggle="modal" data-target="#myModalTwo" class="btn btn-info" style="width: 49%;  margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-at"></i> Change Email</button>
         </div>
             </div>
