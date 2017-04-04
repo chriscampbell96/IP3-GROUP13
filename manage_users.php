@@ -3,6 +3,7 @@ session_start();
 require_once 'class.user.php';
 $user_home = new USER();
 
+include('dbconfig.php');
 if(!$user_home->is_logged_in())
 {
  $user_home->redirect('login.php');
@@ -159,119 +160,26 @@ if(isset($_GET['edit_id']))
         </tr>
     </thead>
     <?php
-          //DB CONNECTION
-          $database = new Database();
-          $db = $database->dbConnection();
-          $conn = $db;
 
+                  $uid = $_SESSION['userSession'];
 
-                  $query = "SELECT * FROM tbl_users";
-                  $stmt = $conn->prepare($query);
-                  $stmt->execute();
-                  while($row=$stmt->fetch(PDO::FETCH_ASSOC)){
-                  ?>
-                  <tr>
+                        $query = "SELECT * FROM tbl_users";
+                    		$records_per_page=3;
+                    		$newquery = $paginate->paging($query,$records_per_page);
+                    		$paginate->dataviewfour($newquery);
+                    		?>
 
-                    <td><?php echo $row['userID']?></td>
-                    <td><?php echo $row['userName']?></td>
-                    <td><?php echo $row['userFirstName']."&nbsp;".$row['userSurname']; ?></td>
-                    <td><?php echo $row['userEmail']?></td>
-                    <td><?php echo $row['userRole']?></td>
-                    <td><?php echo $row['userStatus']?></td>
-
-                  <td style="text-align:center; align-items:center;">
-
-
-
-                    <a href="editUser.php?edit_id=<?php echo $row['userID']; ?>" style="border-radius:10px; background-color:#f05133; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"></i> Edit</a>
-
-
-
-                  </td>
                 </tr>
-
-
-
-                  <?php
-                }
-             ?>
-
 
 
        </tbody>
     </table>
   </div>
 
-  <nav class="pages" aria-label="Page navigation" style="text-align:center; align-items;center;">
-    <ul class="pagination">
-      <li>
-        <a href="#" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li>
-        <a href="#" aria-label="Next">
-          <span aria-hidden="true">&raquo;</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
 
-    <!-- Modal -->
-<!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">Edit User</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="recipient-name" class="control-label">Username:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="recipient-name" class="control-label">Email:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="recipient-name" class="control-label">Password:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="form-group">
-            <label for="recipient-name" class="control-label">Role:</label>
-
-          <select class="form-control">
-            <option>Admin</option>
-            <option>Doc Creator</option>
-            <option>Distributee</option>
-          </select>
-          </div>
-          <div class="form-group">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="">
-              Activate User
-            </label>
-          </div>
-        </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
+<div class="pages" style="text-align:center; align-items:center;">
+  <?php $paginate->paginglink($query,$records_per_page); ?>
+</div>
 
 </div>
 </div>

@@ -63,7 +63,7 @@ class paginate
 		{
 			?>
             <tr>
-            
+
             </tr>
             <?php
 		}
@@ -141,6 +141,40 @@ class paginate
 
   }
 
+  public function dataviewfour($query)
+  {
+    $stmt = $this->db->prepare($query);
+    $stmt->execute();
+
+    if($stmt->rowCount()>0)
+    {
+      while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+      {
+        ?>
+                <tr>
+                <td><?php echo $row['userID']; ?></td>
+                <td><?php echo $row['userName']; ?></td>
+                <td><?php echo $row['userFirstName']; ?> <?php echo $row['userSurname']; ?></td>
+                <td><?php echo $row['userEmail']; ?></td>
+                <td><?php echo $row['userRole']; ?></td>
+                <td><?php echo $row['userStatus']?></td>
+                <td style="align-items:center; text-align:center; width:30%;">
+                <a href="editUser.php?edit_id=<?php echo $row['userID']; ?>" style="border-radius:10px; background-color:#f05133; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"></i> Edit</a>
+                </td>
+                </tr>
+                <?php
+      }
+    }
+    else
+    {
+      ?>
+            <tr>
+
+            </tr>
+            <?php
+    }
+
+  }
 
 
 	public function paging($query,$records_per_page)

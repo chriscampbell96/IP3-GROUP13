@@ -131,7 +131,7 @@ if(isset($_GET['edit_id']))
     <!-- Viewing users.. -->
     <div class="table-responsive">
     <table class="table table-striped table-bordered">
-  
+
 
     <thead>
         <tr>
@@ -160,8 +160,7 @@ if(isset($_GET['edit_id']))
     </table>
   </div>
 
-<?php $paginate->paginglink($query,$records_per_page); ?>
-
+  <?php $paginate->paginglink($query,$records_per_page); ?>
 
 </div>
 </div>
