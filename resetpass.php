@@ -10,7 +10,7 @@ $edituser = new USER();
 
 if(!$edituser->is_logged_in())
 {
- $user_home->redirect('login.php');
+ $edituser->redirect('login.php');
 }
 
 
@@ -21,27 +21,21 @@ if(isset($_POST['btn-update']))
 
 
 
- if ($_POST['update_pass']!= $_POST['update_pass1'])
+ if ($_POST['update_pass'] == $_POST['update_pass1'])
   {
-      echo("Oops! Password did not match! Try again. ");
-      return false;
-  }
-
- elseif($edituser->updatepass($id,$upass))
+      if($edituser->updatepass($id,$upass))
  {
-  $msg = "<div class='alert alert-info'>
-    <strong>Success!</strong> Record was updated !
-    </div>";
+  $edituser->redirect('profile.php?passchanged');
  }
  else
  {
-  $msg = "<div class='alert alert-warning'>
-    <strong>Error!</strong> Somthing went wrong!
-    </div>";
+   $msg = "<div class='alert alert-warning'>
+     <strong>Error!</strong> Somthing went wrong!
+     </div>";
  }
 
 
-
+}
 }
 
 
@@ -115,6 +109,9 @@ if(isset($_GET['edit_id']))
 
       <a href="profile.php" class="btn btn-info" style="border-radius:10px; margin-bottom:20px;"><i class="fa fa-arrow-left"></i> &nbsp;Back to profile</a>
 
+<div class="msg">
+
+</div>
 
 
 <div class="clearfix"></div>

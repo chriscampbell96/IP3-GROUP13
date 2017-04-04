@@ -75,6 +75,16 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                         </div>
                         <!-- /.row -->
 
+                        <?php       if(isset($_GET['passchanged']))
+                              {
+                               ?>
+                                     <div class="alert alert-success">
+                                  <strong>Success!</strong> Password Changed.
+                               </div>
+                                     <?php
+                              }
+                             ?>
+
         <div class="details">
 
         <div class="boxes" style="text-align: center;">
