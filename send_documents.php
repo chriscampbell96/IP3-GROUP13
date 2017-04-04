@@ -72,22 +72,26 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
         <form>
   <div class="form-group">
     <label for="exampleInputEmail1">User Email:</label>
-    <input type="email" class="form-control" style="border-radius:10px; padding:10px" id="exampleInputEmail1" placeholder="Email">
+    <input type="email" class="form-control" style="border-radius:10px; padding:10px" id="exampleInputEmail1" placeholder="Email Recipient" required />
   </div>
   <div class="form-group">
-    <label for="recipient-name" class="control-label">Select Document:</label>
+    <label for="exampleInputEmail1">Message Title:</label>
+    <input type="email" class="form-control" style="border-radius:10px; padding:10px" id="exampleInputEmail1" placeholder="Title" required />
+  </div>
+  <div class="form-group">
+    <label for="recipient-name" class="control-label">Message:</label>
+
+    <textarea class="form-control" rows="3" style="border-radius:10px; padding:10px" placeholder="Please type a message" required /></textarea>
+
+  </div>
+  <div class="form-group">
+    <label for="recipient-name" class="control-label">Attatch Document:</label>
 
   <select class="form-control" style="border-radius:10px; padding:5px">
     <option>Document 1</option>
     <option>Document 2</option>
     <option>Document 3</option>
   </select>
-  </div>
-  <div class="form-group">
-    <label for="recipient-name" class="control-label">Message:</label>
-
-    <textarea class="form-control" rows="3" style="border-radius:10px; padding:10px" placeholder="Please type a message"></textarea>
-
   </div>
   <button type="Submit" class="btn btn-info" style="border-radius:10px;"><i class="fa fa-share-square-o"></i> Send</button>
 </form>
