@@ -131,7 +131,7 @@ $fleExt = strtolower(pathinfo($file,PATHINFO_EXTENSION)); // get file extension
 
              <input type="docTitle" class="input-block-level" style="border-radius:10px; width:100%; margin-bottom:10px; padding:10px;" placeholder="Document Title" name="txtdocTitle" required />
               <textarea input type="docDesc" class="input-block-level" rows="3" style="border-radius:10px; width:100%; padding:10px; margin-bottom:10px;" placeholder="Document Description" name="txtdocDesc" required /></textarea>
-                  <input type="file" name="file" />
+                  <input type="file" name="file" required />
 
               <button class="btn btn-info" style="border-radius:10px" type="submit" name="btn-upload"><i class="fa fa-upload"></i> Upload</button>
             </form>

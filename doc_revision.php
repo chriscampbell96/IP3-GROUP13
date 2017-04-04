@@ -211,7 +211,7 @@ if(isset($_POST['btn-upload']))
 
         <textarea type="docDesc" class="input-block-level" rows="3" style="border-radius:10px; width:100%; padding:10px; margin-bottom:10px;" placeholder="Please describe your revision" name="txtrevDesc" required></textarea>
 
-            <input type="file" name="file" />
+            <input type="file" name="file" required/>
 <br>
         <button class="btn btn-info" style="border-radius:10px" type="submit" name="btn-upload"><i class="fa fa-upload"></i> Upload</button>
         <a href="view_documents.php" style="border-radius:10px;" class="btn btn-success"><i class="fa fa-undo"></i> &nbsp; Cancel</a>
