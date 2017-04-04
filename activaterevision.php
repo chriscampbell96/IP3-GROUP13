@@ -21,6 +21,33 @@ if(isset($_POST['btn-del']))
 }
 
 
+if(isset($_POST['btn-revActivate']))
+{
+  try
+  {
+    $database = new Database();
+    $db = $database->dbConnection();
+    $conn = $db;
+    
+    $stmt=$conn->prepare("UPDATE tbl_revisions SET revStatus='Active'
+              WHERE revID=$rid AND UPDATE tbl_documents SET docStatus='Draft'
+                        WHERE docID=$docID ");
+    $stmt->bindparam("revStatus",$revStatus);
+    $stmt->bindparam(":id",$rid);
+    $stmt->bindparam("docStatus",$docStatus);
+    $stmt->bindparam(":id",$docID);
+    $stmt->execute();
+    $editDoc->redirect('mydocuments.php?published');
+    return true;
+  }
+  catch(PDOException $e)
+  {
+   echo $e->getMessage();
+   return false;
+  }
+  }
+
+
 
 ?>
 
@@ -103,50 +130,7 @@ if(isset($_POST['btn-del']))
  }
  ?>
 
- <?php
- if(isset($_GET['revision_id']))
- {
-  ?>
-  <h4>Original Document</h4>
-     <div class="table-responsive">
-        <table class='table table-bordered'>
-        <tr>
-          <th>Document ID</th>
-          <th>Documet Title</th>
-          <th>Document Description</th>
-          <th>Document File</th>
-          <th>Document Status</th>
 
-        </tr>
-        <?php
-
-        $database = new Database();
-        $db = $database->dbConnection();
-        $conn = $db;
-
-        $stmt =  $db->prepare("SELECT * FROM tbl_documents WHERE docID=:id");
-        $stmt->execute(array(":id"=>$docID));
-        while($row=$stmt->fetch(PDO::FETCH_BOTH))
-        {
-            ?>
-            <tr>
-              <td><?php echo $row['docID']?></td>
-              <td><?php echo $row['revTitle']?></td>
-              <td><?php echo $row['revDesc']?></td>
-              <td><?php echo $row['revFile']?></td>
-              <td><?php echo $row['revStatus']?></td>
-
-
-            </tr>
-            <?php
-        }
-        ?>
-        </table>
-      </div>
-        <?php
- }
- ?>
-<hr>
   <?php
   if(isset($_GET['revision_id']))
   {
@@ -168,6 +152,7 @@ if(isset($_POST['btn-del']))
          $db = $database->dbConnection();
          $conn = $db;
 
+
          $stmt =  $db->prepare("SELECT * FROM tbl_revisions WHERE revID=:id");
          $stmt->execute(array(":id"=>$_GET['revision_id']));
          while($row=$stmt->fetch(PDO::FETCH_BOTH))
@@ -179,6 +164,53 @@ if(isset($_POST['btn-del']))
                <td><?php echo $row['revDesc']?></td>
                <td><?php echo $row['revFile']?></td>
                <td><?php echo $row['revStatus']?></td>
+               <?php $rid = $row['revID']; ?>
+               <?php $docID = $row['docID']; ?>
+
+
+             </tr>
+             <?php
+         }
+         ?>
+         </table>
+       </div>
+         <?php
+  }
+  ?>
+ <hr>
+  <?php
+  if(isset($_GET['revision_id']))
+  {
+   ?>
+   <h4>Original Document</h4>
+      <div class="table-responsive">
+         <table class='table table-bordered'>
+         <tr>
+           <th>Document ID</th>
+           <th>Documet Title</th>
+           <th>Document Description</th>
+           <th>Document File</th>
+           <th>Document Status</th>
+
+         </tr>
+         <?php
+
+         $database = new Database();
+         $db = $database->dbConnection();
+         $conn = $db;
+
+
+         $stmt =  $db->prepare("SELECT * FROM tbl_documents WHERE docID=:id");
+         $stmt->execute(array(":id"=>$docID));
+         while($row=$stmt->fetch(PDO::FETCH_BOTH))
+         {
+             ?>
+             <tr>
+               <td><?php echo $row['docID']?></td>
+               <td><?php echo $row['docTitle']?></td>
+               <td><?php echo $row['docDesc']?></td>
+               <td><?php echo $row['docFile']?></td>
+               <td><?php echo $row['docStatus']?></td>
 
 
              </tr>
@@ -191,6 +223,7 @@ if(isset($_POST['btn-del']))
   }
   ?>
 
+
 <p>
 <?php
 if(isset($_GET['revision_id']))
@@ -198,7 +231,7 @@ if(isset($_GET['revision_id']))
  ?>
    <form method="post">
     <input type="hidden" name="id" value="<?php echo $row['revID']; ?>" />
-    <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-activate"><i class="fa fa-check"></i> &nbsp; Activate</button>
+    <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-revActivate"><i class="fa fa-check"></i> Activate Revision</button>
     <a href="mydocuments.php" style="border-radius:10px; background-color:#f05133; color:white;" class="btn"><i class="fa fa-undo"></i> &nbsp; Cancel</a>
     </form>
  <?php
