@@ -21,7 +21,8 @@ if(isset($_POST['btn-update']))
 
 
 
- if ($_POST['update_pass'] == $_POST['update_pass1'])
+
+ if ($_POST['update_pass'] == $_POST['update_pass1'] AND $_POST['current_pass'] == $_SESSION['userPass'])
   {
       if($edituser->updatepass($id,$upass))
  {
@@ -109,7 +110,13 @@ if(isset($_GET['edit_id']))
 
       <a href="profile.php" class="btn btn-info" style="border-radius:10px; margin-bottom:20px;"><i class="fa fa-arrow-left"></i> &nbsp;Back to profile</a>
 
-<div class="msg">
+
+      <?php
+      if(isset($msg))
+      {
+       echo $msg;
+      }
+      ?>
 
 </div>
 
