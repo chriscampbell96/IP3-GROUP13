@@ -183,7 +183,7 @@ if(isset($_GET['edit_id']))
 
 
 
-                    <button data-toggle="modal" data-target="#myModal" style="border-radius:10px; background-color:#f05133; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"><a href="editUser.php?edit_id=<?php echo $row['userID']; ?>" style="color:white"></i> Edit</a></button>
+                    <a href="editUser.php?edit_id=<?php echo $row['userID']; ?>" style="border-radius:10px; background-color:#f05133; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"></i> Edit</a>
 
 
 
