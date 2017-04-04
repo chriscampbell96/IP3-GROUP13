@@ -63,7 +63,7 @@ class paginate
 		{
 			?>
             <tr>
-            <td>Nothing here...</td>
+            
             </tr>
             <?php
 		}
@@ -99,7 +99,7 @@ class paginate
     {
       ?>
             <tr>
-            <td>Nothing here...</td>
+
             </tr>
             <?php
     }
@@ -134,7 +134,7 @@ class paginate
     {
       ?>
             <tr>
-            <td>Nothing here...</td>
+
             </tr>
             <?php
     }
