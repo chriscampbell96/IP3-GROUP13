@@ -243,7 +243,7 @@ if(isset($msg))
       echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-draft"><i class="fa fa-fw fa-archive"></i> Draft</button>';
     } ?>
 
-   <button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><a href="deleteDoc.php?delete_id=<?php print($docID); ?>" style="color:white"><i class="fa fa-fw fa-trash-o"></i> Delete</a></button>
+   <a href="deleteDoc.php?delete_id=<?php print($docID); ?>" class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><i class="fa fa-fw fa-trash-o"></i> Delete</a>
 
 </form>
 <hr>
@@ -284,7 +284,7 @@ if(isset($msg))
 
             <?php
              if($revStatus == ('Draft')){
-           echo ' <button type="submit" class="btn" style="border-radius:10px; background-color:#f05133; color:white"><a href="activaterevision.php?revision_id=<?php print($rid); ?>" style="color:white"><i class="fa fa-fw fa-toggle-right"></i> Activate Revision</button>';
+           echo ' <a href="activaterevision.php?revision_id=<?php print($rid); ?>" type="submit" class="btn" style="border-radius:10px; background-color:#f05133; color:white"><i class="fa fa-fw fa-toggle-right"></i> Activate Revision</a>';
             }else{
               echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;"><i class="fa fa-fw fa-archive"></i> Draft Revision</button>';
             } ?></td>

@@ -95,79 +95,10 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                    Role: <?php echo $_SESSION['userRole']; ?>
                 </div>
 
-          <button class="btn btn-info" style="width: 49%; margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-unlock-alt"></i><a href ="resetpass.php?edit_id=<?php echo $_SESSION['userSession'] ?>" style="color:white;"> Change Password</a></button>
-         <button data-toggle="modal" data-target="#myModalTwo" class="btn btn-info" style="width: 49%;  margin-top: 10px; border-radius:10px;"><i class="fa fa-fw fa-at"></i> Change Email</button>
+          <a href="resetpass.php?edit_id=<?php echo $_SESSION['userSession'] ?>" style="color:white; width: 50%; margin-top: 10px; border-radius:10px;"" class="btn btn-info"><i class="fa fa-fw fa-unlock-alt"></i> Change Password</a>
         </div>
             </div>
-                          <!-- Modal -->
-                          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                          <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              <h4 class="modal-title" id="exampleModalLabel">Change Password</h4>
-                            </div>
-                            <div class="modal-body">
-                              <form>
-                                <div class="form-group">
-                                  <label for="recipient-name" class="control-label">Enter Old Password: </label>
-                                  <input type="password" class="form-control" id="recipient-name" style="border-radius:10px;" required />
-                                </div>
-                                <div class="form-group">
-                                  <label for="recipient-name" class="control-label">Enter New Password: </label>
-                                  <input type="password" class="form-control" id="recipient-name" style="border-radius:10px;" required />
-                                </div>
 
-                                <div class="form-group">
-                                  <label for="recipient-name" class="control-label">Re-Enter New Password: </label>
-                                  <input type="password" class="form-control" id="recipient-name" style="border-radius:10px;" required />
-                                </div>
-
-                              </form>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal"style="border-radius:10px;">Close</button>
-                              <button type="button" class="btn btn-info" style="border-radius:10px;">Save</button>
-                            </div>
-                          </div>
-                          </div>
-                          </div>
-
-                          <!-- Modal -->
-                          <div class="modal fade" id="myModalTwo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                          <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                              <h4 class="modal-title" id="exampleModalLabel">Change Email Address</h4>
-                            </div>
-                            <div class="modal-body">
-                              <form>
-                                <div class="form-group">
-                                  <label for="recipient-name" class="control-label">Enter Old Email Address: </label>
-                                  <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
-                                </div>
-                                <div class="form-group">
-                                  <label for="recipient-name" class="control-label">Enter New Email Address: </label>
-                                  <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
-                                </div>
-                                <div class="form-group">
-                                  <label for="recipient-name" class="control-label">Re-Enter New Email Address: </label>
-                                  <input type="text" class="form-control" id="recipient-name" style="border-radius:10px;">
-                                </div>
-
-                              </form>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-default" data-dismiss="modal" style="border-radius:10px;">Close</button>
-                              <button type="button" class="btn btn-info" style="border-radius:10px;">Save</button>
-                            </div>
-
-
-
-</div>
-</div>
-</div>
 <?php include 'templates/foot.php';?>
 </div>
 </div>

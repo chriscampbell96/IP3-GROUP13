@@ -52,8 +52,8 @@ class paginate
 								<td><?php echo $row['docFile']; ?></td>
 								<td><?php echo $row['docStatus']?></td>
 								<td style="align-items:center; text-align:center; width:25%;">
-								<button class="btn btn-info" style="color:white; background-color:#f05133; margin-bottom:10px; margin-top:10px; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
-								<button class="btn btn-info" style="border-radius:10px; margin-bottom:10px; margin-top:10px;"><a href="editDoc.php?edit_id=<?php echo $row['docID']; ?>" style="color:white"><i class="fa fa-book"></i> Edit/Delete</a>
+							  <a href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>" class="btn btn-info" style="color:white; background-color:#f05133; margin-bottom:10px; margin-top:10px; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i> Download</a>
+								<a href="editDoc.php?edit_id=<?php echo $row['docID']; ?>" class="btn btn-info" style="border-radius:10px; margin-bottom:10px; margin-top:10px;"><i class="fa fa-book"></i> Edit/Delete</a>
 								</td>
                 </tr>
                 <?php
@@ -88,8 +88,8 @@ class paginate
                 <td><?php echo $row['docFile']; ?></td>
                 <td><?php echo $row['userID']?></td>
                 <td style="align-items:center; text-align:center; width:30%;">
-                  <button class="btn btn-info" style="color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><a href="doc_revision.php?delete_id=<?php print($row['docID']); ?>" style="color:white"><i class="fa fa-pencil-square-o"></i> Upload Revision</a></button>
-                  <button class="btn btn-info" style="color:white; margin-top:10px; margin-bottom:10px; background-color:#f05133; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i><a style="color:white;" href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>"> Download</a></button>
+                  <a href="doc_revision.php?delete_id=<?php print($row['docID']); ?>" style="color:white color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;" class="btn btn-info"><i class="fa fa-pencil-square-o"></i> Upload Revision</a>
+                  <a href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>" class="btn btn-info" style="color:white; margin-top:10px; margin-bottom:10px; background-color:#f05133; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i> Download</a>
                 </td>
                 </tr>
                 <?php
@@ -124,7 +124,7 @@ class paginate
                 <td><?php echo $row['docID']; ?></td>
                 <td><?php echo $row['revStatus']?></td>
                 <td style="align-items:center; text-align:center; width:25%;">
-                  <button class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><a href="deleteDoc.php?delete_id=<?php print($row['docID']); ?>" style="color:white"><i class="fa fa-fw fa-trash-o"></i> Delete</a></button>
+                  <a href="deleteDoc.php?delete_id=<?php print($row['docID']); ?>" class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><i class="fa fa-fw fa-trash-o"></i> Delete</a>
                 </td>
                 </tr>
                 <?php
