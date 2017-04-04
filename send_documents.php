@@ -89,7 +89,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <textarea class="form-control" rows="3" style="border-radius:10px; padding:10px" placeholder="Please type a message"></textarea>
 
   </div>
-  <button type="Submit" class="btn btn-info" style="border-radius:10px;">Send</button>
+  <button type="Submit" class="btn btn-info" style="border-radius:10px;"><i class="fa fa-share-square-o"></i> Send</button>
 </form>
 
 
