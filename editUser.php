@@ -218,6 +218,7 @@ if(isset($_POST['btn-activate']))
   }else{
   echo '  <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-draft"><i class="fa fa-fw fa-archive"></i> Archive</button>';
 } ?>
+     <a href="deleteUser.php?delete_id=<?php print($userID); ?>" class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><i class="fa fa-fw fa-trash-o"></i> Delete</a>
     <a href="manage_users.php" class="btn btn-success" style="border-radius:10px; background-color:#BF3944; border:#BF3944;"><i class="fa fa-ban"></i> &nbsp;Cancel</a>
 
 </form>
