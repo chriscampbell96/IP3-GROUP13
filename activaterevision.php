@@ -165,7 +165,9 @@ if(isset($_POST['btn-del']))
                <td><?php echo $row['revFile']?></td>
                <td><?php echo $row['revStatus']?></td>
                <?php $rid = $row['revID']; ?>
-               <?php $docID = $row['docID']; ?>
+               <?php $did = $row['docID']; ?>
+               <?php $revsts = $row['revStatus']; ?>
+
 
 
 
@@ -202,7 +204,7 @@ if(isset($_POST['btn-del']))
 
 
          $stmt =  $db->prepare("SELECT * FROM tbl_documents WHERE docID=:id");
-         $stmt->execute(array(":id"=>$docID));
+         $stmt->execute(array(":id"=>$did));
          while($row=$stmt->fetch(PDO::FETCH_BOTH))
          {
              ?>
@@ -255,25 +257,43 @@ if(isset($_POST['btn-revActivate']))
     $db = $database->dbConnection();
     $conn = $db;
 
-
-    $stmt=$conn->prepare("UPDATE tbl_revisions, tbl_documents SET revStatus='Active', docStatus='Draft'
-              WHERE revID=$rid AND docID=$docID ");
-    $stmt->bindparam("revStatus",$revStatus);
-    $stmt->bindparam(":id",$rid);
-    $stmt->bindparam("docStatus",$docStatus);
-    $stmt->bindparam(":docID",$docID);
-    $stmt->execute();
+    $query=("UPDATE tbl_revisions SET revStatus='Active' WHERE revID=:rid ");
+    $stmt=$conn->prepare($query);
+    $stmt->execute(array(
+    ":rid" => $rid));
+    draftOriginal($did);
     return true;
-
   }
   catch(PDOException $e)
   {
    echo $e->getMessage();
    return false;
-  }
-  }
+ }
+}
 
+function draftOriginal($did)
+{
+  try
+  {
+    $database = new Database();
+    $db = $database->dbConnection();
+    $conn = $db;
+
+    $query=("UPDATE tbl_documents SET docStatus='Draft' WHERE docID=:did ");
+    $stmt=$conn->prepare($query);
+    $stmt->execute(array(
+    ":did" => $did));
+    return true;
+  }
+  catch(PDOException $e)
+  {
+   echo $e->getMessage();
+   return false;
+ }
+}
    ?>
+
+
 
 </div>
 <?php include 'templates/foot.php';?></div>
