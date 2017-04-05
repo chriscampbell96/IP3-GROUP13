@@ -93,7 +93,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <option>Document 3</option>
   </select>
   </div>
-  <button type="Submit" class="btn btn-info" style="border-radius:10px;"><i class="fa fa-share-square-o"></i> Send</button>
+  <button type="Submit" class="btn btn-info" style="border-radius:10px; "><i class="fa fa-share-square-o"></i> Send</button>
 </form>
 
 
