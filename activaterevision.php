@@ -21,31 +21,31 @@ if(isset($_POST['btn-del']))
 }
 
 
-if(isset($_POST['btn-revActivate']))
-{
-  try
-  {
-    $database = new Database();
-    $db = $database->dbConnection();
-    $conn = $db;
-    
-    $stmt=$conn->prepare("UPDATE tbl_revisions SET revStatus='Active'
-              WHERE revID=$rid AND UPDATE tbl_documents SET docStatus='Draft'
-                        WHERE docID=$docID ");
-    $stmt->bindparam("revStatus",$revStatus);
-    $stmt->bindparam(":id",$rid);
-    $stmt->bindparam("docStatus",$docStatus);
-    $stmt->bindparam(":id",$docID);
-    $stmt->execute();
-    $editDoc->redirect('mydocuments.php?published');
-    return true;
-  }
-  catch(PDOException $e)
-  {
-   echo $e->getMessage();
-   return false;
-  }
-  }
+// if(isset($_POST['btn-revActivate']))
+// {
+//   try
+//   {
+//     $database = new Database();
+//     $db = $database->dbConnection();
+//     $conn = $db;
+//
+//     $stmt=$conn->prepare("UPDATE tbl_revisions SET revStatus='Active'
+//               WHERE revID=$rid AND UPDATE tbl_documents SET docStatus='Draft'
+//                         WHERE docID=$docID ");
+//     $stmt->bindparam("revStatus",$revStatus);
+//     $stmt->bindparam(":id",$rid);
+//     $stmt->bindparam("docStatus",$docStatus);
+//     $stmt->bindparam(":id",$docID);
+//     $stmt->execute();
+//     $editDoc->redirect('mydocuments.php?published');
+//     return true;
+//   }
+//   catch(PDOException $e)
+//   {
+//    echo $e->getMessage();
+//    return false;
+//   }
+//   }
 
 
 
@@ -168,6 +168,7 @@ if(isset($_POST['btn-revActivate']))
                <?php $docID = $row['docID']; ?>
 
 
+
              </tr>
              <?php
          }
@@ -212,7 +213,6 @@ if(isset($_POST['btn-revActivate']))
                <td><?php echo $row['docFile']?></td>
                <td><?php echo $row['docStatus']?></td>
 
-
              </tr>
              <?php
          }
@@ -245,6 +245,35 @@ else
 ?>
 </p>
 
+<?php
+
+if(isset($_POST['btn-revActivate']))
+{
+  try
+  {
+    $database = new Database();
+    $db = $database->dbConnection();
+    $conn = $db;
+
+
+    $stmt=$conn->prepare("UPDATE tbl_revisions, tbl_documents SET revStatus='Active', docStatus='Draft'
+              WHERE revID=$rid AND docID=$docID ");
+    $stmt->bindparam("revStatus",$revStatus);
+    $stmt->bindparam(":id",$rid);
+    $stmt->bindparam("docStatus",$docStatus);
+    $stmt->bindparam(":docID",$docID);
+    $stmt->execute();
+    return true;
+
+  }
+  catch(PDOException $e)
+  {
+   echo $e->getMessage();
+   return false;
+  }
+  }
+
+   ?>
 
 </div>
 <?php include 'templates/foot.php';?></div>
