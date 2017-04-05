@@ -18,11 +18,11 @@ if(isset($_POST['btn-update']))
 {
  $id = $_GET['edit_id'];
  $upass = $_POST['update_pass'];
+$hash = sha1($_POST['current_pass']);
 
 
 
-
- if ($_POST['update_pass'] == $_POST['update_pass1'] AND $_POST['current_pass'] == $_SESSION['userPass'])
+ if ($_POST['update_pass'] == $_POST['update_pass1'] AND $hash == $_SESSION['userPass'])
   {
       if($edituser->updatepass($id,$upass))
  {
