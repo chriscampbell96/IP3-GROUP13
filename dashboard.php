@@ -41,6 +41,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
     <link href="templates/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <?php  if ($_SESSION['userRole'] == ('Admin'))
       {
         include 'templates/headadmin.php';
@@ -63,9 +64,9 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">
+                <h1 class="page-header"> <font="face:Roboto">
                     Welcome <small> <?php echo $_SESSION['userName']; ?></small>
-                </h1>
+                </h1> </font>
                 <ol class="breadcrumb">
                     <li class="active">
                         <i class="fa fa-home"></i> Home

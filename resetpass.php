@@ -118,12 +118,6 @@ if(isset($_GET['edit_id']))
       }
       ?>
 
-</div>
-
-
-<div class="clearfix"></div>
-
-
      <form method='post'>
 
 
