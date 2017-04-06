@@ -26,7 +26,7 @@ $hash = sha1($_POST['current_pass']);
   {
       if($edituser->updatepass($id,$upass))
  {
-  $edituser->redirect('profile.php?passchanged');
+  $edituser->redirect('logout.php');
  }
  else
  {
