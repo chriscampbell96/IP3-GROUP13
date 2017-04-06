@@ -68,7 +68,7 @@
                         <a href="myrevisions.php" style="color:white"><i class="fa fa-fw fa-pencil"></i> My Revisions</a>
                     </li>
                     <li>
-                        <a href="#" style="color:white"><i class="fa fa-fw fa-bell-o"></i> Notifications</a>
+                        <a href="mymessages.php" style="color:white"><i class="fa fa-fw fa fa-comments"></i> My Messages</a>
                     </li>
                 </ul>
             </div>
