@@ -180,6 +180,14 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
     return $stmt;
   }
 
+  public function delete_rev($revID, $id){
+
+     $stmt = $this->conn->prepare("DELETE FROM tbl_revisions WHERE revID=:id");
+     $stmt->bindparam(":id",$id);
+     $stmt->execute();
+     return $stmt;
+   }
+
   public function delete_user($userID, $id){
 
      $stmt = $this->conn->prepare("DELETE FROM tbl_users WHERE userID=:id");

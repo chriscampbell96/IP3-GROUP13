@@ -124,7 +124,7 @@ class paginate
                 <td><?php echo $row['docID']; ?></td>
                 <td><?php echo $row['revStatus']?></td>
                 <td style="align-items:center; text-align:center; width:25%;">
-                  <a href="deleteDoc.php?delete_id=<?php print($row['docID']); ?>" class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><i class="fa fa-fw fa-trash-o"></i> Delete</a>
+                  <a href="deleteRevs.php?revision_id=<?php print($row['revID']); ?>" class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><i class="fa fa-fw fa-trash-o"></i> Delete</a>
                 </td>
                 </tr>
                 <?php
