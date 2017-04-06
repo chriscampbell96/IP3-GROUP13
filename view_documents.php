@@ -130,43 +130,6 @@ if(!$user_home->is_logged_in())
 <?php $paginate->paginglink($query,$records_per_page); ?>
     <tbody>
 
-
-<!-- Modal for upload document
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Upload Document</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-              <div class="form-group" enctype="multipart/form-data">
-                  <label for="exampleInputEmail1">Document Title</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Document Title">
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" rows="3"  placeholder="Document Description"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="uploa">File input</label>
-                  <input type="file" id="upload">
-                  <p class="help-block">Browse Computer</p>
-                </div>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Publish Document
-                  </label>
-              </div>
-          </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn-upload" method="post">Save changes</button>
-      </div>
-    </div>
-  </div>
--->
 </div>
 </div>
 
