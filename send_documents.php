@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'class.user.php';
+include_once 'config.php';
 $user_home = new USER();
 
 
@@ -11,10 +12,25 @@ if(!$user_home->is_logged_in())
 }
 
 
-$stmt = $user_home->runQuery("SELECT * FROM tbl_users WHERE userID=:uid");
-$stmt->execute(array(":uid"=>$_SESSION['userSession']));
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+if(isset($_POST['btn-send']))
+{
+ $msgTitle = trim($_POST['txttitle']);
+ $msgEntry = trim($_POST['txtentry']);
+ $userID = trim($_SESSION['userSession']);
+
+
+  if($user_home->send_message($msgTitle,$msgEntry,$userID))
+  {
+    $user_home->redirect('send_message.php?success');
+
+  }
+  else
+  {
+    $user_home->redirect('send_message.php?error');
+
+ }
+}
 
 
 ?>
@@ -68,38 +84,19 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
             </div>
         </div>
         <!-- /.row -->
+          <div class="form-group">
+          <?php if(isset($msg)) echo $msg;  ?>
+            <form class="form-signin" method="post">
+              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="First Name" name="txttitle" required />
+              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Last Name" name="txtentry" required />
 
-        <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">User Email:</label>
-    <input type="email" class="form-control" style="border-radius:10px; padding:10px" id="exampleInputEmail1" placeholder="Email Recipient" required />
+
+              <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-sned">Send</button>
+            </form>
   </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Message Title:</label>
-    <input type="email" class="form-control" style="border-radius:10px; padding:10px" id="exampleInputEmail1" placeholder="Title" required />
-  </div>
-  <div class="form-group">
-    <label for="recipient-name" class="control-label">Message:</label>
-
-    <textarea class="form-control" rows="3" style="border-radius:10px; padding:10px" placeholder="Please type a message" required /></textarea>
-
-  </div>
-  <div class="form-group">
-    <label for="recipient-name" class="control-label">Attatch Document:</label>
-
-  <select class="form-control" style="border-radius:10px; padding:5px">
-    <option>Document 1</option>
-    <option>Document 2</option>
-    <option>Document 3</option>
-  </select>
-  </div>
-  <button type="Submit" class="btn btn-info" style="border-radius:10px; "><i class="fa fa-share-square-o"></i> Send</button>
-</form>
-
-
-      </div>
-    </div>
-  </div>
+</div>
+<?php include 'templates/foot.php';?>
+</div>
 
 
 

@@ -154,6 +154,24 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
 
   }
 
+  public function send_message($msgTitle,$msgEntry,$userID){
+    try{
+    $stmt = $this->conn->prepare("INSERT INTO tbl_messages(msgTitle,msgEntry,msgFrom)
+                                                 VALUES(:msg_title, :msg_entry, :msg_from)");
+
+    $stmt->bindparam(":msg_title",$msgTitle);
+    $stmt->bindparam(":msg_entry",$msgEntry);
+    $stmt->bindparam(":msg_from",$userID);
+    $stmt->execute();
+    return $stmt;
+  }
+  catch(PDOException $ex)
+  {
+   echo $ex->getMessage();
+  }
+
+   }
+
  public function delete_doc($docID, $id){
 
     $stmt = $this->conn->prepare("DELETE FROM tbl_documents WHERE docID=:id");
