@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand">
-                  <img src="img/logo1.jpg" height="30" width="140">
+                  <img src="img/logo1.jpg" height="40" width="160">
                 </a>
             </div>
             <!-- Top Menu Items -->

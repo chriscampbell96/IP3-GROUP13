@@ -144,7 +144,7 @@ if(isset($_GET['edit_id']))
   </div>
 
     <button type="submit" class="btn btn-info" style="border-radius:10px;" name="btn-update">
-<span class="fa fa-check"></span>  Apply changes
+<span class="fa fa-check"></span> Apply changes
 </button>
 <a href="profile.php" class="btn btn-success" style="border-radius:10px; background-color:#BF3944; border:#BF3944;"><i class="fa fa-ban"></i> &nbsp;Cancel</a>
 
