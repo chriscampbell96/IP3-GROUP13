@@ -16,7 +16,7 @@ if(!$deluser->is_logged_in())
 if(isset($_POST['btn-del']))
 {
  $id = $_GET['delete_id'];
- $deluser->delete_user($userID, $id);
+ delete_user($id);
  header("Location: deleteUser.php?deleted");
 }
 
@@ -170,7 +170,39 @@ else
 ?>
 </p>
 
+<?php
+ function delete_user($id){
 
+  $database = new Database();
+  $db = $database->dbConnection();
+  $conn = $db;
+  $query=("SET foreign_key_checks=0");
+  $stmt = $conn->prepare($query);
+   //
+  //  $stmt = $this->conn->prepare("DELETE FROM tbl_users WHERE userID=:id");
+   $stmt->execute(array());
+   deluser($id);
+   return $stmt;
+
+ }
+
+ function deluser($id)
+   {
+
+     $database = new Database();
+     $db = $database->dbConnection();
+     $conn = $db;
+
+     $query=("DELETE FROM tbl_users WHERE userID=:id");
+
+        $stmt = $conn->prepare($query);
+
+      $stmt->execute(array(":id"=> $id));
+      return $stmt;
+
+   }
+
+?>
 </div>
 <?php include 'templates/foot.php';?></div>
 </div>
