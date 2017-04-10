@@ -189,25 +189,18 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
    }
 
 
- //  public function delete_user($id){
- //
- //    $stmt = $this->conn->prepare("SET foreign_key_checks=0");
- //     //
- //    //  $stmt = $this->conn->prepare("DELETE FROM tbl_users WHERE userID=:id");
- //     $stmt->bindparam(":id",$id);
- //     $stmt->execute();
- //     deluser($id);
- //     return $stmt;
- //
- //   }
- // function deluser($id)
- //   {
- //     $stmt = $this->conn->prepare("DELETE FROM tbl_users WHERE userID=:id");
- //      $stmt->bindparam(":id",$id);
- //      $stmt->execute();
- //      return $stmt;
- //
- //   }
+  public function delete_user($id){
+
+
+     $stmt = $this->conn->prepare("DELETE FROM tbl_users WHERE userID=:id");
+
+     $stmt->bindparam(":id",$id);
+     $stmt->execute();
+    //  deluser($id);
+     return $stmt;
+
+   }
+
 
 
 //UPDATE `tbl_users` SET `userStatus` = 'N' WHERE `tbl_users`.`userID` = 17;

@@ -16,7 +16,7 @@ if(!$deluser->is_logged_in())
 if(isset($_POST['btn-del']))
 {
  $id = $_GET['delete_id'];
- delete_user($id);
+ $deluser->delete_user($id);
  header("Location: deleteUser.php?deleted");
 }
 
@@ -148,6 +148,48 @@ if(isset($_POST['btn-del']))
   }
   ?>
 
+  <?php
+  if(isset($_GET['delete_id']))
+  {
+   ?>
+      <div class="table-responsive">
+         <table class='table table-bordered'>
+         <tr>
+           <th>docID</th>
+           <th>docTitle</th>
+           <th>doc Desc</th>
+           <th>doc file</th>
+
+
+         </tr>
+         <?php
+
+         $database = new Database();
+         $db = $database->dbConnection();
+         $conn = $db;
+
+         $stmt =  $db->prepare("SELECT * FROM tbl_documents WHERE userID=:id");
+         $stmt->execute(array(":id"=>$_GET['delete_id']));
+         while($row=$stmt->fetch(PDO::FETCH_BOTH))
+         {
+             ?>
+             <tr>
+               <td><?php echo $row['docID']; ?></td>
+               <td><?php echo $row['docTitle']; ?></td>
+               <td><?php echo $row['docDesc']; ?></td>
+               <td><?php echo $row['docFile']; ?></td>
+               <?php $uid = $row['userID']; ?>
+
+             </tr>
+             <?php
+         }
+         ?>
+         </table>
+       </div>
+         <?php
+  }
+  ?>
+
 
 <p>
 <?php
@@ -156,7 +198,7 @@ if(isset($_GET['delete_id']))
  ?>
    <form method="post">
     <input type="hidden" name="id" value="<?php echo $row['docID']; ?>" />
-    <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-del"><i class="fa fa-trash-o"></i> &nbsp; YES</button>
+    <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-delUser"><i class="fa fa-trash-o"></i> &nbsp; YES</button>
     <a href="manage_users.php" style="border-radius:10px; background-color:#f05133; color:white;" class="btn"><i class="fa fa-undo"></i> &nbsp; NO</a>
     </form>
  <?php
@@ -171,38 +213,51 @@ else
 </p>
 
 <?php
- function delete_user($id){
 
-  $database = new Database();
-  $db = $database->dbConnection();
-  $conn = $db;
-  $query=("SET foreign_key_checks=0");
-  $stmt = $conn->prepare($query);
-   //
-  //  $stmt = $this->conn->prepare("DELETE FROM tbl_users WHERE userID=:id");
-   $stmt->execute(array());
-   deluser($id);
-   return $stmt;
+if(isset($_POST['btn-delUser']))
+{
+  try
+  {
+    $database = new Database();
+    $db = $database->dbConnection();
+    $conn = $db;
 
+    $query=("DELETE FROM tbl_documents WHERE userID=:id ");
+    $stmt=$conn->prepare($query);
+    $stmt->execute(array(
+    ":id" => $uid));
+    deluser($uid);
+    return true;
+  }
+  catch(PDOException $e)
+  {
+   echo $e->getMessage();
+   return false;
  }
+}
 
- function deluser($id)
-   {
+function deluser($uid)
+{
+  try
+  {
+    $database = new Database();
+    $db = $database->dbConnection();
+    $conn = $db;
 
-     $database = new Database();
-     $db = $database->dbConnection();
-     $conn = $db;
+    $query=("DELETE FROM tbl_users WHERE userID=:id ");
+    $stmt=$conn->prepare($query);
+    $stmt->execute(array(
+    ":id" => $uid));
+    return true;
+  }
+  catch(PDOException $e)
+  {
+   echo $e->getMessage();
+   return false;
+ }
+}
+   ?>
 
-     $query=("DELETE FROM tbl_users WHERE userID=:id");
-
-        $stmt = $conn->prepare($query);
-
-      $stmt->execute(array(":id"=> $id));
-      return $stmt;
-
-   }
-
-?>
 </div>
 <?php include 'templates/foot.php';?></div>
 </div>
