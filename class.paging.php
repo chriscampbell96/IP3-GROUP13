@@ -176,6 +176,42 @@ class paginate
 
   }
 
+  public function dataviewfive($query)
+  {
+    $stmt = $this->db->prepare($query);
+    $stmt->execute();
+
+    if($stmt->rowCount()>0)
+    {
+      while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+      {
+        ?>
+                <tr>
+                <td><?php echo $row['msgID']; ?></td>
+                <td><?php echo $row['msgTitle']; ?></td>
+                <td><?php echo $row['msgEntry']; ?></td>
+                <td><?php echo $row['msgFrom']; ?></td>
+                <td></td>
+
+                <td><?php echo $row['msgDate']?></td>
+                <td style="align-items:center; text-align:center; width:30%;">
+                <a href="editUser.php?edit_id=<?php echo $row['userID']; ?>" style="border-radius:10px; background-color:#f05133; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"></i> Reply</a>
+                </td>
+                </tr>
+                <?php
+      }
+    }
+    else
+    {
+      ?>
+            <tr>
+
+            </tr>
+            <?php
+    }
+
+  }
+
 
 	public function paging($query,$records_per_page)
 	{

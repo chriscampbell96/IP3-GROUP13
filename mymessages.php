@@ -70,7 +70,52 @@ if(!$user_home->is_logged_in())
         </div>
     </div>
     <!-- /.row -->
+    <form action="send_documents.php">
+      <button type="submit" name="Create New user" style="border-radius:10px;" class="btn btn-info"><i class="fa fa-fw fa-envelope"></i> Send Message</button>
+    </form>
 
+    <br>
+
+  <!-- Viewing users.. -->
+  <div class="table-responsive">
+  <table class="table table-striped table-bordered">
+
+  <thead>
+      <tr>
+      <th>Message ID</th>
+      <th>Mesage title</th>
+      <th>Message</th>
+      <th>Message From</th>
+      <th>Attatchments</th>
+      <th>Message Date</th>
+      <th>Actions</th>
+
+      </tr>
+  </thead>
+  <?php
+
+                $uid = $_SESSION['userSession'];
+
+                      $query = "SELECT * FROM tbl_messages WHERE msgTO=$uid";
+                      $records_per_page=3;
+                      $newquery = $paginate->paging($query,$records_per_page);
+                      $paginate->dataviewfive($newquery);
+                      ?>
+
+              </tr>
+
+
+     </tbody>
+  </table>
+</div>
+
+
+<div class="pages" style="text-align:center; align-items:center;">
+<?php $paginate->paginglink($query,$records_per_page); ?>
+</div>
+
+</div>
+</div>
 
 <?php include 'templates/foot.php';?>
 </div>

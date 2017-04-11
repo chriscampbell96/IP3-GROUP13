@@ -91,7 +91,7 @@ if(isset($_POST['btn-send']))
               <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Last Name" name="txtentry" required />
 
 
-              <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-sned">Send</button>
+              <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-send">Send</button>
             </form>
   </div>
 </div>
