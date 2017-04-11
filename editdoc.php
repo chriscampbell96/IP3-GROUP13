@@ -257,7 +257,7 @@ if(isset($msg))
          <td><?php echo $row['revFile']?></td>
          <td><?php echo $row['revStatus']?></td>
          <td>
-           <a href="activaterevision.php?revision_id=<?php print($rid); ?>" class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><i class="fa fa-fw fa-trash-o"></i> Activate Revision</a>
+           <a href="activaterevision.php?revision_id=<?php print($rid); ?>" class="btn" style="background-color:#f05133; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><i class="fa fa-fw fa-toggle-right"></i> Activate Revision</a>
 
             <?php
              if($revStatus == ('Draft')){
