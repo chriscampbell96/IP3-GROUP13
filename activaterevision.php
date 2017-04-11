@@ -283,6 +283,7 @@ function draftOriginal($did)
     $stmt=$conn->prepare($query);
     $stmt->execute(array(
     ":did" => $did));
+
     return true;
   }
   catch(PDOException $e)
