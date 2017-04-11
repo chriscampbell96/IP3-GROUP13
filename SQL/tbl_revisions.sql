@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2017 at 04:34 PM
+-- Generation Time: Apr 11, 2017 at 01:56 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -43,7 +43,8 @@ CREATE TABLE `tbl_revisions` (
 --
 
 INSERT INTO `tbl_revisions` (`revID`, `revTitle`, `revDesc`, `revFile`, `revSize`, `revType`, `revStatus`, `docID`, `userID`) VALUES
-(4, 'test', 'revision test', '60238-SysPrgLab4.doc', 54, 'applicatio', 'Active', 14, 1);
+(5, 'test', 'test', '8405-Proposal Sample B _Comments.doc', 58, 'applicatio', 'Active', 7, 16),
+(6, 'Revision one', 'First Copy', '50367-eight.docx', 12, 'applicatio', 'Active', 24, 1);
 
 --
 -- Indexes for dumped tables
@@ -66,7 +67,7 @@ ALTER TABLE `tbl_revisions`
 -- AUTO_INCREMENT for table `tbl_revisions`
 --
 ALTER TABLE `tbl_revisions`
-  MODIFY `revID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `revID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2017 at 03:09 PM
+-- Generation Time: Apr 11, 2017 at 01:56 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -43,9 +43,11 @@ CREATE TABLE `tbl_users` (
 
 INSERT INTO `tbl_users` (`userID`, `userName`, `userFirstName`, `userSurname`, `userEmail`, `userPass`, `userStatus`, `userRole`) VALUES
 (1, 'admin', 'admin', 'admin', 'admin@admin.com', '66827b01f019fbd4d61f7431dd84260dcfa58b71', 'Y', 'Admin'),
-(3, 'Chris Campbell', 'Chris', 'Campbell', 'chris@user.com', '66827b01f019fbd4d61f7431dd84260dcfa58b71', 'Y', 'Doc_Creator'),
-(14, 'pass', 'chi', 'chch', 'pass@pass.om', 'aafdc23870ecbcd3d557b6423a8982134e17927e', 'N', 'Doc_Creator'),
-(15, 'doctest', 'doc', 'test', 'doctest@doc.com', '66827b01f019fbd4d61f7431dd84260dcfa58b71', 'Y', 'Doc_Creator');
+(18, 'heathz', 'Heather', 'Reid', 'heathz@gmail.com', 'd53652de63b26f2b99abfc5699fac10f3f95e1f7', 'Y', 'Doc_Creator'),
+(19, 'jhall', 'James', 'Hall', 'james@email.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 'Y', 'Doc_Creator'),
+(20, 'jackmcivor96', 'Jack', 'McIvor', 'jack96@yahoo.com', '596727c8a0ea4db3ba2ceceedccbacd3d7b371b8', 'Y', 'Doc_Creator'),
+(21, 'chrissy', 'Christopher', 'Campbell', 'chris@sky.com', '711c73f64afdce07b7e38039a96d2224209e9a6c', 'N', 'Doc_Creator'),
+(22, 'plafferty', 'Patrick', 'Lafferty', 'patrick@hotmail.com', 'cbb7353e6d953ef360baf960c122346276c6e320', 'N', 'Doc_Creator');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +69,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

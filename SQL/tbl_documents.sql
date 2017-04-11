@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2017 at 02:10 PM
+-- Generation Time: Apr 11, 2017 at 01:56 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -44,15 +44,16 @@ CREATE TABLE `tbl_documents` (
 --
 
 INSERT INTO `tbl_documents` (`docID`, `docTitle`, `docDesc`, `docCreateDate`, `docLastChange`, `docFile`, `docType`, `docSize`, `docStatus`, `userID`) VALUES
-(7, 'uplaod', 'uploadtest', '0000-00-00 00:00:00', '2017-03-08 17:48:40', '', '', 0, 'Active', 1),
-(8, 'test', 'test', '0000-00-00 00:00:00', '2017-03-08 17:12:16', '', '', 0, 'Draft', 1),
-(9, 'yayay', 'yayayayaydaisdh', '0000-00-00 00:00:00', '2017-03-12 21:34:32', '45708-sysprglab3.doc', 'applicatio', 60, 'Draft', 1),
-(10, 'writing', 'shellnotes', '0000-00-00 00:00:00', '2017-03-12 21:36:33', '72933-writing-shell-scripts---notes.docx', 'applicatio', 20, 'Draft', 1),
-(11, 'test', 'test', '0000-00-00 00:00:00', '2017-03-12 22:47:40', '61730-sys_prog_writeup.docx', 'applicatio', 491, 'Draft', 3),
-(12, 'tester', 'uyfkf kugk uygkuy g', '0000-00-00 00:00:00', '2017-03-13 13:25:53', '27674-how-secure-is-fingerprint-recognition.docx', 'applicatio', 15, 'Draft', 1),
-(13, 'free', 'free', '0000-00-00 00:00:00', '2017-03-14 23:44:33', '99874-SysPrgLab2.doc', 'applicatio', 50, 'Draft', 1),
-(14, 'upppp', 'upppp', '0000-00-00 00:00:00', '2017-03-19 20:18:43', '44953-SysPrgLab4.doc', 'applicatio', 54, 'Draft', 1),
-(15, 'sfuh', 'osidhhffoif', '0000-00-00 00:00:00', '2017-03-20 13:08:49', '58561-SysPrgLab4.doc', 'applicatio', 54, 'Draft', 1);
+(24, 'To Do', 'To do list for next week', '0000-00-00 00:00:00', '2017-04-11 11:43:48', '92417-one.docx', 'applicatio', 13, 'Draft', 1),
+(25, 'Last weeks Figures', 'Figures for the whole company', '0000-00-00 00:00:00', '2017-04-11 11:30:53', '88517-two.docx', 'applicatio', 12, 'Active', 1),
+(26, 'Project Proposal', 'Needs finishing touches added - do not submit', '0000-00-00 00:00:00', '2017-04-11 11:22:03', '50122-three.docx', 'applicatio', 12, 'Draft', 18),
+(27, 'Plans for next weeks meeting', 'meeting being held next week agenda', '0000-00-00 00:00:00', '2017-04-11 11:24:13', '27112-five.docx', 'applicatio', 12, 'Draft', 18),
+(28, 'Meeting notes for last week', 'Last weeks meeting notes', '0000-00-00 00:00:00', '2017-04-11 11:24:40', '53071-four.docx', 'applicatio', 12, 'Draft', 18),
+(29, 'Meeting Notes', 'Meeting held two weeks ago', '0000-00-00 00:00:00', '2017-04-11 11:26:20', '95553-six.docx', 'applicatio', 12, 'Draft', 1),
+(30, 'Plan A', 'Plans for future development', '0000-00-00 00:00:00', '2017-04-11 11:27:18', '48545-seven.docx', 'applicatio', 12, 'Draft', 1),
+(31, 'Notes from Conference Call', 'Notes taken for last weeks call - Do not delete', '0000-00-00 00:00:00', '2017-04-11 11:27:49', '46433-eight.docx', 'applicatio', 12, 'Draft', 1),
+(32, 'My Notes', 'Notes taken for lecture', '0000-00-00 00:00:00', '2017-04-11 11:28:59', '29617-nine.docx', 'applicatio', 13, 'Draft', 19),
+(33, 'About my cat', 'All about Candy', '0000-00-00 00:00:00', '2017-04-11 11:29:22', '88571-ten.docx', 'applicatio', 13, 'Draft', 19);
 
 --
 -- Indexes for dumped tables
@@ -73,7 +74,7 @@ ALTER TABLE `tbl_documents`
 -- AUTO_INCREMENT for table `tbl_documents`
 --
 ALTER TABLE `tbl_documents`
-  MODIFY `docID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `docID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- Constraints for dumped tables
 --
