@@ -22,12 +22,12 @@ if(isset($_POST['btn-send']))
 
   if($user_home->send_message($msgTitle,$msgEntry,$userID))
   {
-    $user_home->redirect('send_message.php?success');
+    $user_home->redirect('send_documents.php?success');
 
   }
   else
   {
-    $user_home->redirect('send_message.php?error');
+    $user_home->redirect('send_documents.php?error');
 
  }
 }
@@ -84,13 +84,47 @@ if(isset($_POST['btn-send']))
             </div>
         </div>
         <!-- /.row -->
+
+        <?php
+        if(isset($_GET['success']))
+        {
+         ?>
+               <div class="alert alert-success">
+            <strong>Success!</strong> message was <strong><u>sent.</u></strong>
+         </div>
+               <?php
+        }
+         ?>
+         <?php
+         if(isset($_GET['error']))
+         {
+          ?>
+                <div class="alert alert-warning">
+             <strong>Error!</strong> something went wrong. <strong><u>Please try again.</u></strong>
+          </div>
+                <?php
+         }
+          ?>
           <div class="form-group">
           <?php if(isset($msg)) echo $msg;  ?>
             <form class="form-signin" method="post">
-              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="First Name" name="txttitle" required />
-              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Last Name" name="txtentry" required />
+              <label>Send To:</label>
+              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Enter username" name="txtusername" required />
+              <label>Message Title:</label>
 
+              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Message Title" name="txttitle" required />
+              <label>Message:</label>
 
+              <textarea type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Your Message" name="txtentry" required /></textarea>
+
+  <label>Attatch Document:</label>
+  <select class="form-control" style="border-radius:10px; padding:5px">
+    <option>My Document 1</option>
+    <option>My Document 2</option>
+    <option>My Document 3</option>
+
+  </select>
+<br>
               <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-send">Send</button>
             </form>
   </div>

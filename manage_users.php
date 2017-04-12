@@ -19,7 +19,7 @@ if ($_SESSION['userRole'] !== ('Admin'))
 if(isset($_GET['blank']))
 {
  ?>
-          <div class='alert alert-error'>
+          <div class='alert alert-warning'>
   <button class='close' data-dismiss='alert'>&times;</button>
   <strong>Sorry!</strong> You can't leave a field blank!
  </div>

@@ -71,7 +71,7 @@ if(!$user_home->is_logged_in())
     </div>
     <!-- /.row -->
     <form action="send_documents.php">
-      <button type="submit" name="Create New user" style="border-radius:10px;" class="btn btn-info"><i class="fa fa-fw fa-envelope"></i> Send Message</button>
+      <button type="submit" name="Send Documents" style="border-radius:10px;" class="btn btn-info"><i class="fa fa-fw fa-envelope"></i> Send Message</button>
     </form>
 
     <br>
