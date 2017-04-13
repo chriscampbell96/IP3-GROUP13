@@ -105,7 +105,6 @@ if(isset($_POST['btn-signup']))
               <select class="form-control" style="border-radius:10px; padding:5px">
                 <option>Admin</option>
                 <option>Document Creator</option>
-                <option>Distributee</option>
 
               </select>
               </div>

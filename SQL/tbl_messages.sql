@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2017 at 12:36 AM
+-- Generation Time: Apr 13, 2017 at 08:00 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -36,6 +36,14 @@ CREATE TABLE `tbl_messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `tbl_messages`
+--
+
+INSERT INTO `tbl_messages` (`msgID`, `msgTitle`, `msgEntry`, `msgTo`, `msgFrom`, `msgDate`) VALUES
+(1, 'Please Revise This Document', 'Hi James,\r\nCan you revise my document?', 1, 18, '2017-04-13 08:48:14'),
+(2, 'Updates', 'My recent document has been updated.', 1, 21, '2017-04-13 08:51:49');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -53,7 +61,7 @@ ALTER TABLE `tbl_messages`
 -- AUTO_INCREMENT for table `tbl_messages`
 --
 ALTER TABLE `tbl_messages`
-  MODIFY `msgID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `msgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

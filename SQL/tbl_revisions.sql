@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2017 at 01:56 PM
+-- Generation Time: Apr 13, 2017 at 08:00 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -44,7 +44,10 @@ CREATE TABLE `tbl_revisions` (
 
 INSERT INTO `tbl_revisions` (`revID`, `revTitle`, `revDesc`, `revFile`, `revSize`, `revType`, `revStatus`, `docID`, `userID`) VALUES
 (5, 'test', 'test', '8405-Proposal Sample B _Comments.doc', 58, 'applicatio', 'Active', 7, 16),
-(6, 'Revision one', 'First Copy', '50367-eight.docx', 12, 'applicatio', 'Active', 24, 1);
+(6, 'Revision one', 'First Copy', '50367-eight.docx', 12, 'applicatio', 'Active', 24, 1),
+(7, 'updated version', 'up-to-date', '13408-one.docx', 13, 'applicatio', 'Active', 29, 1),
+(8, 'Version one', 'Dated', '77389-four.docx', 12, 'applicatio', 'Active', 31, 1),
+(9, 'rev', 'rev', '87214-seven.docx', 12, 'applicatio', 'Active', 25, 1);
 
 --
 -- Indexes for dumped tables
@@ -67,7 +70,7 @@ ALTER TABLE `tbl_revisions`
 -- AUTO_INCREMENT for table `tbl_revisions`
 --
 ALTER TABLE `tbl_revisions`
-  MODIFY `revID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `revID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
