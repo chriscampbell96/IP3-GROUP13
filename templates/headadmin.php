@@ -53,14 +53,16 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" style="color:#0a3245" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" style="color:#0a3245;text-align:center;" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
+                      <li>
+                          <a href="mymessages.php">Message <span class="label label-warning">Unopened</span></a>
+                      </li>
+                      <hr>
+                      <li>
+                          <a href="mymessages.php">Document <span class="label label-success">Assigned</span></a>
+                      </li>
+
 
                     </ul>
                 </li>

@@ -39,7 +39,7 @@ if(isset($_POST['btn-send']))
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Send Documents</title>
+    <title>Reply</title>
     <head>
       <meta charset="utf-8">
       <title>dashboard</title>
@@ -78,7 +78,7 @@ if(isset($_POST['btn-send']))
                 </h1>
                 <ol class="breadcrumb">
                     <li class="active">
-                        <i class="fa fa-envelope"></i> Send Documents
+                        <i class="fa fa-envelope"></i> Reply
                     </li>
                 </ol>
             </div>
@@ -109,10 +109,10 @@ if(isset($_POST['btn-send']))
           <?php if(isset($msg)) echo $msg;  ?>
             <form class="form-signin" method="post">
               <label>Send To:</label>
-              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Enter username" name="txtusername" required />
+              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="User replying to will echo here" name="txtusername" disabled />
               <label>Message Title:</label>
 
-              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Message Title" name="txttitle" required />
+              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="RE: previous message title will eho here with RE: infront" name="txttitle" disabled />
               <label>Message:</label>
 
               <textarea type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Your Message" name="txtentry" required /></textarea>
