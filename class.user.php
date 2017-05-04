@@ -27,19 +27,20 @@ class USER
   return $stmt;
  }
 
- public function register($fname,$lname,$uname,$email,$upass)
+ public function register($fname,$lname,$uname,$email,$upass,$role)
  {
   try
   {
     $password = sha1($upass);
-    $stmt = $this->conn->prepare("INSERT INTO tbl_users(userFirstName,userSurname,userName,userEmail,userPass)
-                                                 VALUES(:user_firstname, :user_surname, :user_name, :user_mail, :user_pass)");
+    $stmt = $this->conn->prepare("INSERT INTO tbl_users(userFirstName,userSurname,userName,userEmail,userPass,userRole)
+                                                 VALUES(:user_firstname, :user_surname, :user_name, :user_mail, :user_pass, :user_role)");
 
     $stmt->bindparam(":user_firstname",$fname);
     $stmt->bindparam(":user_surname",$lname);
     $stmt->bindparam(":user_name",$uname);
     $stmt->bindparam(":user_mail",$email);
     $stmt->bindparam(":user_pass",$password);
+    $stmt->bindparam(":user_role",$role);
     $stmt->execute();
     return $stmt;
   }

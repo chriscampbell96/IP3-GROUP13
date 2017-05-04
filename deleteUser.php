@@ -13,7 +13,7 @@ if(!$deluser->is_logged_in())
 }
 
 
-if(isset($_POST['btn-del']))
+if(isset($_POST['btn-delUser1']))
 {
  $id = $_GET['delete_id'];
  $deluser->delete_user($id);
@@ -138,6 +138,8 @@ if(isset($_POST['btn-del']))
                <td><?php echo $row['userEmail']; ?></td>
                <td><?php echo $row['userRole']; ?></td>
                <td><?php echo $row['userStatus']?></td>
+               <?php $uid = $row['userID']; ?>
+
              </tr>
              <?php
          }
@@ -151,6 +153,8 @@ if(isset($_POST['btn-del']))
   <?php
   if(isset($_GET['delete_id']))
   {
+
+
    ?>
       <div class="table-responsive">
          <table class='table table-bordered'>
@@ -163,7 +167,6 @@ if(isset($_POST['btn-del']))
 
          </tr>
          <?php
-
          $database = new Database();
          $db = $database->dbConnection();
          $conn = $db;
@@ -179,14 +182,16 @@ if(isset($_POST['btn-del']))
                <td><?php echo $row['docDesc']; ?></td>
                <td><?php echo $row['docFile']; ?></td>
                <?php $uid = $row['userID']; ?>
+               <?php $did = $row['docID']; ?>
 
              </tr>
              <?php
-         }
+       }
          ?>
          </table>
        </div>
          <?php
+
   }
   ?>
 
@@ -198,7 +203,20 @@ if(isset($_GET['delete_id']))
  ?>
    <form method="post">
     <input type="hidden" name="id" value="<?php echo $row['docID']; ?>" />
+    <?php
+    if(isset($did))
+    {
+     ?>
     <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-delUser"><i class="fa fa-trash-o"></i> &nbsp; YES</button>
+    <?php
+   }
+   else
+   {
+    ?>
+    <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-delUser1"><i class="fa fa-trash-o"></i> &nbsp; YES</button>
+       <?php
+   }
+   ?>
     <a href="manage_users.php" style="border-radius:10px; background-color:#f05133; color:white;" class="btn"><i class="fa fa-undo"></i> &nbsp; NO</a>
     </form>
  <?php
@@ -256,6 +274,7 @@ function deluser($uid)
    return false;
  }
 }
+
    ?>
 
 </div>
