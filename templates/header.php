@@ -54,7 +54,6 @@
                       <li>
                           <a href="mymessages.php">Document <span class="label label-success">Assigned</span></a>
                       </li>
-
                     </ul>
                 </li>
                 <li class="dropdown">

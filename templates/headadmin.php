@@ -56,11 +56,11 @@
                     <a href="#" class="dropdown-toggle" style="color:#0a3245;text-align:center;" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
                       <li>
-                          <a href="mymessages.php">Message <span class="label label-warning">Unopened</span></a>
+                          <a href="mymessages.php"><i class="fa fa-fw fa-envelope"></i> Message <span class="label label-warning"> Unopened </span></a>
                       </li>
-                      <hr>
+                      <li class="divider"</li>
                       <li>
-                          <a href="mymessages.php">Document <span class="label label-success">Assigned</span></a>
+                          <a href="mymessages.php"><i class="fa fa-fw fa-book"></i> Document <span class="label label-success"> Assigned </span></a>
                       </li>
 
 
