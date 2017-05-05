@@ -140,7 +140,7 @@ if(isset($_POST['btn-send']))
   </select>
 <br>
 
-              <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-send">Send</button>
+              <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-send"><i class="fa fa-fw fa-check"></i> Send</button>
             </form>
   </div>
 </div>

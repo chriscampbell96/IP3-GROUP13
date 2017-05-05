@@ -194,7 +194,7 @@ class paginate
                 <td></td>
 
                 <td><?php echo $row['msgDate']?></td>
-                <td style="align-items:center; text-align:center; width:30%;">
+                <td style="align-items:center; text-align:center; width:20%;">
                 <a href="replymsg.php" style="border-radius:10px; background-color:#f05133; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"></i> Reply</a>
                 </td>
                 </tr>
