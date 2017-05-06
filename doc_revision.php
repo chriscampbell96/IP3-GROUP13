@@ -216,7 +216,7 @@ if(isset($_POST['btn-upload']))
             <input type="file" name="file" required/>
 <br>
         <button class="btn btn-info" style="border-radius:10px" type="submit" name="btn-upload"><i class="fa fa-upload"></i> Upload</button>
-        <!-- <a href="view_documents.php" style="border-radius:10px;" class="btn btn-success"><i class="fa fa-undo"></i> &nbsp; Cancel</a> -->
+        <!-- <a href="view_documents.php" style="border-radius:10px; background-color:#BF3944; border:#BF3944; color:white;" class="btn btn"><i class="fa fa-ban"></i> &nbsp; Cancel</a> -->
 
       </form>
 </div>

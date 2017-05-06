@@ -106,7 +106,7 @@ if(isset($_GET['edit_id']))
           </div>
       </div>
 
-      <a href="profile.php" class="btn btn-info" style="border-radius:10px; margin-bottom:20px;"><i class="fa fa-arrow-left"></i> &nbsp;Back to profile</a>
+      <!-- <a href="profile.php" class="btn btn-info" style="border-radius:10px; margin-bottom:20px;"><i class="fa fa-arrow-left"></i> &nbsp;Back to profile</a> -->
 
 
       <?php
