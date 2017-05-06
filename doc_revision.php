@@ -131,7 +131,6 @@ if(isset($_POST['btn-upload']))
                       </div>
                       <!-- /.row -->
 
-
  <?php
  if(isset($_GET['success']))
  {
@@ -152,6 +151,9 @@ if(isset($_POST['btn-upload']))
 <?php
 }
 ?>
+
+<a href="view_documents.php" class="btn btn-info" style="border-radius:10px;"><i class="fa fa-arrow-left"></i> &nbsp;Back to Shared Documents</a>
+
  <h3>Original Document</h3>
 
 
@@ -214,7 +216,7 @@ if(isset($_POST['btn-upload']))
             <input type="file" name="file" required/>
 <br>
         <button class="btn btn-info" style="border-radius:10px" type="submit" name="btn-upload"><i class="fa fa-upload"></i> Upload</button>
-        <a href="view_documents.php" style="border-radius:10px;" class="btn btn-success"><i class="fa fa-undo"></i> &nbsp; Cancel</a>
+        <!-- <a href="view_documents.php" style="border-radius:10px;" class="btn btn-success"><i class="fa fa-undo"></i> &nbsp; Cancel</a> -->
 
       </form>
 </div>

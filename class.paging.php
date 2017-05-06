@@ -158,7 +158,7 @@ class paginate
                 <td><?php echo $row['userEmail']; ?></td>
                 <td><?php echo $row['userRole']; ?></td>
                 <td><?php echo $row['userStatus']?></td>
-                <td style="align-items:center; text-align:center; width:30%;">
+                <td style="align-items:center; text-align:center; width:20%;">
                 <a href="editUser.php?edit_id=<?php echo $row['userID']; ?>" style="border-radius:10px; background-color:#f05133; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"></i> Edit</a>
                 </td>
                 </tr>
