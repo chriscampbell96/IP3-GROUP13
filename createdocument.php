@@ -68,8 +68,7 @@ if(!$user_home->is_logged_in())
 
                         <!-- Create the editor container -->
                         <div id="editor">
-                          <p>Hello World!</p>
-                          <p>Some initial <strong>bold</strong> text</p>
+                          <p>Type Here!</p>
                           <p><br></p>
                         </div>
 
