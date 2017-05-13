@@ -195,6 +195,7 @@ class paginate
 
                 <td><?php echo $row['msgDate']?></td>
                 <td style="align-items:center; text-align:center; width:20%;">
+                <a href="deleteMessage.php?delete_id=<?php echo $row['msgID']; ?>" class="btn" style="background-color:#BF3944; color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;"><i class="fa fa-fw fa-trash-o"></i> Delete</a>
                 <a href="replymsg.php" style="border-radius:10px; background-color:#f05133; color:white" id="getUser" class="btn"><i class="fa fa-fw fa-pencil"></i> Reply</a>
                 </td>
                 </tr>

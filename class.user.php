@@ -203,6 +203,18 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
    }
 
 
+     public function delete_message($msgID, $id){
+
+
+        $stmt = $this->conn->prepare("DELETE FROM tbl_messages WHERE msgID=:id");
+
+        $stmt->bindparam(":id",$id);
+        $stmt->execute();
+       //  deluser($id);
+        return $stmt;
+
+      }
+
 
 //UPDATE `tbl_users` SET `userStatus` = 'N' WHERE `tbl_users`.`userID` = 17;
 

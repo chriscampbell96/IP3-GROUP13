@@ -110,6 +110,7 @@ if(!$user_home->is_logged_in())
 </div>
 
 
+
 <div class="pages" style="text-align:center; align-items:center;">
 <?php $paginate->paginglink($query,$records_per_page); ?>
 </div>
