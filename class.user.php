@@ -155,13 +155,15 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
 
   }
 
-  public function send_message($msgTitle,$msgEntry,$userID){
+  public function send_message($msgTo,$msgTitle,$msgEntry,$msgDoc,$userID){
     try{
-    $stmt = $this->conn->prepare("INSERT INTO tbl_messages(msgTitle,msgEntry,msgFrom)
-                                                 VALUES(:msg_title, :msg_entry, :msg_from)");
+    $stmt = $this->conn->prepare("INSERT INTO tbl_messages(msgTo,msgTitle,msgEntry,msgDoc,msgFrom)
+                                                 VALUES(:msg_to, :msg_title, :msg_entry, :msg_document, :msg_from)");
 
+    $stmt->bindparam(":msg_to",$msgTo);
     $stmt->bindparam(":msg_title",$msgTitle);
     $stmt->bindparam(":msg_entry",$msgEntry);
+    $stmt->bindparam(":msg_document",$msgDoc);
     $stmt->bindparam(":msg_from",$userID);
     $stmt->execute();
     return $stmt;

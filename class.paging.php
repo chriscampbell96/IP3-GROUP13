@@ -191,7 +191,7 @@ class paginate
                 <td><?php echo $row['msgTitle']; ?></td>
                 <td><?php echo $row['msgEntry']; ?></td>
                 <td><?php echo $row['msgFrom']; ?></td>
-                <td></td>
+                <td><?php echo $row['msgDoc']; ?></td>
 
                 <td><?php echo $row['msgDate']?></td>
                 <td style="align-items:center; text-align:center; width:20%;">

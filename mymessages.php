@@ -96,7 +96,7 @@ if(!$user_home->is_logged_in())
 
                 $uid = $_SESSION['userSession'];
 
-                      $query = "SELECT * FROM tbl_messages WHERE msgTO=$uid";
+                      $query = "SELECT * FROM tbl_messages WHERE msgTo=$uid";
                       $records_per_page=3;
                       $newquery = $paginate->paging($query,$records_per_page);
                       $paginate->dataviewfive($newquery);

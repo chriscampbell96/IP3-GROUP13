@@ -15,12 +15,19 @@ if(!$user_home->is_logged_in())
 
 if(isset($_POST['btn-send']))
 {
+ $msgTo = trim($_POST['txtto']);
  $msgTitle = trim($_POST['txttitle']);
  $msgEntry = trim($_POST['txtentry']);
+ $msgDoc = trim($_POST['txtdocument']);
+
  $userID = trim($_SESSION['userSession']);
 
+ $stmt = $user_home->runQuery("SELECT * FROM tbl_users WHERE userName=:msgTo");
+ $result = $stmt->execute(array(":msgTo"=>$msgTo));
+ $stmt->fetch(PDO::FETCH_ASSOC);
 
-  if($user_home->send_message($msgTitle,$msgEntry,$userID))
+
+  if($user_home->send_message($msgTo,$msgTitle,$msgEntry,$msgDoc,$userID))
   {
     $user_home->redirect('send_documents.php?success');
 
@@ -109,7 +116,8 @@ if(isset($_POST['btn-send']))
           <?php if(isset($msg)) echo $msg;  ?>
             <form class="form-signin" method="post">
               <label>Send To:</label>
-              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Enter username" name="txtusername" required />
+              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Enter username" name="txtto" required />
+
               <label>Message Title:</label>
 
               <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Message Title" name="txttitle" required />
@@ -117,28 +125,12 @@ if(isset($_POST['btn-send']))
 
               <textarea type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Your Message" name="txtentry" required /></textarea>
 
-  <label>Attatch Document:</label>
-  <select class="form-control" style="border-radius:10px; padding:5px">
-    <?php
+              <label>Attatch Document:</label>
 
-    $database = new Database();
-    $db = $database->dbConnection();
-    $conn = $db;
-
-    $stmt =  $db->prepare("SELECT * FROM tbl_documents WHERE docId=:id");
-    $stmt->execute(array(":id"=>$_SESSION['userSession']));
-    while($row=$stmt->fetch(PDO::FETCH_BOTH))
-    {
-        ?>
+              <input type="text" class="input-block-level" style="width:100%; border-radius:10px; padding:10px; margin-bottom:10px;" placeholder="Document Title" name="txtdocument" required />
 
 
-        <option> <?php echo $row['docTitle']?></option>
-
-        <?php
-    }
-    ?>
-  </select>
-<br>
+<br><br>
 
               <button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-send"><i class="fa fa-fw fa-check"></i> Send</button>
             </form>
