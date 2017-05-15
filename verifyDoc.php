@@ -127,7 +127,7 @@ if(isset($_POST['btn-verify']))
  {
   ?>
         <div class="alert alert-danger">
-     <strong>Warning!</strong> If document is verified then no more revisions can be made.
+     <strong>Warning!</strong> If document is verified then no more revisions can be made. Are you sure you wish to Verify!
   </div>
         <?php
  }
@@ -177,7 +177,7 @@ if(isset($_POST['btn-verify']))
 </div>
          </table>
          <a href="manage_users.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to Users</a>
-        
+
 
            <button type="submit" class="btn btn-info"  style="color:white color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;" name="btn-verify"><i class="fa fa-check-circle"></i> Verify</button>
            <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-draft"><i class="fa fa-fw fa-archive"></i> Draft</button>
