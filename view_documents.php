@@ -114,6 +114,9 @@ if(!$user_home->is_logged_in())
         <th>Document Description</th>
         <th>Last Changed</th>
         <th>Document File</th>
+        <th>Document Verified</th>
+        <th>Verified By</th>
+
         <th>User</th>
         <th>Actions</th>
         </tr>

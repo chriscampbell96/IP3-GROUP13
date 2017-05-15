@@ -86,6 +86,8 @@ class paginate
                 <td><?php echo $row['docDesc']; ?></td>
                 <td><?php echo $row['docLastChange']; ?></td>
                 <td><?php echo $row['docFile']; ?></td>
+                <td><?php echo $row['docVerify']; ?></td>
+                <td><?php echo $row['docVerifiedBy']; ?></td>
                 <td><?php echo $row['userID']?></td>
                 <td style="align-items:center; text-align:center; width:30%;">
 
@@ -98,7 +100,7 @@ class paginate
                   <a href="doc_revision.php?delete_id=<?php print($row['docID']); ?>" style="color:white color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;" class="btn btn-info"><i class="fa fa-pencil-square-o"></i> Upload Revision</a>
                     <?php }else{ ?>
                     <a href="uploads/<?php echo $row['docFile'] ?>" download="<?php echo $row['docFile']  ?>" class="btn btn-info" style="color:white; margin-top:10px; margin-bottom:10px; background-color:#f05133; border:1pt solid #BF691E; border-radius:10px;"><i class="fa fa-download"></i> Download</a>
-                    <a href="verifyDoc.php?document_id=<?php print($row['docID']); ?>" style="color:white color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;" class="btn btn-info"><i class="fa fa-check-circle"></i> Verify</a>
+                    <a href="verifyDoc.php?document_id=<?php print($row['docID']); ?>" style="color:white color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;" class="btn btn-info"><i class="fa fa-check-circle"></i> Edit Status</a>
                   <?php } ?>
 
                </td>

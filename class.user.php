@@ -261,6 +261,14 @@ public function create_doc($docTitle,$docDesc,$file,$file_type,$new_size,$userID
   return $editRow;
  }
 
+ public function getDocID($did)
+ {
+  $stmt = $this->conn->prepare("SELECT * FROM tbl_documents WHERE docID=:id");
+  $stmt->execute(array(":id"=>$did));
+  $editRow=$stmt->fetch(PDO::FETCH_ASSOC);
+  return $editRow;
+ }
+
  public function update($id,$fname,$lname,$uname,$email)
  {
   try

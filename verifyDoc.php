@@ -17,7 +17,34 @@ if ($_SESSION['userRole'] !== ('Distributee'))
    $user_home->redirect('dashboard.php');
 }
 
+if(isset($_GET['document_id']))
+{
+ $did = $_GET['document_id'];
+ extract($user_home->getDocID($did));
+}
 
+if(isset($_POST['btn-verify']))
+{
+  try
+  {
+    $database = new Database();
+    $db = $database->dbConnection();
+    $conn = $db;
+    $id = $_GET['document_id'];
+   $stmt=$conn->prepare("UPDATE tbl_documents SET docVerify='Verified'
+             WHERE docID=$id ");
+   $stmt->bindparam("docVerify",$docVerify);
+   $stmt->bindparam(":id",$id);
+   $stmt->execute();
+   $user_home->redirect('view_documents.php?success');
+   return true;
+  }
+  catch(PDOException $e)
+  {
+   echo $e->getMessage();
+   return false;
+  }
+  }
 
 
 ?>
@@ -31,7 +58,7 @@ if ($_SESSION['userRole'] !== ('Distributee'))
 
 
 
-    <title>Delete user</title>
+    <title>Verify Document</title>
 
 
     <!-- Bootstrap -->
@@ -106,104 +133,66 @@ if ($_SESSION['userRole'] !== ('Distributee'))
  }
  ?>
 
+ <form method="post">
 
-  <?php
-  if(isset($_GET['document_id']))
-  {
-   ?>
-      <div class="table-responsive">
-         <table class='table table-bordered'>
-         <tr>
-           <th>docID</th>
-           <th>docTitle</th>
-           <th>docStatus</th>
+   <div class="table-responsive">
+<table class='table table-bordered'>
+
+    <tr>
+        <td>First Name</td>
+        <td><input type='text' name='first_name' style="border-radius:10px;" class='form-control' value="<?php echo $docID; ?>" disabled></td>
+    </tr>
+
+    <tr>
+        <td>Last Name</td>
+        <td><input type='text' name='last_name' style="border-radius:10px;" class='form-control' value="<?php echo $docTitle; ?>" disabled></td>
+    </tr>
+
+    <tr>
+        <td>User Name</td>
+        <td><input type='text' name='uname' class='form-control' style="border-radius:10px;" value="<?php echo $docDesc; ?>" disabled></td>
+    </tr>
+
+    <tr>
+        <td>Your E-mail ID</td>
+        <td><input type='text' name='userEmail' style="border-radius:10px;" class='form-control' value="<?php echo $docLastChange; ?>" disabled></td>
+    </tr>
+    <tr>
+        <td>User Status</td>
+        <td><input type='text' name='userStatus' style="border-radius:10px;" class='form-control' value="<?php echo $docStatus; ?>" disabled></td>
+    </tr>
+    <tr>
+        <td>User Status</td>
+        <td><input type='text' name='userStatus' style="border-radius:10px;" class='form-control' value="<?php echo $docVerify; ?>" disabled></td>
+    </tr>
+    <tr>
+        <td>User Status</td>
+        <td><input type='text' name='userStatus' style="border-radius:10px;" class='form-control' value="<?php echo $docVerifiedBy; ?>" disabled></td>
+    </tr>
 
 
 
-         </tr>
-         <?php
 
-         $database = new Database();
-         $db = $database->dbConnection();
-         $conn = $db;
-
-         $stmt =  $db->prepare("SELECT * FROM tbl_documents WHERE docID=:id");
-         $stmt->execute(array(":id"=>$_GET['document_id']));
-         while($row=$stmt->fetch(PDO::FETCH_BOTH))
-         {
-             ?>
-             <tr>
-               <td><?php echo $row['docID']; ?></td>
-               <td><?php echo $row['docTitle']; ?></td>
-               <td><?php echo $row['docStatus']?></td>
-               <?php $uid = $row['userID']; ?>
-
-             </tr>
-             <?php
-         }
-         ?>
+</table>
+</div>
          </table>
-       </div>
-         <?php
-  }
-  ?>
+         <a href="manage_users.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to Users</a>
+        
+
+           <button type="submit" class="btn btn-info"  style="color:white color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;" name="btn-verify"><i class="fa fa-check-circle"></i> Verify</button>
+           <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-draft"><i class="fa fa-fw fa-archive"></i> Draft</button>
+         </form>
+
+
+
+
 
 
 
 <p>
 
-    <a href="manage_users.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to Users</a>
-    <a href="#" class="btn btn-info"><i class="fa fa-check-circle"></i> &nbsp; Verify</a>
-
-
 </p>
 
-<?php
-
-if(isset($_POST['btn-delUser']))
-{
-  try
-  {
-    $database = new Database();
-    $db = $database->dbConnection();
-    $conn = $db;
-
-    $query=("DELETE FROM tbl_documents WHERE userID=:id ");
-    $stmt=$conn->prepare($query);
-    $stmt->execute(array(
-    ":id" => $uid));
-    deluser($uid);
-    return true;
-  }
-  catch(PDOException $e)
-  {
-   echo $e->getMessage();
-   return false;
- }
-}
-
-function deluser($uid)
-{
-  try
-  {
-    $database = new Database();
-    $db = $database->dbConnection();
-    $conn = $db;
-
-    $query=("DELETE FROM tbl_users WHERE userID=:id ");
-    $stmt=$conn->prepare($query);
-    $stmt->execute(array(
-    ":id" => $uid));
-    return true;
-  }
-  catch(PDOException $e)
-  {
-   echo $e->getMessage();
-   return false;
- }
-}
-
-   ?>
 
 </div>
 <?php include 'templates/foot.php';?></div>

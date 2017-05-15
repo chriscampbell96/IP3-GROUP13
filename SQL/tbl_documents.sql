@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2017 at 08:00 PM
+-- Generation Time: May 15, 2017 at 08:24 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -36,6 +36,8 @@ CREATE TABLE `tbl_documents` (
   `docType` varchar(10) NOT NULL,
   `docSize` int(11) NOT NULL,
   `docStatus` enum('Draft','Active') NOT NULL,
+  `docVerify` enum('Verified','Unverified') NOT NULL DEFAULT 'Unverified',
+  `docVerifiedBy` varchar(255) NOT NULL,
   `userID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -43,18 +45,14 @@ CREATE TABLE `tbl_documents` (
 -- Dumping data for table `tbl_documents`
 --
 
-INSERT INTO `tbl_documents` (`docID`, `docTitle`, `docDesc`, `docCreateDate`, `docLastChange`, `docFile`, `docType`, `docSize`, `docStatus`, `userID`) VALUES
-(24, 'To Do', 'To do list for next week', '0000-00-00 00:00:00', '2017-04-11 11:43:48', '92417-one.docx', 'applicatio', 13, 'Draft', 1),
-(25, 'Last weeks Figures', 'Figures for the whole company', '0000-00-00 00:00:00', '2017-04-11 11:30:53', '88517-two.docx', 'applicatio', 12, 'Active', 1),
-(26, 'Project Proposal', 'Needs finishing touches added - do not submit', '0000-00-00 00:00:00', '2017-04-11 11:22:03', '50122-three.docx', 'applicatio', 12, 'Draft', 18),
-(27, 'Plans for next weeks meeting', 'meeting being held next week agenda', '0000-00-00 00:00:00', '2017-04-11 11:24:13', '27112-five.docx', 'applicatio', 12, 'Draft', 18),
-(28, 'Meeting notes for last week', 'Last weeks meeting notes', '0000-00-00 00:00:00', '2017-04-11 11:24:40', '53071-four.docx', 'applicatio', 12, 'Draft', 18),
-(29, 'Meeting Notes', 'Meeting held two weeks ago', '0000-00-00 00:00:00', '2017-04-11 12:04:01', '95553-six.docx', 'applicatio', 12, 'Active', 1),
-(30, 'Plan A', 'Plans for future development', '0000-00-00 00:00:00', '2017-04-11 11:27:18', '48545-seven.docx', 'applicatio', 12, 'Draft', 1),
-(31, 'Notes from Conference Call', 'Notes taken for last weeks call - Do not delete', '0000-00-00 00:00:00', '2017-04-11 12:04:58', '46433-eight.docx', 'applicatio', 12, 'Active', 1),
-(32, 'My Notes', 'Notes taken for lecture', '0000-00-00 00:00:00', '2017-04-11 11:28:59', '29617-nine.docx', 'applicatio', 13, 'Draft', 19),
-(33, 'About my cat', 'All about Candy', '0000-00-00 00:00:00', '2017-04-11 11:29:22', '88571-ten.docx', 'applicatio', 13, 'Draft', 19),
-(34, 'test', 'test', '0000-00-00 00:00:00', '2017-04-13 09:15:58', '91949-four.docx', 'applicatio', 12, 'Active', 1);
+INSERT INTO `tbl_documents` (`docID`, `docTitle`, `docDesc`, `docCreateDate`, `docLastChange`, `docFile`, `docType`, `docSize`, `docStatus`, `docVerify`, `docVerifiedBy`, `userID`) VALUES
+(8, 'test', 'test', '0000-00-00 00:00:00', '2017-05-15 17:14:04', '', '', 0, 'Active', 'Verified', '', 1),
+(9, 'yayay', 'yayayayaydaisdh', '0000-00-00 00:00:00', '2017-04-04 22:47:25', '45708-sysprglab3.doc', 'applicatio', 60, 'Draft', 'Unverified', '', 1),
+(10, 'writing', 'shellnotes', '0000-00-00 00:00:00', '2017-03-12 21:36:33', '72933-writing-shell-scripts---notes.docx', 'applicatio', 20, 'Draft', 'Unverified', '', 1),
+(12, 'tester', 'uyfkf kugk uygkuy g', '0000-00-00 00:00:00', '2017-04-07 21:45:43', '27674-how-secure-is-fingerprint-recognition.docx', 'applicatio', 15, 'Draft', 'Unverified', '', 1),
+(13, 'free', 'free', '0000-00-00 00:00:00', '2017-03-28 19:09:50', '99874-SysPrgLab2.doc', 'applicatio', 50, 'Draft', 'Unverified', '', 1),
+(15, 'sfuh', 'osidhhffoif', '0000-00-00 00:00:00', '2017-03-20 13:08:49', '58561-SysPrgLab4.doc', 'applicatio', 54, 'Draft', 'Unverified', '', 1),
+(17, 'Test upload', 'This is a test upload for the document video', '0000-00-00 00:00:00', '2017-04-17 15:05:34', '50361-Testing.docx', 'applicatio', 12, 'Draft', 'Unverified', '', 1);
 
 --
 -- Indexes for dumped tables
@@ -75,7 +73,7 @@ ALTER TABLE `tbl_documents`
 -- AUTO_INCREMENT for table `tbl_documents`
 --
 ALTER TABLE `tbl_documents`
-  MODIFY `docID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `docID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- Constraints for dumped tables
 --
