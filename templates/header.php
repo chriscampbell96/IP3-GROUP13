@@ -51,6 +51,7 @@
                       <li>
                           <a href="mymessages.php">Message <span class="label label-warning">Unopened</span></a>
                       </li>
+                      <li class="divider"</li>
                       <li>
                           <a href="mymessages.php">Document <span class="label label-success">Assigned</span></a>
                       </li>
