@@ -100,7 +100,7 @@ if ($_SESSION['userRole'] !== ('Distributee'))
  {
   ?>
         <div class="alert alert-danger">
-     <strong>Warning!</strong> If document is verified then no more revisions can be made.
+     <strong>Warning!</strong> If document is verified then no more revisions can be made. Are you sure you wish to Verify!
   </div>
         <?php
  }
@@ -152,8 +152,11 @@ if ($_SESSION['userRole'] !== ('Distributee'))
 
 <p>
 
-    <a href="manage_users.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to Users</a>
-    <a href="#" class="btn btn-info"><i class="fa fa-check-circle"></i> &nbsp; Verify</a>
+<button class="btn btn-info" style="border-radius:10px;" type="submit" name="btn-delUser"><i class="fa fa-trash-o"></i> &nbsp; YES</button>
+  <a href="view_documents.php" style="border-radius:10px; background-color:#f05133; color:white;" class="btn"><i class="fa fa-undo"></i> &nbsp; NO</a>
+
+    <!-- <a href="manage_users.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to Users</a>
+    <a href="#" class="btn btn-info"><i class="fa fa-check-circle"></i> &nbsp; Verify</a> -->
 
 
 </p>
