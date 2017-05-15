@@ -10,6 +10,11 @@ if(!$user_home->is_logged_in())
  $user_home->redirect('login.php');
 }
 
+if ($_SESSION['userRole'] == ('Distributee'))
+{
+   $user_home->redirect('dashboard.php');
+}
+
 
 ?>
 

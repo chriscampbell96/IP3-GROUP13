@@ -49,7 +49,14 @@ if(!$user_home->is_logged_in())
   }
       ?>
 
-      <?php include 'templates/sidebar.php';?>
+      <?php if ($_SESSION['userRole'] == ('Distributee'))
+        {
+          include 'templates/sidebar-dis.php';
+        }
+        else {
+          include 'templates/sidebar.php';
+        }
+        ?>
 
     <div id="wrapper">
 <div id="page-wrapper">

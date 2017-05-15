@@ -69,8 +69,14 @@ if(isset($_POST['btn-send']))
       include 'templates/header.php';
     }
         ?>
-
-        <?php include 'templates/sidebar.php';?>
+        <?php if ($_SESSION['userRole'] == ('Distributee'))
+          {
+            include 'templates/sidebar-dis.php';
+          }
+          else {
+            include 'templates/sidebar.php';
+          }
+          ?>
     </head>
   <body>
   <div id="wrapper">
