@@ -75,3 +75,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/windows,macos,codeigniter,sass,less
+revisions/47007-sysprglab2(1)-(1).doc
+*.doc

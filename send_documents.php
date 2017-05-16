@@ -27,6 +27,8 @@ if(isset($_POST['btn-send']))
  $stmt->fetch(PDO::FETCH_ASSOC);
 
 
+if ($_POST['txtto'] == $userID)
+{
   if($user_home->send_message($msgTo,$msgTitle,$msgEntry,$msgDoc,$userID))
   {
     $user_home->redirect('send_documents.php?success');
@@ -37,8 +39,9 @@ if(isset($_POST['btn-send']))
     $user_home->redirect('send_documents.php?error');
 
  }
+ 
 }
-
+}
 
 ?>
 
