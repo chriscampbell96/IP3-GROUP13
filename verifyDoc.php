@@ -196,7 +196,7 @@ if(isset($_POST['btn-verify']))
 </table>
 </div>
          </table>
-         <a href="manage_users.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to Users</a>
+         <a href="view_documents.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to Documents</a>
 
          <?php if($docVerify == 'Unverified'){ ?>
            <button type="submit" class="btn btn-info"  style="color:white color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;" name="btn-verify"><i class="fa fa-check-circle"></i> Verify</button>
