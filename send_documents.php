@@ -22,12 +22,13 @@ if(isset($_POST['btn-send']))
 
  $userID = trim($_SESSION['userSession']);
 
- $stmt = $user_home->runQuery("SELECT * FROM tbl_users WHERE userName=:msgTo");
+ $stmt = $user_home->runQuery("SELECT userID FROM tbl_users WHERE userID=:msgTo");
  $result = $stmt->execute(array(":msgTo"=>$msgTo));
  $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-if ($_POST['txtto'] == $userID)
+if($stmt->rowCount() > 0)
+
 {
   if($user_home->send_message($msgTo,$msgTitle,$msgEntry,$msgDoc,$userID))
   {
