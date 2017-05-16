@@ -99,47 +99,164 @@ if(!$user_home->is_logged_in())
         <input type="text" class="form-control" placeholder="Search My Shared Documents">
       </div>
 
-    <!-- Viewing users.. -->
-    <div class="table-responsive">
-    <table class="table table-striped table-bordered">
-      <form class="navbar-form navbar-left">
-
-      </form>
-
-    <thead>
-        <tr>
-
-        <th>Document ID</th>
-        <th>Doument Title</th>
-        <th>Document Description</th>
-        <th>Last Changed</th>
-        <th>Document File</th>
-        <th>Document Verified</th>
-        <th>Verified By</th>
-
-        <th>User</th>
-        <th>Actions</th>
-        </tr>
-    </thead>
-    <?php
-
-    $uid = $_SESSION['userSession'];
-
-          $query = "SELECT * FROM tbl_documents WHERE docStatus='Active'";
-          $records_per_page=3;
-          $newquery = $paginate->paging($query,$records_per_page);
-          $paginate->dataviewtwo($newquery);
-          ?>
-                </tr>
 
 
-       </tbody>
-    </table>
-</div>
-<?php $paginate->paginglink($query,$records_per_page); ?>
-    <tbody>
 
-</div>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Original/Active Documents
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <!-- Viewing users.. -->
+        <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <form class="navbar-form navbar-left">
+
+          </form>
+
+        <thead>
+            <tr>
+
+            <th>Document ID</th>
+            <th>Doument Title</th>
+            <th>Document Description</th>
+            <th>Last Changed</th>
+            <th>Document File</th>
+            <th>Document Verified</th>
+            <th>Verified By</th>
+
+            <th>User</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <?php
+
+        $uid = $_SESSION['userSession'];
+
+              $query = "SELECT * FROM tbl_documents WHERE docStatus='Active'";
+              $records_per_page=3;
+              $newquery = $paginate->paging($query,$records_per_page);
+              $paginate->dataviewtwo($newquery);
+              ?>
+                    </tr>
+
+
+           </tbody>
+        </table>
+    </div>
+    <?php $paginate->paginglink($query,$records_per_page); ?>
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Document Revisions
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <!-- Viewing users.. -->
+        <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <form class="navbar-form navbar-left">
+
+          </form>
+
+        <thead>
+            <tr>
+
+            <th>Document ID</th>
+            <th>Doument Title</th>
+            <th>Document Description</th>
+            <th>Last Changed</th>
+            <th>Document File</th>
+            <th>Document Verified</th>
+            <th>Verified By</th>
+
+            <th>User</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <?php
+
+        $uid = $_SESSION['userSession'];
+
+              $query = "SELECT * FROM tbl_documents WHERE docStatus='Active'";
+              $records_per_page=3;
+              $newquery = $paginate->paging($query,$records_per_page);
+              $paginate->dataviewtwo($newquery);
+              ?>
+                    </tr>
+
+
+           </tbody>
+        </table>
+    </div>
+    <?php $paginate->paginglink($query,$records_per_page); ?>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Verified/Final Documents
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        <!-- Viewing users.. -->
+        <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <form class="navbar-form navbar-left">
+
+          </form>
+
+        <thead>
+            <tr>
+
+            <th>Document ID</th>
+            <th>Doument Title</th>
+            <th>Document Description</th>
+            <th>Last Changed</th>
+            <th>Document File</th>
+            <th>Document Verified</th>
+            <th>Verified By</th>
+
+            <th>User</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <?php
+
+        $uid = $_SESSION['userSession'];
+
+              $query = "SELECT * FROM tbl_documents WHERE docStatus='Active'";
+              $records_per_page=3;
+              $newquery = $paginate->paging($query,$records_per_page);
+              $paginate->dataviewtwo($newquery);
+              ?>
+                    </tr>
+
+
+           </tbody>
+        </table>
+    </div>
+    <?php $paginate->paginglink($query,$records_per_page); ?>
+      </div>
+    </div>
+  </div>
 </div>
 
 <?php include 'templates/foot.php';?>
