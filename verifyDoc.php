@@ -31,6 +31,8 @@ if(isset($_POST['btn-verify']))
     $db = $database->dbConnection();
     $conn = $db;
     $id = $_GET['document_id'];
+    $verifyUser = $_SESSION['userName'];
+
    $stmt=$conn->prepare("UPDATE tbl_documents SET docVerify='Verified'
              WHERE docID=$id ");
    $stmt->bindparam("docVerify",$docVerify);
@@ -46,6 +48,28 @@ if(isset($_POST['btn-verify']))
   }
   }
 
+  if(isset($_POST['btn-draft']))
+  {
+    try
+    {
+      $database = new Database();
+      $db = $database->dbConnection();
+      $conn = $db;
+      $id = $_GET['document_id'];
+     $stmt=$conn->prepare("UPDATE tbl_documents SET docStatus='Draft'
+               WHERE docID=$id ");
+     $stmt->bindparam("docStatus",$docStatus);
+     $stmt->bindparam(":id",$id);
+     $stmt->execute();
+     $user_home->redirect('view_documents.php');
+     return true;
+    }
+    catch(PDOException $e)
+    {
+     echo $e->getMessage();
+     return false;
+    }
+    }
 
 ?>
 
@@ -139,35 +163,31 @@ if(isset($_POST['btn-verify']))
 <table class='table table-bordered'>
 
     <tr>
-        <td>First Name</td>
+        <td>Document ID</td>
         <td><input type='text' name='first_name' style="border-radius:10px;" class='form-control' value="<?php echo $docID; ?>" disabled></td>
     </tr>
 
     <tr>
-        <td>Last Name</td>
+        <td>Document Title</td>
         <td><input type='text' name='last_name' style="border-radius:10px;" class='form-control' value="<?php echo $docTitle; ?>" disabled></td>
     </tr>
 
     <tr>
-        <td>User Name</td>
+        <td>Document Description</td>
         <td><input type='text' name='uname' class='form-control' style="border-radius:10px;" value="<?php echo $docDesc; ?>" disabled></td>
     </tr>
 
     <tr>
-        <td>Your E-mail ID</td>
+        <td>Document Last Changed</td>
         <td><input type='text' name='userEmail' style="border-radius:10px;" class='form-control' value="<?php echo $docLastChange; ?>" disabled></td>
     </tr>
     <tr>
-        <td>User Status</td>
+        <td>Document Status</td>
         <td><input type='text' name='userStatus' style="border-radius:10px;" class='form-control' value="<?php echo $docStatus; ?>" disabled></td>
     </tr>
     <tr>
-        <td>User Status</td>
+        <td>Verification</td>
         <td><input type='text' name='userStatus' style="border-radius:10px;" class='form-control' value="<?php echo $docVerify; ?>" disabled></td>
-    </tr>
-    <tr>
-        <td>User Status</td>
-        <td><input type='text' name='userStatus' style="border-radius:10px;" class='form-control' value="<?php echo $docVerifiedBy; ?>" disabled></td>
     </tr>
 
 
@@ -178,8 +198,9 @@ if(isset($_POST['btn-verify']))
          </table>
          <a href="manage_users.php" class="btn btn-info"><i class="fa fa-arrow-left"></i> &nbsp; Back to Users</a>
 
-
+         <?php if($docVerify == 'Unverified'){ ?>
            <button type="submit" class="btn btn-info"  style="color:white color:white; margin-top:10px; margin-bottom:10px; border-radius:10px;" name="btn-verify"><i class="fa fa-check-circle"></i> Verify</button>
+           <?php }else{ echo ''; } ?>
            <button type="submit" class="btn btn-default" style="border-radius:10px;" name="btn-draft"><i class="fa fa-fw fa-archive"></i> Draft</button>
          </form>
 

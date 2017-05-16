@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2017 at 08:00 PM
+-- Generation Time: May 16, 2017 at 01:29 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -32,6 +32,7 @@ CREATE TABLE `tbl_messages` (
   `msgEntry` varchar(500) NOT NULL,
   `msgTo` int(11) NOT NULL,
   `msgFrom` int(11) NOT NULL,
+  `msgDoc` varchar(100) NOT NULL,
   `msgDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -39,9 +40,11 @@ CREATE TABLE `tbl_messages` (
 -- Dumping data for table `tbl_messages`
 --
 
-INSERT INTO `tbl_messages` (`msgID`, `msgTitle`, `msgEntry`, `msgTo`, `msgFrom`, `msgDate`) VALUES
-(1, 'Please Revise This Document', 'Hi James,\r\nCan you revise my document?', 1, 18, '2017-04-13 08:48:14'),
-(2, 'Updates', 'My recent document has been updated.', 1, 21, '2017-04-13 08:51:49');
+INSERT INTO `tbl_messages` (`msgID`, `msgTitle`, `msgEntry`, `msgTo`, `msgFrom`, `msgDoc`, `msgDate`) VALUES
+(4, 'send', 'james', 24, 1, '', '2017-05-06 21:28:54'),
+(9, 'test', 'test', 0, 1, 'test', '2017-05-06 22:09:13'),
+(10, 'eodsif', 'dlksdfd', 0, 24, 'dsfs', '2017-05-15 13:31:20'),
+(11, 'send', 'send', 24, 24, 'd', '2017-05-16 12:27:47');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +64,7 @@ ALTER TABLE `tbl_messages`
 -- AUTO_INCREMENT for table `tbl_messages`
 --
 ALTER TABLE `tbl_messages`
-  MODIFY `msgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `msgID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
