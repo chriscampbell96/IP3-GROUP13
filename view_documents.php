@@ -129,8 +129,6 @@ if(!$user_home->is_logged_in())
             <th>Last Changed</th>
             <th>Document File</th>
             <th>Document Verified</th>
-            <th>Verified By</th>
-
             <th>User</th>
             <th>Actions</th>
             </tr>
@@ -175,14 +173,11 @@ if(!$user_home->is_logged_in())
         <thead>
             <tr>
 
-            <th>Document ID</th>
-            <th>Doument Title</th>
-            <th>Document Description</th>
-            <th>Last Changed</th>
-            <th>Document File</th>
-            <th>Document Verified</th>
-            <th>Verified By</th>
-
+            <th>Revision ID</th>
+            <th>Revision Title</th>
+            <th>Revision Description</th>
+            <th>Revision File</th>
+            <th>Original Document</th>
             <th>User</th>
             <th>Actions</th>
             </tr>
@@ -191,10 +186,10 @@ if(!$user_home->is_logged_in())
 
         $uid = $_SESSION['userSession'];
 
-              $query = "SELECT * FROM tbl_documents WHERE docStatus='Active'";
+              $query = "SELECT * FROM tbl_revisions WHERE revStatus='Active'";
               $records_per_page=3;
               $newquery = $paginate->paging($query,$records_per_page);
-              $paginate->dataviewtwo($newquery);
+              $paginate->dataviewtwo1($newquery);
               ?>
                     </tr>
 
@@ -231,8 +226,7 @@ if(!$user_home->is_logged_in())
             <th>Document Description</th>
             <th>Last Changed</th>
             <th>Document File</th>
-            <th>Document Verified</th>
-            <th>Verified By</th>
+
 
             <th>User</th>
             <th>Actions</th>
@@ -242,10 +236,10 @@ if(!$user_home->is_logged_in())
 
         $uid = $_SESSION['userSession'];
 
-              $query = "SELECT * FROM tbl_documents WHERE docStatus='Active'";
+              $query = "SELECT * FROM tbl_documents WHERE docVerify='Verified'";
               $records_per_page=3;
               $newquery = $paginate->paging($query,$records_per_page);
-              $paginate->dataviewtwo($newquery);
+              $paginate->dataviewtwo2($newquery);
               ?>
                     </tr>
 
