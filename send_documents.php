@@ -39,10 +39,10 @@ if ($_POST['txtto'] == $userID)
     $user_home->redirect('send_documents.php?error');
 
  }
- 
-}
-}
 
+} else {$user_home->redirect('send_documents.php?error123');
+}
+}
 ?>
 
 <!DOCTYPE html>
@@ -118,6 +118,17 @@ if ($_POST['txtto'] == $userID)
                 <div class="alert alert-warning">
              <strong>Error!</strong> something went wrong. <strong><u>Please try again.</u></strong>
           </div>
+          <?php
+   }
+    ?>
+
+          <?php
+          if(isset($_GET['error123']))
+          {
+           ?>
+                 <div class="alert alert-warning">
+              <strong>Error!</strong> User does not exist!! <strong><u>Please try again.</u></strong>
+           </div>
                 <?php
          }
           ?>
